@@ -1712,13 +1712,13 @@
           </div>
 
           <h1 class="hero-title">
-            <span class="line"><span class="line-inner">Civic Infrastructure</span></span>
-            <span class="line"><span class="line-inner">for the <span class="hero-title-accent">Intelligence</span></span></span>
-            <span class="line"><span class="line-inner"><span class="hero-title-accent">Age</span></span></span>
+            <span class="line"><span class="line-inner">Bridging the Gap</span></span>
+            <span class="line"><span class="line-inner">Between <span class="hero-title-accent">AI Advancement</span></span></span>
+            <span class="line"><span class="line-inner">&amp; <span class="hero-title-accent">Societal Readiness</span></span></span>
           </h1>
 
           <p class="hero-subtitle">
-            25 curated voices. 60 minutes. One question that matters. Join the civic dialogue shaping how society responds to AI.
+            Civic infrastructure for the intelligence age. 25 curated voices. 60 minutes. One question that matters.
           </p>
 
           <div class="countdown" id="countdown">
@@ -2098,7 +2098,7 @@
         </div>
 
         <div class="register-form-wrap reveal">
-          <form id="registerForm">
+          <form id="registerForm" action="https://formspree.io/f/xnjzjall" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label">Full Name *</label>
@@ -2461,7 +2461,7 @@
     })();
 
     // =============================================
-    // FORM HANDLING
+    // FORM HANDLING (Formspree)
     // =============================================
     (function () {
       var form = document.getElementById('registerForm');
@@ -2474,17 +2474,43 @@
         btn.textContent = 'Submitting...';
         btn.disabled = true;
 
-        setTimeout(function () {
-          btn.textContent = 'Application Received \u2714';
-          btn.style.background = 'linear-gradient(135deg, #059669, #10B981)';
-          form.reset();
+        var data = new FormData(form);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function (response) {
+          if (response.ok) {
+            btn.textContent = 'Application Received \u2714';
+            btn.style.background = 'linear-gradient(135deg, #059669, #10B981)';
+            form.reset();
+
+            setTimeout(function () {
+              btn.textContent = 'Submit Application \u2192';
+              btn.style.background = '';
+              btn.disabled = false;
+            }, 4000);
+          } else {
+            btn.textContent = 'Something went wrong. Try again.';
+            btn.style.background = 'linear-gradient(135deg, #DC2626, #EF4444)';
+            btn.disabled = false;
+
+            setTimeout(function () {
+              btn.textContent = 'Submit Application \u2192';
+              btn.style.background = '';
+            }, 3000);
+          }
+        }).catch(function () {
+          btn.textContent = 'Network error. Try again.';
+          btn.style.background = 'linear-gradient(135deg, #DC2626, #EF4444)';
+          btn.disabled = false;
 
           setTimeout(function () {
             btn.textContent = 'Submit Application \u2192';
             btn.style.background = '';
-            btn.disabled = false;
-          }, 4000);
-        }, 1500);
+          }, 3000);
+        });
       });
     })();
   </script>
