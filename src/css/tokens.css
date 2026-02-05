@@ -25,11 +25,60 @@
   --border-light: rgba(26, 54, 93, 0.08);
   --shadow-neutral: rgba(26, 54, 93, 0.12);
 
-  --font-serif: 'Playfair Display', Georgia, serif;
+  /* Typography */
+  --font-serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
 
+  /* Multi-Layered Shadows */
+  --shadow-float-sm:
+    0 1px 2px rgba(26, 54, 93, 0.06),
+    0 4px 8px rgba(26, 54, 93, 0.04),
+    0 8px 16px rgba(26, 54, 93, 0.03);
+  --shadow-float-md:
+    0 2px 4px rgba(26, 54, 93, 0.06),
+    0 8px 20px rgba(26, 54, 93, 0.06),
+    0 20px 48px rgba(26, 54, 93, 0.05);
+  --shadow-float-lg:
+    0 4px 8px rgba(26, 54, 93, 0.05),
+    0 16px 40px rgba(26, 54, 93, 0.08),
+    0 40px 80px rgba(26, 54, 93, 0.06);
+  --shadow-glow-accent: 0 0 24px rgba(43, 122, 120, 0.25);
+  --shadow-glow-gold: 0 0 24px rgba(212, 168, 67, 0.25);
+  --shadow-inset: inset 0 2px 6px rgba(26, 54, 93, 0.08);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-blur: blur(20px);
+  --glass-bg-dark: rgba(26, 54, 93, 0.65);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+
+  /* Parchment — Paper White (Day) */
+  --parchment-base: #F2F0E9;
+  --parchment-warm: #EDE8DD;
+  --parchment-cool: #E8E6E1;
+
+  /* Parchment — Library Night (Dark) */
+  --parchment-dark-base: #1C2127;
+  --parchment-dark-warm: #252B33;
+  --parchment-dark-cool: #181C21;
+  --parchment-dark-accent: rgba(58, 175, 169, 0.06);
+
+  /* Phase Colors */
+  --phase-prime: #2B7A78;
+  --phase-complicate: #3B6FA0;
+  --phase-position: #D4A843;
+  --phase-breakout: #E07A5F;
+  --phase-shareback: #3AAFA9;
+  --phase-synthesize: #1A365D;
+  --phase-capture: #8B5CF6;
+
+  /* Easing */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-orbital: cubic-bezier(0.4, 0, 0.6, 1);
+  --ease-expand: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-morph: cubic-bezier(0.65, 0, 0.35, 1);
 }

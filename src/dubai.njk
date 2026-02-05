@@ -8,17 +8,16 @@ extraCss:
 extraJs:
   - /js/countdown.js
   - /js/form.js
-  - /js/pages/dubai-circle.js
-  - /js/pages/dubai-radar.js
+  - /js/pages/dubai-orbit.js
+  - /js/pages/dubai-phases.js
+  - /js/pages/dubai-agency.js
   - /js/pages/live-feed.js
 ---
-
-{% from "phase-stepper.njk" import phaseStepper %}
 
 <!-- ============================================
      HERO: Global Readiness Clock
      ============================================ -->
-<section class="dubai-hero">
+<section class="dubai-hero parchment-bg">
   <div class="container">
     <div class="dubai-hero-content">
       <div class="dubai-hero-eyebrow">Dubai Node &middot; April 2026</div>
@@ -66,29 +65,34 @@ extraJs:
 </section>
 
 <!-- ============================================
-     CURATED CIRCLE
+     WALL OF AGENCY — Hexagonal Grid
      ============================================ -->
-<section class="curated-circle-section">
+<section class="agency-section" style="background: white;">
   <div class="container">
-    <div class="curated-circle-header reveal">
+    <div class="agency-header reveal">
       <span class="label label--accent">The Room</span>
-      <h2 class="curated-circle-title">25 Curated Voices</h2>
-      <p class="curated-circle-sub">
+      <h2 class="agency-title">25 Curated Voices</h2>
+      <p class="agency-sub">
         Every seat is intentional. We curate for cross-sector diversity so that
-        no single perspective dominates the dialogue.
+        no single perspective dominates the dialogue. Hover to explore connections.
       </p>
     </div>
 
-    <div class="curated-circle-ring" id="curatedCircleRing">
-      <div class="curated-circle-center">
-        <span class="curated-circle-center-num">25</span>
-        <span class="curated-circle-center-label">Voices</span>
+    <div class="agency-grid-wrap">
+      <svg class="agency-connections-svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="agency-grid">
+        <!-- Hex cells rendered by dubai-agency.js -->
       </div>
-      <!-- Nodes positioned by dubai-circle.js -->
+      <div class="agency-detail">
+        <div class="agency-detail-name"></div>
+        <div class="agency-detail-role"></div>
+        <div class="agency-detail-connections"></div>
+      </div>
     </div>
 
-    <div class="curated-circle-legend">
+    <div class="agency-legend">
       {% set sectors = {
+        "Host": "#1A365D",
         "Healthcare": "#2B7A78",
         "Finance": "#D4A843",
         "Government": "#3B6FA0",
@@ -97,8 +101,8 @@ extraJs:
         "Citizen": "#8896AB"
       } %}
       {% for name, color in sectors %}
-      <div class="curated-circle-legend-item">
-        <span class="curated-circle-legend-dot" style="background: {{ color }}"></span>
+      <div class="agency-legend-item">
+        <span class="agency-legend-dot" style="background: {{ color }}"></span>
         {{ name }}
       </div>
       {% endfor %}
@@ -107,76 +111,273 @@ extraJs:
 </section>
 
 <!-- ============================================
-     MAIN CONTENT: Phase Stepper + Host + Feed
+     PROTOCOL PHASE STATE MACHINE
      ============================================ -->
-<section style="background: var(--bg); padding: 120px 0;">
+<section class="phase-machine-section parchment-bg">
   <div class="container">
-    <div class="dubai-main-layout">
+    <div class="phase-machine-header reveal">
+      <span class="label label--accent">The Protocol</span>
+      <h2 class="phase-machine-title">7 Phases. 60 Minutes.</h2>
+      <p class="phase-machine-sub">
+        Our structured dialogue protocol ensures every voice is heard, every perspective challenged,
+        and every insight captured. Click through to explore each phase.
+      </p>
+    </div>
 
-      <!-- Sidebar: Phase Stepper -->
-      {{ phaseStepper(1, 'Dubai') }}
+    <!-- Phase Navigation -->
+    <nav class="phase-machine-nav" aria-label="Protocol phases">
+      <button class="phase-machine-nav-btn active" data-phase="1">
+        <span class="phase-machine-nav-num">01</span>
+        <span class="phase-machine-nav-name">Prime</span>
+      </button>
+      <button class="phase-machine-nav-btn" data-phase="2">
+        <span class="phase-machine-nav-num">02</span>
+        <span class="phase-machine-nav-name">Complicate</span>
+      </button>
+      <button class="phase-machine-nav-btn" data-phase="3">
+        <span class="phase-machine-nav-num">03</span>
+        <span class="phase-machine-nav-name">Position</span>
+      </button>
+      <button class="phase-machine-nav-btn" data-phase="4">
+        <span class="phase-machine-nav-num">04</span>
+        <span class="phase-machine-nav-name">Breakout</span>
+      </button>
+      <button class="phase-machine-nav-btn" data-phase="5">
+        <span class="phase-machine-nav-num">05</span>
+        <span class="phase-machine-nav-name">Shareback</span>
+      </button>
+      <button class="phase-machine-nav-btn" data-phase="6">
+        <span class="phase-machine-nav-num">06</span>
+        <span class="phase-machine-nav-name">Synthesize</span>
+      </button>
+      <button class="phase-machine-nav-btn" data-phase="7">
+        <span class="phase-machine-nav-num">07</span>
+        <span class="phase-machine-nav-name">Capture</span>
+      </button>
+    </nav>
 
-      <!-- Main content column -->
-      <div>
-        <!-- HOST CARD -->
-        <div style="margin-bottom: 80px;">
-          <div style="margin-bottom: 32px;">
-            <span class="label label--accent reveal">Your Host</span>
-          </div>
-          <div class="host-card reveal">
-            <div class="host-avatar">OV</div>
-            <div>
-              <h3 class="host-name">Olga V.</h3>
-              <p class="host-title">Lead Facilitator, AI TownSquare &middot; Protocol Host</p>
-              <p class="host-bio">
-                Olga brings deep expertise in structured civic dialogue and
-                cross-sector facilitation. Her work bridges technology leaders,
-                policymakers, and citizens&mdash;ensuring every voice in the room
-                shapes the outcome, not just the loudest ones.
-              </p>
-              <div class="host-credentials">
-                <span class="host-credential">Protocol Facilitator</span>
-                <span class="host-credential">Civic Dialogue</span>
-                <span class="host-credential">Cross-Sector Design</span>
-              </div>
-            </div>
-          </div>
+    <!-- Phase Viewport -->
+    <div class="phase-machine-viewport">
+      <!-- Phase 1: Prime -->
+      <div class="phase-mode phase-mode--active" data-phase="1">
+        <div class="phase-mode-card">
+          <span class="phase-mode-label" style="color: var(--phase-prime);">Phase 1: Prime</span>
+          <p class="phase-mode-question">
+            &ldquo;Is AI going to take our jobs &mdash; or is that the wrong question entirely?&rdquo;
+          </p>
+          <p class="phase-mode-desc">
+            The host introduces the provocative question and establishes the stakes.
+            Participants sit with the discomfort before rushing to answers.
+          </p>
+          <div class="phase-mode-timer">0&ndash;5 min</div>
         </div>
-
-        <!-- LIVE SYNTHESIS FEED (inline) -->
-        {% include "live-feed.njk" %}
       </div>
 
+      <!-- Phase 2: Complicate -->
+      <div class="phase-mode" data-phase="2">
+        <div class="phase-mode-card">
+          <span class="phase-mode-label" style="color: var(--phase-complicate);">Phase 2: Complicate</span>
+          <p class="phase-mode-desc" style="margin-bottom: 20px;">
+            Three nuance cards surface hidden assumptions and competing framings.
+            The question becomes richer before we seek answers.
+          </p>
+          <div class="phase-mode-nuance-grid phase-mode-dynamic">
+            <!-- Cards rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3: Position -->
+      <div class="phase-mode" data-phase="3">
+        <div class="phase-mode-card">
+          <span class="phase-mode-label" style="color: var(--phase-position);">Phase 3: Position</span>
+          <blockquote class="phase-mode-reframe-quote">
+            &ldquo;What if the gap isn&rsquo;t between humans and AI, but between institutions and citizens?&rdquo;
+          </blockquote>
+          <p class="phase-mode-host-tag">&#8212; Olga V., Host</p>
+          <p class="phase-mode-desc">
+            The host reframes the dialogue based on emerging tensions.
+            A pivotal moment that redirects collective attention.
+          </p>
+        </div>
+      </div>
+
+      <!-- Phase 4: Breakout -->
+      <div class="phase-mode" data-phase="4">
+        <div class="phase-mode-card">
+          <span class="phase-mode-label" style="color: var(--phase-breakout);">Phase 4: Breakout</span>
+          <p class="phase-mode-desc" style="margin-bottom: 20px;">
+            Five cross-sector groups dive deep into specific angles.
+            Small-group intimacy enables honest dialogue.
+          </p>
+          <div class="phase-mode-breakout-grid phase-mode-dynamic">
+            <!-- Cards rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 5: Shareback -->
+      <div class="phase-mode" data-phase="5">
+        <div class="phase-mode-card">
+          <span class="phase-mode-label" style="color: var(--phase-shareback);">Phase 5: Shareback</span>
+          <p class="phase-mode-desc" style="margin-bottom: 20px;">
+            Each group surfaces their consensus insight. Unexpected alignments emerge
+            across sectors that rarely speak to each other.
+          </p>
+          <div class="phase-mode-consensus-stack phase-mode-dynamic">
+            <!-- Cards rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 6: Synthesize -->
+      <div class="phase-mode" data-phase="6">
+        <div class="phase-mode-card">
+          <span class="phase-mode-label" style="color: var(--phase-synthesize);">Phase 6: Synthesize</span>
+          <p class="phase-mode-desc" style="margin-bottom: 20px;">
+            Three emergent themes crystallize from the dialogue.
+            Not predetermined &mdash; organically discovered.
+          </p>
+          <div class="phase-mode-themes">
+            <span class="phase-mode-theme-pill">Institutional Speed</span>
+            <span class="phase-mode-theme-pill">Trust Architecture</span>
+            <span class="phase-mode-theme-pill">Citizen Agency</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 7: Capture -->
+      <div class="phase-mode" data-phase="7">
+        <div class="phase-mode-card">
+          <span class="phase-mode-label" style="color: var(--phase-capture);">Phase 7: Capture</span>
+          <p class="phase-mode-desc" style="margin-bottom: 20px;">
+            The Civic Brief is generated &mdash; a permanent artifact of collective intelligence
+            that participants can share with their institutions.
+          </p>
+          <div class="phase-mode-brief-preview">
+            <span class="phase-mode-brief-badge">Civic Brief</span>
+            <h4 class="phase-mode-brief-title">Dubai Node: AI &amp; Employment</h4>
+            <p class="phase-mode-brief-meta">April 2026 &middot; 25 Participants &middot; 60 Minutes</p>
+            <p class="phase-mode-brief-body">
+              Three cross-sector themes emerged: the speed gap between institutional policy and technological change,
+              the architecture of trust required for AI deployment, and the preservation of citizen agency
+              in algorithmic systems...
+            </p>
+          </div>
+          <div class="phase-mode-brief-cta">
+            <div class="phase-mode-brief-timeline">
+              <span class="phase-mode-brief-timeline-icon">&#9201;</span>
+              <span class="phase-mode-brief-timeline-text">Full PDF delivered to participants within <strong>48 hours</strong></span>
+            </div>
+            <a href="/briefs/" class="phase-mode-brief-btn">
+              View Past Insight Briefs
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="phase-machine-progress">
+      <div class="phase-machine-progress-fill"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="phase-machine-controls">
+      <button class="phase-machine-prev">&larr; Prev</button>
+      <button class="phase-machine-auto">Auto-Play</button>
+      <button class="phase-machine-next">Next &rarr;</button>
     </div>
   </div>
 </section>
 
 <!-- ============================================
-     SRI RADAR CHART (Hexagonal SVG)
+     HOST CARD (Standalone)
      ============================================ -->
-<section class="dubai-sri-section">
+<section class="host-section">
   <div class="container">
-    <div class="dubai-sri-header reveal">
-      <span class="label label--accent">Societal Readiness Index</span>
-      <h2 class="dubai-sri-title">Dubai&rsquo;s Readiness Profile</h2>
-      <p class="dubai-sri-sub">
-        Six pillars measuring how prepared Dubai is for AI integration.
-        Scores are weighted by institutional importance.
-      </p>
+    <div style="text-align: center; margin-bottom: 32px;">
+      <span class="label label--accent reveal">Your Host</span>
     </div>
-
-    <div class="dubai-radar-wrap reveal">
-      <svg id="dubaiRadarChart" class="dubai-radar-svg" viewBox="0 0 500 500" aria-label="Hexagonal radar chart showing Dubai SRI scores">
-        <!-- Rendered by dubai-radar.js -->
-      </svg>
-      <div class="dubai-radar-tooltip" id="radarTooltip">
-        <div class="dubai-radar-tooltip-title" id="radarTooltipTitle"></div>
-        <div id="radarTooltipDesc"></div>
-        <div class="dubai-radar-tooltip-source" id="radarTooltipSource">Data Source: AI TownSquare SRI</div>
+    <div class="host-card reveal parchment-bg">
+      <div class="host-avatar">OV</div>
+      <div>
+        <h3 class="host-name">Olga V.</h3>
+        <p class="host-title">Lead Facilitator, AI TownSquare &middot; Protocol Host</p>
+        <p class="host-bio">
+          Olga brings deep expertise in structured civic dialogue and
+          cross-sector facilitation. Her work bridges technology leaders,
+          policymakers, and citizens&mdash;ensuring every voice in the room
+          shapes the outcome, not just the loudest ones.
+        </p>
+        <div class="host-credentials">
+          <span class="host-credential">Protocol Facilitator</span>
+          <span class="host-credential">Civic Dialogue</span>
+          <span class="host-credential">Cross-Sector Design</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ============================================
+     ORBITAL SRI VISUALIZATION
+     ============================================ -->
+<section class="orbital-sri-section parchment-bg">
+  <div class="container">
+    <div class="orbital-sri-header reveal">
+      <span class="label label--accent">Societal Readiness Index</span>
+      <h2 class="orbital-sri-title">Dubai&rsquo;s Readiness Profile</h2>
+      <p class="orbital-sri-sub">
+        Six pillars measuring how prepared Dubai is for AI integration.
+        Hover on any satellite to explore the breakdown.
+      </p>
+    </div>
+
+    <div class="orbital-sri-wrap reveal">
+      <svg id="orbitalSriSvg" class="orbital-sri-svg" viewBox="0 0 700 700" aria-label="Orbital visualization showing Dubai SRI scores">
+        <!-- Rendered by dubai-orbit.js -->
+      </svg>
+
+      <!-- Center score overlay -->
+      <div class="orbital-center-score">
+        <span class="orbital-center-value" id="orbitalCenterValue">67</span>
+        <span class="orbital-center-label">Overall</span>
+      </div>
+
+      <!-- Detail panel -->
+      <div class="orbital-detail-panel" id="orbitalDetailPanel">
+        <div class="orbital-detail-header">
+          <span class="orbital-detail-abbr" id="orbitalDetailAbbr">GOV</span>
+          <span class="orbital-detail-name" id="orbitalDetailName">Governance</span>
+        </div>
+        <div class="orbital-detail-weight" id="orbitalDetailWeight">25% weight</div>
+        <p class="orbital-detail-desc" id="orbitalDetailDesc">
+          Regulatory frameworks, policy readiness, and institutional capacity for AI oversight.
+        </p>
+        <div class="orbital-detail-scores">
+          <div class="orbital-detail-score-box">
+            <span class="orbital-detail-score-val" id="orbitalDetailDubai">72</span>
+            <span class="orbital-detail-score-label">Dubai</span>
+          </div>
+          <div class="orbital-detail-score-box">
+            <span class="orbital-detail-score-val" id="orbitalDetailGlobal">45</span>
+            <span class="orbital-detail-score-label">Global Avg</span>
+          </div>
+        </div>
+        <div id="orbitalDetailSubMetrics">
+          <!-- Sub-metric bars rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     LIVE SYNTHESIS FEED
+     ============================================ -->
+{% include "live-feed.njk" %}
 
 <!-- ============================================
      REGISTRATION
