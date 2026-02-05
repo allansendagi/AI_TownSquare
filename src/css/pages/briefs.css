@@ -111,9 +111,7 @@
   flex-direction: column;
 }
 .brief-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(26, 54, 93, 0.1);
-  border-color: var(--accent-dim);
+  border-color: var(--hairline-dark);
 }
 .brief-card-meta {
   display: flex;
@@ -166,7 +164,36 @@
 }
 .brief-card-link:hover { gap: 10px; }
 
+/* Empty State */
+.briefs-empty-state {
+  text-align: center;
+  padding: 100px 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.briefs-empty-content {
+  background: white;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: 80px 60px;
+}
+.briefs-empty-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 20px;
+  letter-spacing: var(--tracking-tight);
+}
+.briefs-empty-text {
+  font-size: 15px;
+  color: var(--ink-70);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
 @media (max-width: 640px) {
   .briefs-grid { grid-template-columns: 1fr; }
   .briefs-controls { top: 0; }
+  .briefs-empty-content { padding: 60px 32px; }
 }

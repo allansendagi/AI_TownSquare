@@ -52,6 +52,7 @@ extraJs:
      ============================================ -->
 <section class="briefs-grid-section">
   <div class="container">
+    {% if briefs.briefs.length > 0 %}
     <div class="briefs-grid">
       {% for brief in briefs.briefs %}
       <div class="brief-card"
@@ -74,11 +75,22 @@ extraJs:
         <a href="{{ brief.link }}" class="brief-card-link">Read Brief <span>&rarr;</span></a>
       </div>
       {% endfor %}
-
-      <div class="briefs-empty" style="display: none;">
-        No briefs match your search. Try a different query or filter.
+    </div>
+    {% else %}
+    <div class="briefs-empty-state">
+      <div class="briefs-empty-content">
+        <h3 class="briefs-empty-title">No Civic Briefs Published Yet</h3>
+        <p class="briefs-empty-text">
+          Our first Civic Brief will be published within 48 hours of the Dubai Node session in April 2026.
+          Each brief captures the key themes, direct quotes, and actionable signals from our structured dialogues.
+        </p>
+        <a href="/dubai/#register" class="btn btn--primary">
+          Apply for Dubai Node
+          <span class="btn-arrow">&rarr;</span>
+        </a>
       </div>
     </div>
+    {% endif %}
   </div>
 </section>
 

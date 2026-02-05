@@ -101,3 +101,94 @@
   border-radius: 2px;
   transition: transform 0.3s, opacity 0.3s;
 }
+
+/* =============================================
+   NAV DROPDOWN
+   ============================================= */
+.nav-dropdown {
+  position: relative;
+}
+.nav-link--dropdown {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-dropdown-arrow {
+  transition: transform 0.3s var(--ease-smooth);
+}
+.nav-dropdown:hover .nav-dropdown-arrow {
+  transform: rotate(180deg);
+}
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 200px;
+  background: white;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: 12px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  box-shadow: var(--shadow-elevated);
+  z-index: 100;
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 13px;
+  color: var(--ink-70);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-dropdown-item:hover {
+  background: var(--ink-04);
+  color: var(--ink);
+}
+.nav-dropdown-item--active {
+  color: var(--ink);
+  font-weight: 600;
+}
+.nav-dropdown-item--active .nav-dropdown-date {
+  color: var(--bronze);
+}
+.nav-dropdown-item--upcoming {
+  color: var(--ink-30);
+  cursor: default;
+}
+.nav-dropdown-item--upcoming:hover {
+  background: transparent;
+  color: var(--ink-30);
+}
+.nav-dropdown-city {
+  font-weight: 500;
+}
+.nav-dropdown-date {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: var(--tracking-wide);
+}
+.nav-dropdown-divider {
+  height: 1px;
+  background: var(--hairline);
+  margin: 8px 0;
+}
+.nav-dropdown-label {
+  display: block;
+  padding: 8px 20px 6px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-30);
+}

@@ -8,7 +8,38 @@
   </a>
   <div class="nav-links" id="navLinks">
     <a href="/" class="nav-link{% if page.url == '/' %} nav-link--active{% endif %}">Home</a>
-    <a href="/dubai/" class="nav-link{% if page.url == '/dubai/' %} nav-link--active{% endif %}">Dubai</a>
+    <div class="nav-dropdown">
+      <a href="/dubai/" class="nav-link nav-link--dropdown{% if page.url == '/dubai/' %} nav-link--active{% endif %}">
+        Nodes
+        <svg class="nav-dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <div class="nav-dropdown-menu">
+        <a href="/dubai/" class="nav-dropdown-item nav-dropdown-item--active">
+          <span class="nav-dropdown-city">Dubai</span>
+          <span class="nav-dropdown-date">April 2026</span>
+        </a>
+        <div class="nav-dropdown-divider"></div>
+        <span class="nav-dropdown-label">Future Nodes</span>
+        <span class="nav-dropdown-item nav-dropdown-item--upcoming">
+          <span class="nav-dropdown-city">Doha</span>
+          <span class="nav-dropdown-date">2026</span>
+        </span>
+        <span class="nav-dropdown-item nav-dropdown-item--upcoming">
+          <span class="nav-dropdown-city">Singapore</span>
+          <span class="nav-dropdown-date">2027</span>
+        </span>
+        <span class="nav-dropdown-item nav-dropdown-item--upcoming">
+          <span class="nav-dropdown-city">London</span>
+          <span class="nav-dropdown-date">2027</span>
+        </span>
+        <span class="nav-dropdown-item nav-dropdown-item--upcoming">
+          <span class="nav-dropdown-city">New York</span>
+          <span class="nav-dropdown-date">2027</span>
+        </span>
+      </div>
+    </div>
     <a href="/protocol/" class="nav-link{% if page.url == '/protocol/' %} nav-link--active{% endif %}">Protocol</a>
     <a href="/sri/" class="nav-link{% if page.url == '/sri/' %} nav-link--active{% endif %}">SRI</a>
     <a href="/briefs/" class="nav-link{% if page.url == '/briefs/' %} nav-link--active{% endif %}">Briefs</a>

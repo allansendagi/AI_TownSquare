@@ -41,6 +41,8 @@
   --white: #FFFFFF;
   --bg: var(--bone);
   --bg-alt: #FFFFFF;
+  --off-white: var(--bone);
+  --cream: var(--bone-warm);
   --text-primary: var(--ink);
   --text-secondary: var(--ink-70);
   --text-muted: var(--ink-50);
