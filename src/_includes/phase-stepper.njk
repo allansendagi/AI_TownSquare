@@ -1,0 +1,26 @@
+{# Reusable Phase Stepper Macro — works for any city node #}
+{% macro phaseStepper(activePhase, city) %}
+<aside class="phase-stepper" aria-label="Protocol Phase Tracker">
+  <div class="phase-stepper-label">{{ city or 'Dubai' }} Protocol</div>
+  {% set phases = [
+    { "num": 1, "name": "Prime",      "time": "0–5 min" },
+    { "num": 2, "name": "Complicate", "time": "5–12 min" },
+    { "num": 3, "name": "Position",   "time": "12–18 min" },
+    { "num": 4, "name": "Breakout",   "time": "18–35 min" },
+    { "num": 5, "name": "Shareback",  "time": "35–45 min" },
+    { "num": 6, "name": "Synthesize", "time": "45–55 min" },
+    { "num": 7, "name": "Capture",    "time": "55–60 min" }
+  ] %}
+  <ol class="phase-stepper-list">
+    {% for phase in phases %}
+    <li class="phase-stepper-item{% if phase.num < activePhase %} phase-stepper-item--done{% elif phase.num == activePhase %} phase-stepper-item--active{% endif %}">
+      <span class="phase-stepper-node" aria-hidden="true">{{ phase.num }}</span>
+      <div class="phase-stepper-info">
+        <span class="phase-stepper-name">{{ phase.name }}</span>
+        <span class="phase-stepper-time">{{ phase.time }}</span>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</aside>
+{% endmacro %}

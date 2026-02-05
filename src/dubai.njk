@@ -8,48 +8,54 @@ extraCss:
 extraJs:
   - /js/countdown.js
   - /js/form.js
-  - /js/pages/dubai-tracker.js
+  - /js/pages/dubai-circle.js
+  - /js/pages/dubai-radar.js
+  - /js/pages/live-feed.js
 ---
 
+{% from "phase-stepper.njk" import phaseStepper %}
+
 <!-- ============================================
-     HERO
+     HERO: Global Readiness Clock
      ============================================ -->
 <section class="dubai-hero">
   <div class="container">
     <div class="dubai-hero-content">
-      <div class="hero-badge" style="justify-content: center; margin-left: auto; margin-right: auto;">
-        <span class="hero-badge-dot"></span>
-        <span class="hero-badge-text">Dubai Node &middot; April 2026</span>
-      </div>
+      <div class="dubai-hero-eyebrow">Dubai Node &middot; April 2026</div>
 
       <h1 class="dubai-hero-question">
         <em>Is AI Going to Take Our Jobs?</em>
       </h1>
 
       <p class="dubai-hero-sub">
-        25 curated voices from healthcare, finance, government, and education will grapple with one of AI's most pressing questions in a structured 60-minute civic dialogue.
+        25 curated voices from healthcare, finance, government, and education
+        will grapple with one of AI&rsquo;s most pressing questions in a
+        structured 60-minute civic dialogue.
       </p>
 
-      <div class="countdown" id="countdown" style="justify-content: center;">
-        <div class="countdown-unit">
-          <span class="countdown-value" id="cd-days">--</span>
-          <span class="countdown-label">Days</span>
-        </div>
-        <div class="countdown-unit">
-          <span class="countdown-value" id="cd-hours">--</span>
-          <span class="countdown-label">Hours</span>
-        </div>
-        <div class="countdown-unit">
-          <span class="countdown-value" id="cd-min">--</span>
-          <span class="countdown-label">Min</span>
-        </div>
-        <div class="countdown-unit">
-          <span class="countdown-value" id="cd-sec">--</span>
-          <span class="countdown-label">Sec</span>
+      <div class="readiness-clock" id="countdown">
+        <div class="readiness-clock-label">Global Readiness Clock</div>
+        <div class="readiness-clock-units">
+          <div class="readiness-clock-unit">
+            <span class="readiness-clock-value" id="cd-days">--</span>
+            <span class="readiness-clock-name">Days</span>
+          </div>
+          <div class="readiness-clock-unit">
+            <span class="readiness-clock-value" id="cd-hours">--</span>
+            <span class="readiness-clock-name">Hours</span>
+          </div>
+          <div class="readiness-clock-unit">
+            <span class="readiness-clock-value" id="cd-min">--</span>
+            <span class="readiness-clock-name">Min</span>
+          </div>
+          <div class="readiness-clock-unit">
+            <span class="readiness-clock-value" id="cd-sec">--</span>
+            <span class="readiness-clock-name">Sec</span>
+          </div>
         </div>
       </div>
 
-      <div style="text-align: center;">
+      <div class="dubai-hero-actions">
         <a href="#register" class="btn btn--primary">
           Apply for 1 of 25 Seats
           <span class="btn-arrow">&rarr;</span>
@@ -60,75 +66,114 @@ extraJs:
 </section>
 
 <!-- ============================================
-     HOST
+     CURATED CIRCLE
      ============================================ -->
-<section class="host-section">
+<section class="curated-circle-section">
   <div class="container">
-    <div style="text-align: center; margin-bottom: 48px;">
-      <span class="label label--accent reveal">Your Host</span>
+    <div class="curated-circle-header reveal">
+      <span class="label label--accent">The Room</span>
+      <h2 class="curated-circle-title">25 Curated Voices</h2>
+      <p class="curated-circle-sub">
+        Every seat is intentional. We curate for cross-sector diversity so that
+        no single perspective dominates the dialogue.
+      </p>
     </div>
-    <div class="host-card reveal">
-      <div class="host-avatar">AS</div>
-      <div>
-        <h3 class="host-name">Allan Sendagi</h3>
-        <p class="host-title">Founder, AI TownSquare &middot; SafeHaven</p>
-        <p class="host-bio">
-          Allan created AI TownSquare to bridge the gap between AI advancement and societal readiness. His background spans technology, civic engagement, and institutional design. The protocol he developed has been endorsed by global health and academic leaders.
-        </p>
-        <div class="host-credentials">
-          <span class="host-credential">Protocol Designer</span>
-          <span class="host-credential">Civic Infrastructure</span>
-          <span class="host-credential">SafeHaven Founder</span>
-        </div>
+
+    <div class="curated-circle-ring" id="curatedCircleRing">
+      <div class="curated-circle-center">
+        <span class="curated-circle-center-num">25</span>
+        <span class="curated-circle-center-label">Voices</span>
       </div>
+      <!-- Nodes positioned by dubai-circle.js -->
+    </div>
+
+    <div class="curated-circle-legend">
+      {% set sectors = {
+        "Healthcare": "#2B7A78",
+        "Finance": "#D4A843",
+        "Government": "#3B6FA0",
+        "Education": "#E07A5F",
+        "Technology": "#3AAFA9",
+        "Citizen": "#8896AB"
+      } %}
+      {% for name, color in sectors %}
+      <div class="curated-circle-legend-item">
+        <span class="curated-circle-legend-dot" style="background: {{ color }}"></span>
+        {{ name }}
+      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
 
 <!-- ============================================
-     LIVE PROTOCOL TRACKER
+     MAIN CONTENT: Phase Stepper + Host + Feed
      ============================================ -->
-<section class="tracker-section">
+<section style="background: var(--bg); padding: 120px 0;">
   <div class="container">
-    <div class="tracker-header reveal">
-      <span class="label label--accent">Live Protocol Tracker</span>
-      <h2 class="tracker-title">Session Insights</h2>
-      <p class="tracker-subtitle">Emerging themes and insights from the AI TownSquare protocol phases.</p>
+    <div class="dubai-main-layout">
+
+      <!-- Sidebar: Phase Stepper -->
+      {{ phaseStepper(1, 'Dubai') }}
+
+      <!-- Main content column -->
+      <div>
+        <!-- HOST CARD -->
+        <div style="margin-bottom: 80px;">
+          <div style="margin-bottom: 32px;">
+            <span class="label label--accent reveal">Your Host</span>
+          </div>
+          <div class="host-card reveal">
+            <div class="host-avatar">OV</div>
+            <div>
+              <h3 class="host-name">Olga V.</h3>
+              <p class="host-title">Lead Facilitator, AI TownSquare &middot; Protocol Host</p>
+              <p class="host-bio">
+                Olga brings deep expertise in structured civic dialogue and
+                cross-sector facilitation. Her work bridges technology leaders,
+                policymakers, and citizens&mdash;ensuring every voice in the room
+                shapes the outcome, not just the loudest ones.
+              </p>
+              <div class="host-credentials">
+                <span class="host-credential">Protocol Facilitator</span>
+                <span class="host-credential">Civic Dialogue</span>
+                <span class="host-credential">Cross-Sector Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LIVE SYNTHESIS FEED (inline) -->
+        {% include "live-feed.njk" %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SRI RADAR CHART (Hexagonal SVG)
+     ============================================ -->
+<section class="dubai-sri-section">
+  <div class="container">
+    <div class="dubai-sri-header reveal">
+      <span class="label label--accent">Societal Readiness Index</span>
+      <h2 class="dubai-sri-title">Dubai&rsquo;s Readiness Profile</h2>
+      <p class="dubai-sri-sub">
+        Six pillars measuring how prepared Dubai is for AI integration.
+        Scores are weighted by institutional importance.
+      </p>
     </div>
 
-    <div class="tracker-phases reveal">
-      <div class="tracker-phase tracker-phase--active">
-        <div class="tracker-phase-num">1</div>
-        <div class="tracker-phase-name">Prime</div>
+    <div class="dubai-radar-wrap reveal">
+      <svg id="dubaiRadarChart" class="dubai-radar-svg" viewBox="0 0 500 500" aria-label="Hexagonal radar chart showing Dubai SRI scores">
+        <!-- Rendered by dubai-radar.js -->
+      </svg>
+      <div class="dubai-radar-tooltip" id="radarTooltip">
+        <div class="dubai-radar-tooltip-title" id="radarTooltipTitle"></div>
+        <div id="radarTooltipDesc"></div>
+        <div class="dubai-radar-tooltip-source" id="radarTooltipSource">Data Source: AI TownSquare SRI</div>
       </div>
-      <div class="tracker-phase">
-        <div class="tracker-phase-num">2</div>
-        <div class="tracker-phase-name">Complicate</div>
-      </div>
-      <div class="tracker-phase">
-        <div class="tracker-phase-num">3</div>
-        <div class="tracker-phase-name">Position</div>
-      </div>
-      <div class="tracker-phase">
-        <div class="tracker-phase-num">4</div>
-        <div class="tracker-phase-name">Breakout</div>
-      </div>
-      <div class="tracker-phase">
-        <div class="tracker-phase-num">5</div>
-        <div class="tracker-phase-name">Share</div>
-      </div>
-      <div class="tracker-phase">
-        <div class="tracker-phase-num">6</div>
-        <div class="tracker-phase-name">Synth</div>
-      </div>
-      <div class="tracker-phase">
-        <div class="tracker-phase-num">7</div>
-        <div class="tracker-phase-name">Capture</div>
-      </div>
-    </div>
-
-    <div class="tracker-insights" id="trackerInsights">
-      <!-- Populated by dubai-tracker.js -->
     </div>
   </div>
 </section>
@@ -199,23 +244,20 @@ extraJs:
 
         <p class="form-note">
           We curate for diversity across sectors, roles, and perspectives.<br/>
-          You'll hear back within 48 hours.
+          You&rsquo;ll hear back within 48 hours.
         </p>
       </div>
 
       <div class="register-details reveal">
         <div class="register-detail">
-          <div class="register-detail-icon">&#128197;</div>
           <div class="register-detail-label">Date</div>
           <div class="register-detail-value">April 2026</div>
         </div>
         <div class="register-detail">
-          <div class="register-detail-icon">&#128205;</div>
           <div class="register-detail-label">Location</div>
           <div class="register-detail-value">Dubai, UAE</div>
         </div>
         <div class="register-detail">
-          <div class="register-detail-icon">&#127758;</div>
           <div class="register-detail-label">Format</div>
           <div class="register-detail-value">In-Person + Hybrid</div>
         </div>
@@ -223,4 +265,3 @@ extraJs:
     </div>
   </div>
 </section>
-

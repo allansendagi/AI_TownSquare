@@ -1,122 +1,580 @@
 /* =============================================
-   DUBAI PAGE
+   DUBAI NODE — $100M INSTITUTIONAL STANDARD
+   "The Archival Future" — Civic Blue + Limestone
+   Anti-grid organic layout with generous whitespace
    ============================================= */
+
+/* --- HERO: Global Readiness Clock --- */
 .dubai-hero {
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
   background: var(--bg);
   overflow: hidden;
-  padding: 120px 0 80px;
+  padding: 140px 0 100px;
 }
 .dubai-hero::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.035;
   background-image: radial-gradient(circle, var(--primary-deep) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-size: 28px 28px;
 }
-
 .dubai-hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 800px;
+  max-width: 860px;
   margin: 0 auto;
+}
+
+.dubai-hero-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s var(--ease-smooth) forwards;
 }
 
 .dubai-hero-question {
   font-family: var(--font-serif);
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: clamp(40px, 6vw, 72px);
   font-weight: 800;
   color: var(--primary-deep);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  margin-bottom: 24px;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 1s 0.35s var(--ease-smooth) forwards;
 }
 .dubai-hero-question em {
   color: var(--accent);
-  font-style: normal;
+  font-style: italic;
 }
 
 .dubai-hero-sub {
-  font-size: 18px;
+  font-size: clamp(16px, 1.4vw, 20px);
   color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 48px;
-  max-width: 600px;
+  line-height: 1.75;
+  margin-bottom: 56px;
+  max-width: 620px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0;
+  animation: fadeUp 1s 0.5s var(--ease-smooth) forwards;
 }
 
-/* Host Card */
+/* Readiness Clock (countdown) */
+.readiness-clock {
+  margin-bottom: 56px;
+  opacity: 0;
+  animation: fadeUp 1s 0.65s var(--ease-smooth) forwards;
+}
+.readiness-clock-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.readiness-clock-units {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.readiness-clock-unit {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 28px 32px;
+  min-width: 110px;
+  text-align: center;
+  box-shadow: 0 4px 20px var(--shadow-neutral);
+  transition: transform 0.4s var(--ease-smooth);
+}
+.readiness-clock-unit:hover {
+  transform: translateY(-4px);
+}
+.readiness-clock-value {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-deep);
+  line-height: 1;
+  display: block;
+}
+.readiness-clock-name {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 12px;
+  display: block;
+}
+
+.dubai-hero-actions {
+  opacity: 0;
+  animation: fadeUp 1s 0.8s var(--ease-smooth) forwards;
+}
+
+/* --- CURATED CIRCLE --- */
+.curated-circle-section {
+  background: white;
+  padding: 120px 0;
+  overflow: hidden;
+}
+.curated-circle-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.curated-circle-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 48px);
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.curated-circle-sub {
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Circular arrangement */
+.curated-circle-ring {
+  position: relative;
+  width: 480px;
+  height: 480px;
+  margin: 0 auto 48px;
+}
+.curated-circle-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--primary-deep);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+  box-shadow: 0 8px 40px rgba(26, 54, 93, 0.25);
+}
+.curated-circle-center-num {
+  font-family: var(--font-mono);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+.curated-circle-center-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 6px;
+  opacity: 0.7;
+}
+
+.curated-circle-node {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s;
+  cursor: default;
+  box-shadow: 0 2px 12px var(--shadow-neutral);
+}
+.curated-circle-node:hover {
+  transform: scale(1.25);
+  box-shadow: 0 8px 32px rgba(26, 54, 93, 0.2);
+  z-index: 10;
+}
+.curated-circle-node-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-deep);
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.curated-circle-node:hover .curated-circle-node-tooltip {
+  opacity: 1;
+}
+
+/* Sector legend */
+.curated-circle-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.curated-circle-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.curated-circle-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* --- PHASE STEPPER (Sidebar) --- */
+.dubai-main-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.phase-stepper {
+  position: sticky;
+  top: 100px;
+  background: white;
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 24px var(--shadow-neutral);
+  border: 1px solid var(--border-light);
+}
+.phase-stepper-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+.phase-stepper-list {
+  list-style: none;
+  position: relative;
+}
+/* Vertical line */
+.phase-stepper-list::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--highlight));
+  border-radius: 2px;
+}
+.phase-stepper-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  position: relative;
+}
+.phase-stepper-node {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--limestone);
+  border: 2px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  z-index: 1;
+  transition: all 0.4s var(--ease-smooth);
+}
+.phase-stepper-item--active .phase-stepper-node {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+  box-shadow: 0 0 0 6px var(--accent-dim);
+}
+.phase-stepper-item--done .phase-stepper-node {
+  background: var(--primary-deep);
+  border-color: var(--primary-deep);
+  color: white;
+}
+.phase-stepper-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+}
+.phase-stepper-item--active .phase-stepper-name {
+  color: var(--accent);
+}
+.phase-stepper-time {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  display: block;
+}
+
+/* --- HOST CARD --- */
 .host-section {
   background: white;
-  padding: 100px 0;
+  padding: 120px 0;
 }
 .host-card {
-  max-width: 700px;
+  max-width: 740px;
   margin: 0 auto;
-  background: var(--off-white);
-  border-radius: 24px;
-  padding: 48px;
+  background: var(--limestone);
+  border-radius: 28px;
+  padding: 52px;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 36px;
+  gap: 40px;
   align-items: center;
-  box-shadow: 0 4px 24px var(--shadow-neutral);
+  box-shadow: 0 8px 40px var(--shadow-neutral);
+  border: 1px solid var(--border-light);
 }
 .host-avatar {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   background: var(--accent-dim);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 48px;
+  font-size: 44px;
   color: var(--accent);
   font-family: var(--font-serif);
   font-weight: 700;
+  border: 3px solid white;
+  box-shadow: 0 4px 20px var(--shadow-neutral);
 }
 .host-name {
   font-family: var(--font-serif);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .host-title {
   font-size: 14px;
   color: var(--text-muted);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 .host-bio {
   font-size: 15px;
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 .host-credentials {
   display: flex;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 10px;
+  margin-top: 20px;
   flex-wrap: wrap;
 }
 .host-credential {
   font-size: 12px;
   font-weight: 600;
   color: var(--accent);
-  background: var(--accent-dim);
-  padding: 6px 14px;
+  background: white;
+  padding: 6px 16px;
   border-radius: 100px;
+  border: 1px solid var(--accent-dim);
 }
 
-/* Protocol Tracker */
+/* --- SRI RADAR CHART (SVG Hexagonal) --- */
+.dubai-sri-section {
+  background: var(--limestone);
+  padding: 120px 0;
+}
+.dubai-sri-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.dubai-sri-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 48px);
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.dubai-sri-sub {
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.dubai-radar-wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  position: relative;
+}
+.dubai-radar-svg {
+  width: 100%;
+  height: auto;
+}
+.dubai-radar-polygon {
+  transition: all 0.8s var(--ease-smooth);
+}
+.dubai-radar-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  fill: var(--text-primary);
+}
+.dubai-radar-weight {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  fill: var(--text-muted);
+}
+/* Tooltip for pillar hover */
+.dubai-radar-pillar-group {
+  cursor: pointer;
+}
+.dubai-radar-tooltip {
+  position: absolute;
+  background: var(--primary-deep);
+  color: white;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 12px 16px;
+  border-radius: 12px;
+  max-width: 240px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 10;
+  box-shadow: 0 8px 32px rgba(26, 54, 93, 0.3);
+}
+.dubai-radar-tooltip.visible {
+  opacity: 1;
+}
+.dubai-radar-tooltip-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.dubai-radar-tooltip-source {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  font-style: italic;
+}
+
+/* --- LIVE SYNTHESIS FEED --- */
+.live-feed {
+  background: white;
+  padding: 120px 0;
+}
+.live-feed-header {
+  text-align: center;
+  margin-bottom: 48px;
+  position: relative;
+}
+.live-feed-pulse {
+  width: 12px;
+  height: 12px;
+  background: #E74C3C;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  position: relative;
+}
+.live-feed-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(231, 76, 60, 0.4);
+  animation: livePulse 2s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.8); opacity: 0; }
+}
+.live-feed-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.live-feed-sub {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.live-feed-stream {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.live-feed-card {
+  background: var(--limestone);
+  border-radius: 16px;
+  padding: 24px 28px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 2px 12px var(--shadow-neutral);
+}
+.live-feed-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.live-feed-card-phase {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.live-feed-card-time {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+.live-feed-card-text {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* --- TRACKER (inline, for mobile fallback) --- */
 .tracker-section {
-  background: var(--off-white);
+  background: var(--limestone);
   padding: 100px 0;
 }
 .tracker-header {
@@ -134,8 +592,6 @@
   font-size: 16px;
   color: var(--text-secondary);
 }
-
-/* Phase indicator bar */
 .tracker-phases {
   display: flex;
   gap: 4px;
@@ -148,10 +604,10 @@
   flex: 1;
   text-align: center;
   padding: 12px 8px;
-  border-radius: 8px;
+  border-radius: 10px;
   background: white;
   border: 1px solid var(--border-light);
-  transition: all 0.3s;
+  transition: all 0.4s var(--ease-smooth);
 }
 .tracker-phase--active {
   background: var(--accent);
@@ -171,8 +627,6 @@
 .tracker-phase--active .tracker-phase-name {
   color: rgba(255,255,255,0.8);
 }
-
-/* Insight cards */
 .tracker-insights {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -215,15 +669,58 @@
   color: var(--highlight);
 }
 
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+  .dubai-main-layout {
+    grid-template-columns: 1fr;
+  }
+  .phase-stepper {
+    position: static;
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    padding: 16px;
+  }
+  .phase-stepper-label { display: none; }
+  .phase-stepper-list {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+  }
+  .phase-stepper-list::before { display: none; }
+  .phase-stepper-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 70px;
+  }
+  .phase-stepper-time { display: none; }
+  .curated-circle-ring {
+    width: 340px;
+    height: 340px;
+  }
+  .curated-circle-node { width: 40px; height: 40px; font-size: 11px; }
+  .curated-circle-center { width: 100px; height: 100px; }
+  .curated-circle-center-num { font-size: 28px; }
+}
+
 @media (max-width: 640px) {
+  .dubai-hero { padding: 120px 0 60px; min-height: auto; }
+  .readiness-clock-unit { padding: 20px 22px; min-width: 80px; }
+  .readiness-clock-value { font-size: 36px; }
   .host-card {
     grid-template-columns: 1fr;
     text-align: center;
-    padding: 32px 24px;
+    padding: 36px 24px;
   }
-  .host-avatar { margin: 0 auto; }
+  .host-avatar { margin: 0 auto; width: 100px; height: 100px; font-size: 36px; }
   .host-credentials { justify-content: center; }
   .tracker-phases { flex-wrap: wrap; }
   .tracker-phase { min-width: 80px; }
-  .dubai-hero { padding: 120px 0 60px; }
+  .curated-circle-ring { width: 280px; height: 280px; }
+  .curated-circle-node { width: 34px; height: 34px; font-size: 10px; }
+  .curated-circle-center { width: 80px; height: 80px; }
+  .curated-circle-center-num { font-size: 22px; }
+  .curated-circle-node-tooltip { display: none; }
 }

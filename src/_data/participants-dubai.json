@@ -1,0 +1,38 @@
+{
+  "participants": [
+    { "initials": "OV", "sector": "Host", "label": "Facilitator" },
+    { "initials": "MK", "sector": "Healthcare", "label": "Clinician" },
+    { "initials": "RJ", "sector": "Finance", "label": "Risk Analyst" },
+    { "initials": "SA", "sector": "Government", "label": "Policy Advisor" },
+    { "initials": "LT", "sector": "Education", "label": "Dean" },
+    { "initials": "NB", "sector": "Technology", "label": "AI Engineer" },
+    { "initials": "FH", "sector": "Healthcare", "label": "Nurse Leader" },
+    { "initials": "DW", "sector": "Citizen", "label": "Community Rep" },
+    { "initials": "KA", "sector": "Finance", "label": "RegTech" },
+    { "initials": "PL", "sector": "Government", "label": "Regulator" },
+    { "initials": "YC", "sector": "Technology", "label": "Data Scientist" },
+    { "initials": "AM", "sector": "Education", "label": "EdTech" },
+    { "initials": "GR", "sector": "Healthcare", "label": "Bioethicist" },
+    { "initials": "TN", "sector": "Citizen", "label": "Journalist" },
+    { "initials": "BF", "sector": "Finance", "label": "Inclusion Lead" },
+    { "initials": "HS", "sector": "Government", "label": "Urban Planner" },
+    { "initials": "QD", "sector": "Technology", "label": "Product Lead" },
+    { "initials": "WE", "sector": "Education", "label": "Researcher" },
+    { "initials": "ZL", "sector": "Healthcare", "label": "Public Health" },
+    { "initials": "CO", "sector": "Citizen", "label": "Activist" },
+    { "initials": "IR", "sector": "Finance", "label": "Economist" },
+    { "initials": "JV", "sector": "Government", "label": "Diplomat" },
+    { "initials": "XP", "sector": "Technology", "label": "CTO" },
+    { "initials": "EU", "sector": "Education", "label": "Student Rep" },
+    { "initials": "MT", "sector": "Citizen", "label": "Entrepreneur" }
+  ],
+  "sectorColors": {
+    "Host": "#1A365D",
+    "Healthcare": "#2B7A78",
+    "Finance": "#D4A843",
+    "Government": "#3B6FA0",
+    "Education": "#E07A5F",
+    "Technology": "#3AAFA9",
+    "Citizen": "#8896AB"
+  }
+}
