@@ -1,0 +1,84 @@
+---
+layout: base.njk
+title: "Civic Briefs Archive"
+description: "Published civic insight briefs from AI TownSquare sessions worldwide. Searchable by city, sector, and theme."
+permalink: /briefs/
+extraCss:
+  - /css/pages/briefs.css
+extraJs:
+  - /js/pages/briefs-search.js
+---
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="briefs-hero">
+  <div class="container">
+    <span class="label label--accent reveal">Published Insights</span>
+    <h1 class="briefs-hero-title reveal">Civic Briefs Archive</h1>
+    <p class="briefs-hero-sub reveal">
+      Every AI TownSquare session produces a published Civic Brief within 48 hours. Search and explore the growing archive of civic intelligence on AI readiness.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================
+     SEARCH & FILTER
+     ============================================ -->
+<section class="briefs-controls">
+  <div class="container">
+    <div class="briefs-search-wrap">
+      <input
+        type="text"
+        class="briefs-search"
+        id="briefsSearch"
+        placeholder="Search by title, city, theme, or sector..."
+        aria-label="Search briefs"
+      />
+    </div>
+    <div class="briefs-filters">
+      <button class="briefs-filter-chip briefs-filter-chip--active" data-filter="All">All</button>
+      <button class="briefs-filter-chip" data-filter="Healthcare">Healthcare</button>
+      <button class="briefs-filter-chip" data-filter="Finance">Finance</button>
+      <button class="briefs-filter-chip" data-filter="Government">Government</button>
+      <button class="briefs-filter-chip" data-filter="Education">Education</button>
+      <button class="briefs-filter-chip" data-filter="Cross-Sector">Cross-Sector</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     BRIEFS GRID
+     ============================================ -->
+<section class="briefs-grid-section">
+  <div class="container">
+    <div class="briefs-grid">
+      {% for brief in briefs.briefs %}
+      <div class="brief-card"
+           data-title="{{ brief.title }}"
+           data-city="{{ brief.city }}"
+           data-sector="{{ brief.sector }}"
+           data-themes="{{ brief.themes | join(', ') }}">
+        <div class="brief-card-meta">
+          <span class="brief-card-city">{{ brief.city }}</span>
+          <span>{{ brief.date }}</span>
+          <span>{{ brief.sector }}</span>
+        </div>
+        <h3 class="brief-card-title">{{ brief.title }}</h3>
+        <p class="brief-card-insight">{{ brief.insight }}</p>
+        <div class="brief-card-tags">
+          {% for theme in brief.themes %}
+          <span class="brief-card-tag">{{ theme }}</span>
+          {% endfor %}
+        </div>
+        <a href="{{ brief.link }}" class="brief-card-link">Read Brief <span>&rarr;</span></a>
+      </div>
+      {% endfor %}
+
+      <div class="briefs-empty" style="display: none;">
+        No briefs match your search. Try a different query or filter.
+      </div>
+    </div>
+  </div>
+</section>
+

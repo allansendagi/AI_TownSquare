@@ -1,0 +1,50 @@
+{
+  "pillars": [
+    {
+      "name": "Governance",
+      "weight": 25,
+      "dubaiScore": 72,
+      "globalAvg": 45,
+      "description": "Regulatory frameworks, policy readiness, and institutional capacity for AI oversight."
+    },
+    {
+      "name": "Citizen Empowerment",
+      "weight": 20,
+      "dubaiScore": 58,
+      "globalAvg": 38,
+      "description": "Public awareness, digital literacy, and citizen participation in AI governance."
+    },
+    {
+      "name": "Ethics",
+      "weight": 20,
+      "dubaiScore": 65,
+      "globalAvg": 42,
+      "description": "Ethical guidelines, bias mitigation, transparency, and accountability measures."
+    },
+    {
+      "name": "Economic Adaptability",
+      "weight": 15,
+      "dubaiScore": 70,
+      "globalAvg": 50,
+      "description": "Workforce transition readiness, reskilling infrastructure, and economic resilience."
+    },
+    {
+      "name": "Infrastructure",
+      "weight": 10,
+      "dubaiScore": 82,
+      "globalAvg": 55,
+      "description": "Digital infrastructure, data governance, and technical capacity."
+    },
+    {
+      "name": "Foresight",
+      "weight": 10,
+      "dubaiScore": 60,
+      "globalAvg": 35,
+      "description": "Future-readiness planning, scenario analysis, and adaptive policy mechanisms."
+    }
+  ],
+  "overallScore": {
+    "dubai": 67,
+    "global": 44
+  }
+}

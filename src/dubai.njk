@@ -1,0 +1,226 @@
+---
+layout: base.njk
+title: "Dubai Node — April 2026"
+description: "Is AI Going to Take Our Jobs? 25 curated voices. 60 minutes. One question that matters. Apply for your seat at AI TownSquare Dubai."
+permalink: /dubai/
+extraCss:
+  - /css/pages/dubai.css
+extraJs:
+  - /js/countdown.js
+  - /js/form.js
+  - /js/pages/dubai-tracker.js
+---
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="dubai-hero">
+  <div class="container">
+    <div class="dubai-hero-content">
+      <div class="hero-badge" style="justify-content: center; margin-left: auto; margin-right: auto;">
+        <span class="hero-badge-dot"></span>
+        <span class="hero-badge-text">Dubai Node &middot; April 2026</span>
+      </div>
+
+      <h1 class="dubai-hero-question">
+        <em>Is AI Going to Take Our Jobs?</em>
+      </h1>
+
+      <p class="dubai-hero-sub">
+        25 curated voices from healthcare, finance, government, and education will grapple with one of AI's most pressing questions in a structured 60-minute civic dialogue.
+      </p>
+
+      <div class="countdown" id="countdown" style="justify-content: center;">
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-days">--</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-hours">--</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-min">--</span>
+          <span class="countdown-label">Min</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-sec">--</span>
+          <span class="countdown-label">Sec</span>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="#register" class="btn btn--primary">
+          Apply for 1 of 25 Seats
+          <span class="btn-arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     HOST
+     ============================================ -->
+<section class="host-section">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <span class="label label--accent reveal">Your Host</span>
+    </div>
+    <div class="host-card reveal">
+      <div class="host-avatar">AS</div>
+      <div>
+        <h3 class="host-name">Allan Sendagi</h3>
+        <p class="host-title">Founder, AI TownSquare &middot; SafeHaven</p>
+        <p class="host-bio">
+          Allan created AI TownSquare to bridge the gap between AI advancement and societal readiness. His background spans technology, civic engagement, and institutional design. The protocol he developed has been endorsed by global health and academic leaders.
+        </p>
+        <div class="host-credentials">
+          <span class="host-credential">Protocol Designer</span>
+          <span class="host-credential">Civic Infrastructure</span>
+          <span class="host-credential">SafeHaven Founder</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     LIVE PROTOCOL TRACKER
+     ============================================ -->
+<section class="tracker-section">
+  <div class="container">
+    <div class="tracker-header reveal">
+      <span class="label label--accent">Live Protocol Tracker</span>
+      <h2 class="tracker-title">Session Insights</h2>
+      <p class="tracker-subtitle">Emerging themes and insights from the AI TownSquare protocol phases.</p>
+    </div>
+
+    <div class="tracker-phases reveal">
+      <div class="tracker-phase tracker-phase--active">
+        <div class="tracker-phase-num">1</div>
+        <div class="tracker-phase-name">Prime</div>
+      </div>
+      <div class="tracker-phase">
+        <div class="tracker-phase-num">2</div>
+        <div class="tracker-phase-name">Complicate</div>
+      </div>
+      <div class="tracker-phase">
+        <div class="tracker-phase-num">3</div>
+        <div class="tracker-phase-name">Position</div>
+      </div>
+      <div class="tracker-phase">
+        <div class="tracker-phase-num">4</div>
+        <div class="tracker-phase-name">Breakout</div>
+      </div>
+      <div class="tracker-phase">
+        <div class="tracker-phase-num">5</div>
+        <div class="tracker-phase-name">Share</div>
+      </div>
+      <div class="tracker-phase">
+        <div class="tracker-phase-num">6</div>
+        <div class="tracker-phase-name">Synth</div>
+      </div>
+      <div class="tracker-phase">
+        <div class="tracker-phase-num">7</div>
+        <div class="tracker-phase-name">Capture</div>
+      </div>
+    </div>
+
+    <div class="tracker-insights" id="trackerInsights">
+      <!-- Populated by dubai-tracker.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     REGISTRATION
+     ============================================ -->
+<section class="register section--dark" id="register">
+  <div class="container">
+    <div class="register-inner">
+      <div class="register-header">
+        <span class="label label--highlight reveal">Apply Now</span>
+        <h2 class="register-title reveal">
+          Claim Your Seat at<br/>
+          <span class="register-title-accent">AI TownSquare Dubai</span>
+        </h2>
+        <p class="register-subtitle reveal">25 seats. Curated for cross-sector diversity. Your background matters.</p>
+      </div>
+
+      <div class="register-form-wrap reveal">
+        <form id="registerForm" action="https://formspree.io/f/{{ site.formspreeId }}" method="POST">
+          <input type="hidden" name="_subject" value="Dubai Node Application" />
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" class="form-input" name="name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-input" name="email" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Organization *</label>
+              <input type="text" class="form-input" name="organization" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Role / Title *</label>
+              <input type="text" class="form-input" name="role" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">I am a... *</label>
+            <select class="form-select" name="category" required>
+              <option value="">Select your category</option>
+              <option value="builder">Builder (tech, AI, product)</option>
+              <option value="user">User (business, operations)</option>
+              <option value="regulator">Regulator (policy, government)</option>
+              <option value="academic">Academic (research, education)</option>
+              <option value="healthcare">Healthcare professional</option>
+              <option value="finance">Finance &amp; banking</option>
+              <option value="citizen">Citizen (general public)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Why does this topic matter to you? *</label>
+            <textarea class="form-textarea" name="reason" rows="4" placeholder="1-2 sentences about your perspective on AI and jobs" required></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" id="submitBtn">
+            Submit Application &rarr;
+          </button>
+        </form>
+
+        <p class="form-note">
+          We curate for diversity across sectors, roles, and perspectives.<br/>
+          You'll hear back within 48 hours.
+        </p>
+      </div>
+
+      <div class="register-details reveal">
+        <div class="register-detail">
+          <div class="register-detail-icon">&#128197;</div>
+          <div class="register-detail-label">Date</div>
+          <div class="register-detail-value">April 2026</div>
+        </div>
+        <div class="register-detail">
+          <div class="register-detail-icon">&#128205;</div>
+          <div class="register-detail-label">Location</div>
+          <div class="register-detail-value">Dubai, UAE</div>
+        </div>
+        <div class="register-detail">
+          <div class="register-detail-icon">&#127758;</div>
+          <div class="register-detail-label">Format</div>
+          <div class="register-detail-value">In-Person + Hybrid</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

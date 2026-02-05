@@ -1,0 +1,229 @@
+/* =============================================
+   DUBAI PAGE
+   ============================================= */
+.dubai-hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: var(--bg);
+  overflow: hidden;
+  padding: 120px 0 80px;
+}
+.dubai-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: radial-gradient(circle, var(--primary-deep) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dubai-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dubai-hero-question {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  color: var(--primary-deep);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+.dubai-hero-question em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.dubai-hero-sub {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Host Card */
+.host-section {
+  background: white;
+  padding: 100px 0;
+}
+.host-card {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--off-white);
+  border-radius: 24px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 36px;
+  align-items: center;
+  box-shadow: 0 4px 24px var(--shadow-neutral);
+}
+.host-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: var(--accent);
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+.host-name {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.host-title {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.host-bio {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.host-credentials {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.host-credential {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 6px 14px;
+  border-radius: 100px;
+}
+
+/* Protocol Tracker */
+.tracker-section {
+  background: var(--off-white);
+  padding: 100px 0;
+}
+.tracker-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.tracker-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.tracker-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+/* Phase indicator bar */
+.tracker-phases {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tracker-phase {
+  flex: 1;
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s;
+}
+.tracker-phase--active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+.tracker-phase-num {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+}
+.tracker-phase-name {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+.tracker-phase--active .tracker-phase-name {
+  color: rgba(255,255,255,0.8);
+}
+
+/* Insight cards */
+.tracker-insights {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.tracker-insight-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 12px var(--shadow-neutral);
+}
+.tracker-insight-phase {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.tracker-insight-text {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.tracker-insight-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tracker-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: var(--highlight-dim);
+  color: var(--highlight);
+}
+
+@media (max-width: 640px) {
+  .host-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 32px 24px;
+  }
+  .host-avatar { margin: 0 auto; }
+  .host-credentials { justify-content: center; }
+  .tracker-phases { flex-wrap: wrap; }
+  .tracker-phase { min-width: 80px; }
+  .dubai-hero { padding: 120px 0 60px; }
+}

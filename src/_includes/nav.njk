@@ -1,0 +1,21 @@
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <a href="/" class="nav-logo">
+    <img src="/assets/Logo_Black.png" alt="AI TownSquare" />
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="/" class="nav-link{% if page.url == '/' %} nav-link--active{% endif %}">Home</a>
+    <a href="/dubai/" class="nav-link{% if page.url == '/dubai/' %} nav-link--active{% endif %}">Dubai</a>
+    <a href="/protocol/" class="nav-link{% if page.url == '/protocol/' %} nav-link--active{% endif %}">Protocol</a>
+    <a href="/sri/" class="nav-link{% if page.url == '/sri/' %} nav-link--active{% endif %}">SRI</a>
+    <a href="/briefs/" class="nav-link{% if page.url == '/briefs/' %} nav-link--active{% endif %}">Briefs</a>
+    <a href="/institute/" class="nav-link{% if page.url == '/institute/' %} nav-link--active{% endif %}">Institute</a>
+    <a href="/dubai/#register" class="nav-cta">Apply for a Seat</a>
+  </div>
+  <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>

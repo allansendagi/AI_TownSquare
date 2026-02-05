@@ -1,0 +1,159 @@
+---
+layout: base.njk
+title: "Societal Readiness Index"
+description: "Six-pillar benchmark measuring how prepared societies are for AI. Dubai/UAE vs. Global Average scores across Governance, Ethics, Infrastructure, and more."
+permalink: /sri/
+extraCss:
+  - /css/pages/sri.css
+extraJs:
+  - /js/counter.js
+  - /js/pages/sri-charts.js
+---
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="sri-hero">
+  <div class="container">
+    <span class="label label--accent reveal">SRI Dashboard</span>
+    <h1 class="sri-hero-title reveal">Societal Readiness Index</h1>
+    <p class="sri-hero-sub reveal">
+      A six-pillar benchmark measuring how prepared societies are for AI. Powered by civic data from AI TownSquare sessions worldwide.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================
+     OVERALL SCORE GAUGES
+     ============================================ -->
+<section class="sri-gauge-section">
+  <div class="container">
+    <div class="sri-gauge-grid">
+      <div class="reveal">
+        <div class="sri-gauge">
+          <div class="sri-gauge-ring" style="--score: 0" data-score="{{ sri.overallScore.dubai }}"></div>
+          <div class="sri-gauge-inner">
+            <div class="sri-gauge-value">{{ sri.overallScore.dubai }}</div>
+            <div class="sri-gauge-label">out of 100</div>
+          </div>
+        </div>
+        <p class="sri-gauge-region">Dubai / UAE</p>
+      </div>
+      <div class="reveal reveal-d1">
+        <div class="sri-gauge">
+          <div class="sri-gauge-ring" style="--score: 0; background: conic-gradient(var(--highlight) 0deg, var(--highlight) calc(var(--score) * 3.6deg), #e8ecf0 calc(var(--score) * 3.6deg), #e8ecf0 360deg);" data-score="{{ sri.overallScore.global }}"></div>
+          <div class="sri-gauge-inner">
+            <div class="sri-gauge-value" style="color: var(--highlight);">{{ sri.overallScore.global }}</div>
+            <div class="sri-gauge-label">out of 100</div>
+          </div>
+        </div>
+        <p class="sri-gauge-region">Global Average</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PILLAR BAR CHARTS
+     ============================================ -->
+<section class="sri-pillars-section">
+  <div class="container">
+    <h2 class="sri-pillars-title reveal">Six Pillars of Readiness</h2>
+
+    {% for pillar in sri.pillars %}
+    <div class="sri-pillar reveal">
+      <div class="sri-pillar-header">
+        <span class="sri-pillar-name">{{ pillar.name }}</span>
+        <span class="sri-pillar-weight">Weight: {{ pillar.weight }}%</span>
+      </div>
+      <div class="sri-pillar-bars">
+        <div class="sri-bar-row">
+          <span class="sri-bar-label">Dubai/UAE</span>
+          <div class="sri-bar-track">
+            <div class="sri-bar-fill sri-bar-fill--dubai" data-width="{{ pillar.dubaiScore }}"></div>
+          </div>
+          <span class="sri-bar-value">{{ pillar.dubaiScore }}</span>
+        </div>
+        <div class="sri-bar-row">
+          <span class="sri-bar-label">Global Avg</span>
+          <div class="sri-bar-track">
+            <div class="sri-bar-fill sri-bar-fill--global" data-width="{{ pillar.globalAvg }}"></div>
+          </div>
+          <span class="sri-bar-value">{{ pillar.globalAvg }}</span>
+        </div>
+      </div>
+      <p class="sri-pillar-desc">{{ pillar.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ============================================
+     WEIGHT VISUALIZATION
+     ============================================ -->
+<section class="sri-weight-section">
+  <div class="container">
+    <h2 class="sri-weight-title reveal">Pillar Weights</h2>
+    <div class="sri-weight-ring reveal">
+      <div class="sri-weight-ring-inner">100%</div>
+    </div>
+    <div class="sri-weight-legend reveal">
+      <div class="sri-weight-item">
+        <span class="sri-weight-dot" style="background: #1A365D;"></span>
+        Governance (25%)
+      </div>
+      <div class="sri-weight-item">
+        <span class="sri-weight-dot" style="background: #2B7A78;"></span>
+        Citizen Empowerment (20%)
+      </div>
+      <div class="sri-weight-item">
+        <span class="sri-weight-dot" style="background: #3AAFA9;"></span>
+        Ethics (20%)
+      </div>
+      <div class="sri-weight-item">
+        <span class="sri-weight-dot" style="background: #D4A843;"></span>
+        Economic Adaptability (15%)
+      </div>
+      <div class="sri-weight-item">
+        <span class="sri-weight-dot" style="background: #E0BA5A;"></span>
+        Infrastructure (10%)
+      </div>
+      <div class="sri-weight-item">
+        <span class="sri-weight-dot" style="background: #8896AB;"></span>
+        Foresight (10%)
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     METHODOLOGY
+     ============================================ -->
+<section class="sri-methodology">
+  <div class="container">
+    <div class="sri-methodology-inner reveal">
+      <h2 class="sri-methodology-title">Methodology</h2>
+      <p class="sri-methodology-text">
+        The Societal Readiness Index aggregates qualitative civic data from AI TownSquare sessions with quantitative policy and infrastructure metrics. Each session contributes to the index through structured dialogue outputs&mdash;the Civic Briefs.
+      </p>
+      <p class="sri-methodology-text">
+        Scores are weighted across six pillars that reflect the multidimensional nature of societal readiness for AI. Governance carries the highest weight (25%) because regulatory and institutional frameworks set the conditions for all other dimensions.
+      </p>
+      <p class="sri-methodology-text">
+        Regional scores are updated as new sessions are conducted in each geography. The index is designed to be a living benchmark&mdash;not a static ranking&mdash;that evolves with new civic data.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CTA
+     ============================================ -->
+<section class="sri-cta">
+  <div class="container">
+    <h2 class="sri-cta-title reveal">Want to contribute to the index?</h2>
+    <p class="sri-cta-text reveal">Apply for a seat at an upcoming AI TownSquare session. Your voice shapes the data.</p>
+    <a href="/dubai/#register" class="btn btn--primary reveal">Apply for a Seat &rarr;</a>
+  </div>
+</section>
+

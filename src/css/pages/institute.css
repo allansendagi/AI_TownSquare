@@ -1,0 +1,201 @@
+/* =============================================
+   READINESS INSTITUTE PAGE
+   ============================================= */
+.institute-hero {
+  background: var(--bg);
+  padding: 140px 0 80px;
+  text-align: center;
+}
+.institute-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--primary-deep);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+.institute-hero-sub {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Toolkits */
+.institute-toolkits {
+  background: white;
+  padding: 100px 0;
+}
+.institute-section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3.5vw, 40px);
+  color: var(--text-primary);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.institute-resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.institute-resource-card {
+  background: var(--off-white);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid var(--border-light);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+}
+.institute-resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px var(--shadow-neutral);
+}
+.institute-resource-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.institute-resource-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.institute-resource-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.institute-resource-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.3s;
+}
+.institute-resource-link:hover { gap: 10px; }
+
+/* Training Modules */
+.institute-training {
+  background: var(--off-white);
+  padding: 100px 0;
+}
+.institute-training-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.institute-training-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 4px 24px var(--shadow-neutral);
+  border: 1px solid transparent;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s;
+}
+.institute-training-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(26, 54, 93, 0.1);
+  border-color: var(--accent-dim);
+}
+.institute-training-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+.institute-training-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+.institute-training-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* White Papers */
+.institute-papers {
+  background: white;
+  padding: 100px 0;
+}
+.institute-papers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.institute-paper-card {
+  background: var(--off-white);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid var(--border-light);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+}
+.institute-paper-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px var(--shadow-neutral);
+}
+.institute-paper-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+.institute-paper-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.institute-paper-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.institute-paper-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* CTA */
+.institute-cta {
+  background: var(--primary-deep);
+  padding: 80px 0;
+  text-align: center;
+}
+.institute-cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3.5vw, 40px);
+  color: white;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.institute-cta-text {
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 32px;
+}
+
+@media (max-width: 640px) {
+  .institute-training-grid { grid-template-columns: 1fr; }
+  .institute-paper-card { flex-direction: column; }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ai-townsquare-website",
+  "version": "1.0.0",
+  "description": "AI TownSquare - Civic Infrastructure for the Intelligence Age",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve",
+    "dev": "npx @11ty/eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

@@ -1,0 +1,227 @@
+/* =============================================
+   PROTOCOL PRODUCT PAGE
+   ============================================= */
+.protocol-hero {
+  background: var(--bg);
+  padding: 140px 0 80px;
+  text-align: center;
+}
+.protocol-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: radial-gradient(circle, var(--primary-deep) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.protocol-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--primary-deep);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+.protocol-hero-sub {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+.protocol-hero-manifesto {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--accent);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Visual Timeline */
+.protocol-timeline-section {
+  background: white;
+  padding: 100px 0;
+}
+.protocol-timeline-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--text-primary);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.protocol-phases {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+/* Vertical line */
+.protocol-phases::before {
+  content: '';
+  position: absolute;
+  left: 32px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--highlight));
+}
+
+.protocol-phase {
+  position: relative;
+  padding-left: 80px;
+  margin-bottom: 0;
+}
+
+/* Phase node circle */
+.protocol-phase-node {
+  position: absolute;
+  left: 18px;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  z-index: 1;
+}
+.protocol-phase:last-child .protocol-phase-node {
+  border-color: var(--highlight);
+  color: var(--highlight);
+}
+
+/* Accordion header */
+.protocol-phase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: var(--off-white);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: 1px solid var(--border-light);
+  margin-bottom: 4px;
+}
+.protocol-phase-header:hover {
+  background: white;
+}
+.protocol-phase-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.protocol-phase-timing {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+.protocol-phase-toggle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 14px;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.protocol-phase--open .protocol-phase-toggle {
+  transform: rotate(45deg);
+}
+
+/* Accordion body */
+.protocol-phase-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-out);
+}
+.protocol-phase--open .protocol-phase-body {
+  max-height: 500px;
+}
+.protocol-phase-content {
+  padding: 20px 24px;
+  background: white;
+  border-radius: 0 0 12px 12px;
+  border: 1px solid var(--border-light);
+  border-top: none;
+  margin-bottom: 20px;
+}
+.protocol-phase-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.protocol-phase-detail {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Designed for Transfer */
+.protocol-transfer {
+  background: var(--off-white);
+  padding: 100px 0;
+}
+.protocol-transfer-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.protocol-transfer-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.protocol-transfer-text {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+.protocol-transfer-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: left;
+}
+.protocol-transfer-feature {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 12px var(--shadow-neutral);
+}
+.protocol-transfer-feature-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.protocol-transfer-feature-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .protocol-phases::before { left: 16px; }
+  .protocol-phase { padding-left: 52px; }
+  .protocol-phase-node { left: 2px; width: 26px; height: 26px; font-size: 11px; }
+  .protocol-transfer-features { grid-template-columns: 1fr; }
+}

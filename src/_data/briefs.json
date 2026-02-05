@@ -1,0 +1,22 @@
+{
+  "briefs": [
+    {
+      "title": "AI & Societal Readiness: Who Gets Left Behind?",
+      "city": "Doha",
+      "date": "November 2024",
+      "sector": "Cross-Sector",
+      "themes": ["Workforce", "Governance", "Ethics"],
+      "insight": "Participants distinguished between AI replacing tasks vs. replacing jobs. Consensus: the framing itself is misleading. The real question is institutional readiness.",
+      "link": "#"
+    },
+    {
+      "title": "Is AI Going to Take Our Jobs?",
+      "city": "Dubai",
+      "date": "April 2026",
+      "sector": "Healthcare",
+      "themes": ["Healthcare", "Workforce", "Education"],
+      "insight": "Healthcare professionals emphasized that AI augmentation in diagnostics requires parallel investment in trust-building with patients and practitioners.",
+      "link": "#"
+    }
+  ]
+}

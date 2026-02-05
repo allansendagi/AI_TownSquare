@@ -1,0 +1,287 @@
+/* =============================================
+   SRI DASHBOARD PAGE
+   ============================================= */
+.sri-hero {
+  background: var(--bg);
+  padding: 140px 0 80px;
+  text-align: center;
+}
+.sri-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--primary-deep);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+.sri-hero-sub {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+}
+
+/* Overall Score Gauge */
+.sri-gauge-section {
+  background: white;
+  padding: 80px 0;
+}
+.sri-gauge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  max-width: 800px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.sri-gauge {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+}
+.sri-gauge-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--accent) 0deg,
+    var(--accent) calc(var(--score) * 3.6deg),
+    #e8ecf0 calc(var(--score) * 3.6deg),
+    #e8ecf0 360deg
+  );
+  transition: background 1.5s var(--ease-out);
+}
+.sri-gauge-inner {
+  position: absolute;
+  inset: 20px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sri-gauge-value {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.sri-gauge-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+.sri-gauge-region {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* Pillar Bar Charts */
+.sri-pillars-section {
+  background: var(--off-white);
+  padding: 100px 0;
+}
+.sri-pillars-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--text-primary);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.sri-pillar {
+  max-width: 800px;
+  margin: 0 auto 36px;
+  padding: 28px 32px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px var(--shadow-neutral);
+}
+.sri-pillar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+.sri-pillar-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.sri-pillar-weight {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+.sri-pillar-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sri-bar-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 50px;
+  align-items: center;
+  gap: 12px;
+}
+.sri-bar-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.sri-bar-track {
+  height: 12px;
+  background: #e8ecf0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.sri-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  width: 0;
+  transition: width 1.2s var(--ease-out);
+}
+.sri-bar-fill--dubai {
+  background: var(--accent);
+}
+.sri-bar-fill--global {
+  background: var(--highlight);
+}
+.sri-bar-value {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+.sri-pillar-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* Weight Ring */
+.sri-weight-section {
+  background: white;
+  padding: 100px 0;
+}
+.sri-weight-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 36px);
+  color: var(--text-primary);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.sri-weight-ring {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  margin: 0 auto 32px;
+  background: conic-gradient(
+    #1A365D 0deg 90deg,
+    #2B7A78 90deg 162deg,
+    #3AAFA9 162deg 234deg,
+    #D4A843 234deg 288deg,
+    #E0BA5A 288deg 324deg,
+    #8896AB 324deg 360deg
+  );
+  position: relative;
+}
+.sri-weight-ring-inner {
+  position: absolute;
+  inset: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.sri-weight-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.sri-weight-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.sri-weight-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+/* Methodology */
+.sri-methodology {
+  background: var(--off-white);
+  padding: 100px 0;
+}
+.sri-methodology-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.sri-methodology-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.sri-methodology-text {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* CTA */
+.sri-cta {
+  background: var(--primary-deep);
+  padding: 80px 0;
+  text-align: center;
+}
+.sri-cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3.5vw, 40px);
+  color: white;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.sri-cta-text {
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 32px;
+}
+
+@media (max-width: 640px) {
+  .sri-gauge-grid { grid-template-columns: 1fr; gap: 40px; }
+  .sri-bar-row { grid-template-columns: 70px 1fr 40px; }
+  .sri-gauge { width: 180px; height: 180px; }
+  .sri-gauge-value { font-size: 36px; }
+  .sri-weight-ring { width: 200px; height: 200px; }
+}
