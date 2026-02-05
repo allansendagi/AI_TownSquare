@@ -1,7 +1,7 @@
 // =============================================
-// WALL OF AGENCY — Hexagonal Tessellation Grid
-// 25 participants as hex cells clustered by sector
-// with cross-sector connection lines on hover
+// WALL OF AGENCY — MONOCHROME EDITION
+// Hexagonal tessellation with hairline outlines
+// No solid sector colors, bronze glow on hover
 // =============================================
 (function () {
   var grid = document.querySelector('.agency-grid');
@@ -36,16 +36,6 @@
     { initials: 'CO', sector: 'Citizen', label: 'Activist', name: 'C. Osei' },
     { initials: 'MT', sector: 'Citizen', label: 'Entrepreneur', name: 'M. Tadesse' }
   ];
-
-  var sectorColors = {
-    Host: '#1A365D',
-    Healthcare: '#2B7A78',
-    Finance: '#D4A843',
-    Government: '#3B6FA0',
-    Education: '#E07A5F',
-    Technology: '#3AAFA9',
-    Citizen: '#8896AB'
-  };
 
   // Cross-sector connections: sector -> connected sectors
   var connections = {
@@ -104,11 +94,15 @@
 
       var hex = document.createElement('div');
       hex.className = 'agency-hex';
+      // Special class for host
+      if (p.sector === 'Host') {
+        hex.classList.add('agency-hex--host');
+      }
       hex.style.left = px + 'px';
       hex.style.top = py + 'px';
       hex.style.width = hexW + 'px';
       hex.style.height = hexH + 'px';
-      hex.style.background = sectorColors[p.sector];
+      // No solid background color - hairline outline only (handled by CSS)
       hex.setAttribute('data-sector', p.sector);
       hex.setAttribute('data-index', idx);
 
@@ -116,8 +110,7 @@
         '<span class="agency-hex-initials">' + p.initials + '</span>' +
         '<span class="agency-hex-label">' + p.label + '</span>';
 
-      // Staggered entrance animation
-      hex.style.transform = 'scale(0)';
+      // Staggered entrance animation (opacity fade, slow-gate style)
       hex.style.opacity = '0';
 
       hex.addEventListener('mouseenter', onHexEnter);
@@ -127,14 +120,13 @@
       hexElements.push({ el: hex, participant: p, cx: px + hexW / 2, cy: py + hexH / 2 });
       sectorHexMap[sector].push(hexElements.length - 1);
 
-      // Animate entrance with stagger
+      // Animate entrance with stagger (slow-gate reveal)
       (function (hexEl, delay) {
         setTimeout(function () {
-          hexEl.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease';
-          hexEl.style.transform = 'scale(1)';
+          hexEl.style.transition = 'opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1)';
           hexEl.style.opacity = '1';
         }, delay);
-      })(hex, 200 + idx * 40);
+      })(hex, 300 + idx * 60);
 
       idx++;
     });
@@ -171,7 +163,7 @@
       }
     });
 
-    // Draw connection lines
+    // Draw connection lines (hairline style)
     drawConnections(dataIdx, connectedSectors);
 
     // Show detail tooltip
@@ -202,8 +194,6 @@
   function drawConnections(fromIdx, connectedSectors) {
     clearConnections();
     var from = hexElements[fromIdx];
-    var gridRect = grid.getBoundingClientRect();
-    var svgRect = svgOverlay.getBoundingClientRect();
 
     connectedSectors.forEach(function (cs) {
       if (!sectorHexMap[cs]) return;

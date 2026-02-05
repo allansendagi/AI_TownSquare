@@ -17,7 +17,7 @@ extraJs:
 <!-- ============================================
      HERO: Global Readiness Clock
      ============================================ -->
-<section class="dubai-hero parchment-bg">
+<section class="dubai-hero">
   <div class="container">
     <div class="dubai-hero-content">
       <div class="dubai-hero-eyebrow">Dubai Node &middot; April 2026</div>
@@ -67,7 +67,7 @@ extraJs:
 <!-- ============================================
      WALL OF AGENCY — Hexagonal Grid
      ============================================ -->
-<section class="agency-section" style="background: white;">
+<section class="agency-section">
   <div class="container">
     <div class="agency-header reveal">
       <span class="label label--accent">The Room</span>
@@ -91,18 +91,10 @@ extraJs:
     </div>
 
     <div class="agency-legend">
-      {% set sectors = {
-        "Host": "#1A365D",
-        "Healthcare": "#2B7A78",
-        "Finance": "#D4A843",
-        "Government": "#3B6FA0",
-        "Education": "#E07A5F",
-        "Technology": "#3AAFA9",
-        "Citizen": "#8896AB"
-      } %}
-      {% for name, color in sectors %}
+      {% set sectors = ["Host", "Healthcare", "Finance", "Government", "Education", "Technology", "Citizen"] %}
+      {% for name in sectors %}
       <div class="agency-legend-item">
-        <span class="agency-legend-dot" style="background: {{ color }}"></span>
+        <span class="agency-legend-dot{% if name == 'Host' %} agency-legend-dot--host{% endif %}"></span>
         {{ name }}
       </div>
       {% endfor %}
@@ -113,7 +105,7 @@ extraJs:
 <!-- ============================================
      PROTOCOL PHASE STATE MACHINE
      ============================================ -->
-<section class="phase-machine-section parchment-bg">
+<section class="phase-machine-section bone-bg">
   <div class="container">
     <div class="phase-machine-header reveal">
       <span class="label label--accent">The Protocol</span>
@@ -300,7 +292,7 @@ extraJs:
     <div style="text-align: center; margin-bottom: 32px;">
       <span class="label label--accent reveal">Your Host</span>
     </div>
-    <div class="host-card reveal parchment-bg">
+    <div class="host-card reveal">
       <div class="host-avatar">OV</div>
       <div>
         <h3 class="host-name">Olga V.</h3>
@@ -324,7 +316,7 @@ extraJs:
 <!-- ============================================
      ORBITAL SRI VISUALIZATION
      ============================================ -->
-<section class="orbital-sri-section parchment-bg">
+<section class="orbital-sri-section bone-bg">
   <div class="container">
     <div class="orbital-sri-header reveal">
       <span class="label label--accent">Societal Readiness Index</span>
