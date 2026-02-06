@@ -306,7 +306,7 @@ body.nav-open {
 
   /* Hero */
   .hero-content {
-    padding: 140px 0 60px;
+    padding: 160px 0 60px;
   }
   .hero-title {
     font-size: clamp(26px, 7vw, 36px);
