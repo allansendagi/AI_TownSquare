@@ -306,7 +306,7 @@ body.nav-open {
 
   /* Hero */
   .hero-content {
-    padding: 120px 0 140px;
+    padding: 120px 0 40px;
   }
   .hero-title {
     font-size: clamp(26px, 7vw, 36px);
@@ -348,9 +348,11 @@ body.nav-open {
 
   /* Hero Proof */
   .hero-proof {
+    position: relative;
     flex-direction: column;
     gap: 8px;
-    padding: 16px 20px;
+    padding: 20px;
+    margin-top: 40px;
   }
   .hero-proof-sep {
     display: none;

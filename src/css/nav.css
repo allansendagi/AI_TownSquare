@@ -239,20 +239,20 @@
   }
   .nav-dropdown-item {
     padding: 12px 24px;
-    color: var(--bone);
+    color: var(--ink-70);
   }
   .nav-dropdown-item--active {
-    color: var(--bone);
+    color: var(--ink);
   }
   .nav-dropdown-item--upcoming {
-    color: var(--bone-deep);
+    color: var(--ink-50);
   }
   .nav-dropdown-label {
-    color: var(--bone-deep);
+    color: var(--ink-30);
     padding: 12px 24px 8px;
   }
   .nav-dropdown-divider {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--hairline);
     margin: 8px 24px;
   }
   .nav-dropdown-arrow {
