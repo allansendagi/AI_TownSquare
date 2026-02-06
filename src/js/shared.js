@@ -62,11 +62,46 @@
 
   toggle.addEventListener('click', function () {
     links.classList.toggle('nav-links--open');
+    document.body.classList.toggle('nav-open');
   });
 
-  links.querySelectorAll('a').forEach(function (a) {
+  // Close menu when clicking a link (except dropdown triggers)
+  links.querySelectorAll('a:not(.nav-link--dropdown)').forEach(function (a) {
     a.addEventListener('click', function () {
       links.classList.remove('nav-links--open');
+      document.body.classList.remove('nav-open');
     });
+  });
+
+  // Mobile dropdown toggle
+  var dropdowns = links.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(function (dropdown) {
+    var trigger = dropdown.querySelector('.nav-link--dropdown');
+    if (trigger) {
+      trigger.addEventListener('click', function (e) {
+        // Only prevent default on mobile
+        if (window.innerWidth <= 640) {
+          e.preventDefault();
+          dropdown.classList.toggle('open');
+        }
+      });
+    }
+  });
+
+  // Close menu on resize to desktop
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 640) {
+      links.classList.remove('nav-links--open');
+      document.body.classList.remove('nav-open');
+      dropdowns.forEach(function (d) { d.classList.remove('open'); });
+    }
+  });
+
+  // Close menu on escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && links.classList.contains('nav-links--open')) {
+      links.classList.remove('nav-links--open');
+      document.body.classList.remove('nav-open');
+    }
   });
 })();

@@ -274,6 +274,14 @@
 }
 
 /* =============================================
+   DARK SECTION BASE STYLES
+   ============================================= */
+.section--dark {
+  background: var(--ink);
+  color: var(--bone);
+}
+
+/* =============================================
    GALLERY BONE BACKGROUND
    High-end museum wall with subtle warmth
    ============================================= */

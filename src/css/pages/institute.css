@@ -317,16 +317,190 @@
   padding: 48px;
 }
 
+/* =============================================
+   RESPONSIVE STYLES
+   ============================================= */
+
+/* Tablets (968px and below) */
 @media (max-width: 968px) {
+  .institute-hero {
+    padding: 120px 0 60px;
+  }
+  .institute-toolkits,
+  .institute-training,
+  .institute-papers {
+    padding: 80px 0;
+  }
+  .institute-section-title {
+    margin-bottom: 36px;
+  }
+  .institute-training-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sponsor-section {
+    padding: 100px 0;
+  }
   .sponsor-grid {
     grid-template-columns: 1fr;
     gap: 48px;
   }
-  .sponsor-benefits { padding: 0; }
+  .sponsor-benefits {
+    padding: 0;
+  }
+  .sponsor-header {
+    margin-bottom: 48px;
+  }
 }
 
+/* Tablets Portrait (768px and below) */
+@media (max-width: 768px) {
+  .institute-hero {
+    padding: 110px 0 50px;
+  }
+  .institute-hero-sub {
+    font-size: 16px;
+  }
+  .institute-toolkits,
+  .institute-training,
+  .institute-papers {
+    padding: 60px 0;
+  }
+  .institute-resources-grid {
+    gap: 16px;
+  }
+  .institute-resource-card {
+    padding: 24px;
+  }
+  .institute-training-card {
+    padding: 28px 24px;
+  }
+  .institute-cta {
+    padding: 60px 0;
+  }
+  .sponsor-section {
+    padding: 80px 0;
+  }
+  .sponsor-title {
+    font-size: clamp(28px, 5vw, 40px);
+  }
+}
+
+/* Mobile (640px and below) */
 @media (max-width: 640px) {
-  .institute-training-grid { grid-template-columns: 1fr; }
-  .institute-paper-card { flex-direction: column; }
-  .sponsor-form-wrap { padding: 32px 24px; }
+  .institute-hero {
+    padding: 100px 0 40px;
+  }
+  .institute-hero-title {
+    font-size: clamp(28px, 7vw, 36px);
+  }
+  .institute-hero-sub {
+    font-size: 15px;
+  }
+  .institute-toolkits,
+  .institute-training,
+  .institute-papers {
+    padding: 48px 0;
+  }
+  .institute-section-title {
+    font-size: clamp(22px, 5vw, 28px);
+    margin-bottom: 28px;
+  }
+  .institute-resources-grid {
+    grid-template-columns: 1fr;
+  }
+  .institute-resource-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .institute-resource-title {
+    font-size: 15px;
+  }
+  .institute-resource-desc {
+    font-size: 13px;
+  }
+  .institute-training-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .institute-training-card {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+  .institute-training-title {
+    font-size: 16px;
+  }
+  .institute-training-text {
+    font-size: 13px;
+  }
+  .institute-papers-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .institute-paper-card {
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 12px;
+    gap: 16px;
+  }
+  .institute-paper-title {
+    font-size: 14px;
+  }
+  .institute-paper-desc {
+    font-size: 12px;
+  }
+  .institute-cta {
+    padding: 48px 0;
+  }
+  .institute-cta-title {
+    font-size: clamp(22px, 5vw, 28px);
+  }
+  .institute-cta-text {
+    font-size: 14px;
+  }
+  .sponsor-section {
+    padding: 60px 0;
+  }
+  .sponsor-header {
+    margin-bottom: 36px;
+  }
+  .sponsor-title {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+  .sponsor-subtitle {
+    font-size: 14px;
+  }
+  .sponsor-benefits-list {
+    gap: 20px;
+  }
+  .sponsor-benefits-list strong {
+    font-size: 14px;
+  }
+  .sponsor-benefits-list p {
+    font-size: 13px;
+  }
+  .sponsor-form-wrap {
+    padding: 32px 24px;
+  }
+}
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+  .institute-hero {
+    padding: 90px 0 36px;
+  }
+  .institute-hero-title {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+  .institute-resource-card,
+  .institute-training-card,
+  .institute-paper-card {
+    padding: 16px;
+  }
+  .sponsor-form-wrap {
+    padding: 24px 16px;
+  }
+  .sponsor-benefit-num {
+    width: 28px;
+    height: 28px;
+  }
 }

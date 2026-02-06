@@ -278,10 +278,242 @@
   margin-bottom: 32px;
 }
 
+/* =============================================
+   RESPONSIVE STYLES
+   ============================================= */
+
+/* Tablets (968px and below) */
+@media (max-width: 968px) {
+  .sri-hero {
+    padding: 120px 0 60px;
+  }
+  .sri-gauge-section {
+    padding: 60px 0;
+  }
+  .sri-gauge-grid {
+    gap: 48px;
+  }
+  .sri-pillars-section,
+  .sri-weight-section,
+  .sri-methodology {
+    padding: 80px 0;
+  }
+  .sri-pillars-title {
+    margin-bottom: 48px;
+  }
+  .sri-pillar {
+    padding: 24px;
+  }
+}
+
+/* Tablets Portrait (768px and below) */
+@media (max-width: 768px) {
+  .sri-hero {
+    padding: 110px 0 50px;
+  }
+  .sri-hero-sub {
+    font-size: 16px;
+    margin-bottom: 36px;
+  }
+  .sri-gauge-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .sri-gauge {
+    width: 200px;
+    height: 200px;
+  }
+  .sri-gauge-value {
+    font-size: 42px;
+  }
+  .sri-pillars-section,
+  .sri-weight-section,
+  .sri-methodology {
+    padding: 60px 0;
+  }
+  .sri-pillars-title {
+    margin-bottom: 36px;
+  }
+  .sri-pillar {
+    margin-bottom: 24px;
+    border-radius: 12px;
+  }
+  .sri-pillar-name {
+    font-size: 15px;
+  }
+  .sri-bar-row {
+    grid-template-columns: 90px 1fr 45px;
+    gap: 10px;
+  }
+  .sri-bar-label {
+    font-size: 12px;
+  }
+  .sri-bar-value {
+    font-size: 13px;
+  }
+  .sri-weight-ring {
+    width: 220px;
+    height: 220px;
+  }
+  .sri-weight-legend {
+    gap: 12px;
+  }
+  .sri-weight-item {
+    font-size: 12px;
+  }
+  .sri-methodology-title {
+    font-size: 24px;
+  }
+  .sri-methodology-text {
+    font-size: 15px;
+  }
+  .sri-cta {
+    padding: 60px 0;
+  }
+}
+
+/* Mobile (640px and below) */
 @media (max-width: 640px) {
-  .sri-gauge-grid { grid-template-columns: 1fr; gap: 40px; }
-  .sri-bar-row { grid-template-columns: 70px 1fr 40px; }
-  .sri-gauge { width: 180px; height: 180px; }
-  .sri-gauge-value { font-size: 36px; }
-  .sri-weight-ring { width: 200px; height: 200px; }
+  .sri-hero {
+    padding: 100px 0 40px;
+  }
+  .sri-hero-title {
+    font-size: clamp(28px, 7vw, 36px);
+  }
+  .sri-hero-sub {
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+  .sri-gauge-section {
+    padding: 48px 0;
+  }
+  .sri-gauge-grid {
+    gap: 32px;
+  }
+  .sri-gauge {
+    width: 180px;
+    height: 180px;
+  }
+  .sri-gauge-value {
+    font-size: 36px;
+  }
+  .sri-gauge-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+  .sri-gauge-region {
+    font-size: 13px;
+  }
+  .sri-pillars-section,
+  .sri-weight-section,
+  .sri-methodology {
+    padding: 48px 0;
+  }
+  .sri-pillars-title {
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 28px;
+  }
+  .sri-pillar {
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .sri-pillar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+  .sri-pillar-name {
+    font-size: 14px;
+  }
+  .sri-pillar-weight {
+    font-size: 11px;
+  }
+  .sri-bar-row {
+    grid-template-columns: 70px 1fr 40px;
+    gap: 8px;
+  }
+  .sri-bar-label {
+    font-size: 11px;
+  }
+  .sri-bar-track {
+    height: 10px;
+  }
+  .sri-bar-value {
+    font-size: 12px;
+  }
+  .sri-pillar-desc {
+    font-size: 12px;
+  }
+  .sri-weight-title {
+    font-size: clamp(20px, 4vw, 28px);
+    margin-bottom: 32px;
+  }
+  .sri-weight-ring {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 24px;
+  }
+  .sri-weight-ring-inner {
+    font-size: 15px;
+    inset: 32px;
+  }
+  .sri-weight-legend {
+    gap: 10px;
+  }
+  .sri-weight-item {
+    font-size: 11px;
+    gap: 6px;
+  }
+  .sri-weight-dot {
+    width: 10px;
+    height: 10px;
+  }
+  .sri-methodology-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .sri-methodology-text {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .sri-cta {
+    padding: 48px 0;
+  }
+  .sri-cta-title {
+    font-size: clamp(22px, 5vw, 28px);
+  }
+  .sri-cta-text {
+    font-size: 14px;
+  }
+}
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+  .sri-hero {
+    padding: 90px 0 36px;
+  }
+  .sri-hero-title {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+  .sri-gauge {
+    width: 160px;
+    height: 160px;
+  }
+  .sri-gauge-value {
+    font-size: 32px;
+  }
+  .sri-pillar {
+    padding: 16px;
+  }
+  .sri-bar-row {
+    grid-template-columns: 60px 1fr 36px;
+  }
+  .sri-bar-label {
+    font-size: 10px;
+  }
+  .sri-weight-ring {
+    width: 180px;
+    height: 180px;
+  }
 }

@@ -33,11 +33,12 @@
 }
 .protocol-hero-manifesto {
   font-family: var(--font-serif);
-  font-size: 20px;
-  font-style: italic;
-  color: var(--accent);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--bronze);
   max-width: 600px;
   margin: 0 auto;
+  letter-spacing: -0.01em;
 }
 
 /* Visual Timeline */
@@ -219,9 +220,195 @@
   line-height: 1.6;
 }
 
+/* =============================================
+   RESPONSIVE STYLES
+   ============================================= */
+
+/* Tablets (968px and below) */
+@media (max-width: 968px) {
+  .protocol-hero {
+    padding: 120px 0 60px;
+  }
+  .protocol-timeline-section,
+  .protocol-transfer {
+    padding: 80px 0;
+  }
+  .protocol-timeline-title {
+    margin-bottom: 48px;
+  }
+  .protocol-phases {
+    max-width: 100%;
+  }
+}
+
+/* Tablets Portrait (768px and below) */
+@media (max-width: 768px) {
+  .protocol-hero {
+    padding: 110px 0 50px;
+  }
+  .protocol-hero-sub {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  .protocol-hero-manifesto {
+    font-size: 18px;
+  }
+  .protocol-timeline-section,
+  .protocol-transfer {
+    padding: 60px 0;
+  }
+  .protocol-timeline-title {
+    margin-bottom: 40px;
+  }
+  .protocol-phases::before {
+    left: 24px;
+  }
+  .protocol-phase {
+    padding-left: 64px;
+  }
+  .protocol-phase-node {
+    left: 10px;
+  }
+  .protocol-phase-header {
+    padding: 16px 20px;
+  }
+  .protocol-phase-name {
+    font-size: 16px;
+  }
+  .protocol-phase-content {
+    padding: 16px 20px;
+  }
+  .protocol-phase-desc {
+    font-size: 14px;
+  }
+  .protocol-transfer-title {
+    margin-bottom: 20px;
+  }
+  .protocol-transfer-text {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  .protocol-transfer-feature {
+    padding: 20px;
+  }
+}
+
+/* Mobile (640px and below) */
 @media (max-width: 640px) {
-  .protocol-phases::before { left: 16px; }
-  .protocol-phase { padding-left: 52px; }
-  .protocol-phase-node { left: 2px; width: 26px; height: 26px; font-size: 11px; }
-  .protocol-transfer-features { grid-template-columns: 1fr; }
+  .protocol-hero {
+    padding: 100px 0 40px;
+  }
+  .protocol-hero-title {
+    font-size: clamp(28px, 7vw, 36px);
+  }
+  .protocol-hero-sub {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .protocol-hero-manifesto {
+    font-size: 16px;
+  }
+  .protocol-timeline-section,
+  .protocol-transfer {
+    padding: 48px 0;
+  }
+  .protocol-timeline-title {
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 32px;
+  }
+  .protocol-phases::before {
+    left: 16px;
+  }
+  .protocol-phase {
+    padding-left: 52px;
+  }
+  .protocol-phase-node {
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+  .protocol-phase-header {
+    padding: 14px 16px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .protocol-phase-name {
+    font-size: 15px;
+  }
+  .protocol-phase-timing {
+    font-size: 11px;
+  }
+  .protocol-phase-toggle {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+  .protocol-phase-content {
+    padding: 14px 16px;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 16px;
+  }
+  .protocol-phase-desc {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .protocol-phase-detail {
+    font-size: 12px;
+  }
+  .protocol-transfer-title {
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 16px;
+  }
+  .protocol-transfer-text {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .protocol-transfer-features {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .protocol-transfer-feature {
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .protocol-transfer-feature-title {
+    font-size: 14px;
+  }
+  .protocol-transfer-feature-text {
+    font-size: 13px;
+  }
+}
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+  .protocol-hero {
+    padding: 90px 0 36px;
+  }
+  .protocol-hero-title {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+  .protocol-phases::before {
+    left: 12px;
+  }
+  .protocol-phase {
+    padding-left: 44px;
+  }
+  .protocol-phase-node {
+    left: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+    border-width: 2px;
+  }
+  .protocol-phase-header {
+    padding: 12px 14px;
+  }
+  .protocol-phase-content {
+    padding: 12px 14px;
+  }
+  .protocol-transfer-feature {
+    padding: 16px;
+  }
 }
