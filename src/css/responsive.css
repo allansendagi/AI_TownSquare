@@ -306,7 +306,7 @@ body.nav-open {
 
   /* Hero */
   .hero-content {
-    padding: 120px 0 120px;
+    padding: 120px 0 160px;
   }
   .hero-title {
     font-size: clamp(26px, 7vw, 36px);
@@ -379,7 +379,6 @@ body.nav-open {
     text-align: center;
     white-space: nowrap;
     font-size: 12px;
-    margin-bottom: 60px;
   }
 
   /* Manifesto */
