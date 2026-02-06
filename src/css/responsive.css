@@ -306,7 +306,7 @@ body.nav-open {
 
   /* Hero */
   .hero-content {
-    padding: 100px 0 140px;
+    padding: 120px 0 120px;
   }
   .hero-title {
     font-size: clamp(26px, 7vw, 36px);
@@ -347,9 +347,6 @@ body.nav-open {
   }
 
   /* Hero Proof - keep at bottom */
-  .hero {
-    align-items: flex-start;
-  }
   .hero-proof {
     position: absolute;
     bottom: 0;
