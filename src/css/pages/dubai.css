@@ -1031,6 +1031,14 @@
   color: var(--bone);
   letter-spacing: var(--tracking-wide);
 }
+.host-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--hairline);
+  flex-shrink: 0;
+}
 .host-name {
   font-family: var(--font-serif);
   font-size: 22px;
@@ -1483,6 +1491,10 @@
     height: 80px;
     font-size: 22px;
   }
+  .host-photo {
+    width: 90px;
+    height: 90px;
+  }
   .host-name {
     font-size: 18px;
   }
@@ -1498,6 +1510,14 @@
   .host-credential {
     font-size: 8px;
     padding: 5px 10px;
+  }
+
+  /* Orbital SRI - Larger nodes on mobile */
+  .orbital-sri-svg {
+    max-width: 100%;
+  }
+  .orbital-satellite {
+    r: 18;
   }
 
   /* Live Feed */
@@ -1547,5 +1567,16 @@
   .agency-hex-label {
     font-size: 5px;
     display: none;
+  }
+
+  .host-photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Orbital SRI - Scale up nodes on small phones */
+  .orbital-sri-svg {
+    transform: scale(1.1);
+    transform-origin: center;
   }
 }

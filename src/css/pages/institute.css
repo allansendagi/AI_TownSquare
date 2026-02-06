@@ -23,6 +23,168 @@
   line-height: 1.7;
 }
 
+/* =============================================
+   RESEARCH & PUBLICATIONS
+   ============================================= */
+.institute-publications {
+  background: var(--bone);
+  padding: 100px 0;
+}
+.institute-section-sub {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: -32px auto 48px;
+  line-height: 1.7;
+}
+
+.publications-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.publication-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid var(--hairline);
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.publication-card:hover {
+  border-color: var(--hairline-dark);
+  box-shadow: 0 8px 32px var(--shadow-neutral);
+}
+.publication-card--open {
+  border-color: var(--bronze);
+}
+
+.publication-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.publication-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--bone);
+  background: var(--accent);
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+}
+.publication-badge--manifesto {
+  background: var(--bronze);
+}
+.publication-badge--research {
+  background: var(--primary-deep);
+}
+.publication-num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  color: var(--ink-30);
+}
+
+.publication-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: var(--tracking-tight);
+}
+.publication-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.publication-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.publication-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.publication-toggle:hover {
+  background: var(--ink-90);
+  transform: translateY(-1px);
+}
+.publication-toggle--active {
+  background: var(--bronze);
+}
+.publication-toggle--active:hover {
+  background: var(--bronze);
+}
+.publication-toggle-icon {
+  transition: transform 0.3s;
+}
+.publication-toggle--active .publication-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.publication-download {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.3s;
+}
+.publication-download:hover {
+  gap: 10px;
+}
+
+/* PDF Viewer */
+.publication-viewer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.3s, margin-top 0.3s, padding 0.3s;
+  margin-top: 0;
+}
+.publication-viewer--open {
+  max-height: 75vh;
+  opacity: 1;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hairline);
+}
+.publication-embed {
+  width: 100%;
+  height: 70vh;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  background: var(--bone);
+}
+
 /* Toolkits */
 .institute-toolkits {
   background: white;
@@ -225,6 +387,10 @@
    ============================================= */
 .sponsor-section {
   padding: 140px 0;
+  margin-bottom: 0;
+}
+.sponsor-section:last-child {
+  margin-bottom: 80px;
 }
 .sponsor-inner {
   max-width: 1000px;
@@ -326,10 +492,20 @@
   .institute-hero {
     padding: 120px 0 60px;
   }
+  .institute-publications,
   .institute-toolkits,
   .institute-training,
   .institute-papers {
     padding: 80px 0;
+  }
+  .publication-card {
+    padding: 28px;
+  }
+  .publication-viewer--open {
+    max-height: 60vh;
+  }
+  .publication-embed {
+    height: 55vh;
   }
   .institute-section-title {
     margin-bottom: 36px;
@@ -360,10 +536,21 @@
   .institute-hero-sub {
     font-size: 16px;
   }
+  .institute-publications,
   .institute-toolkits,
   .institute-training,
   .institute-papers {
     padding: 60px 0;
+  }
+  .institute-section-sub {
+    font-size: 15px;
+    margin-bottom: 36px;
+  }
+  .publication-title {
+    font-size: 18px;
+  }
+  .publication-desc {
+    font-size: 13px;
   }
   .institute-resources-grid {
     gap: 16px;
@@ -396,10 +583,52 @@
   .institute-hero-sub {
     font-size: 15px;
   }
+  .institute-publications,
   .institute-toolkits,
   .institute-training,
   .institute-papers {
     padding: 48px 0;
+  }
+  .institute-section-sub {
+    font-size: 14px;
+    margin: -24px auto 32px;
+  }
+  .publications-grid {
+    gap: 16px;
+  }
+  .publication-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .publication-badge {
+    font-size: 8px;
+    padding: 4px 10px;
+  }
+  .publication-title {
+    font-size: 16px;
+  }
+  .publication-desc {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .publication-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .publication-toggle {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+  .publication-viewer--open {
+    max-height: 50vh;
+  }
+  .publication-embed {
+    height: 45vh;
+  }
+  .sponsor-section:last-child {
+    margin-bottom: 60px;
   }
   .institute-section-title {
     font-size: clamp(22px, 5vw, 28px);

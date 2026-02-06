@@ -1,4 +1,164 @@
 {
+  "cities": {
+    "dubai": {
+      "name": "Dubai / UAE",
+      "shortName": "Dubai",
+      "overallScore": 67,
+      "pillars": [
+        {
+          "name": "Governance",
+          "abbr": "GOV",
+          "weight": 25,
+          "score": 72,
+          "description": "Regulatory frameworks, policy readiness, and institutional capacity for AI oversight.",
+          "subMetrics": [
+            { "label": "Regulatory Frameworks", "value": 78 },
+            { "label": "Policy Readiness", "value": 68 },
+            { "label": "Institutional Capacity", "value": 70 }
+          ]
+        },
+        {
+          "name": "Citizen Empowerment",
+          "abbr": "CIT",
+          "weight": 20,
+          "score": 58,
+          "description": "Public awareness, digital literacy, and citizen participation in AI governance.",
+          "subMetrics": [
+            { "label": "Public Awareness", "value": 52 },
+            { "label": "Digital Literacy", "value": 64 },
+            { "label": "Civic Participation", "value": 55 }
+          ]
+        },
+        {
+          "name": "Ethics",
+          "abbr": "ETH",
+          "weight": 20,
+          "score": 65,
+          "description": "Ethical guidelines, bias mitigation, transparency, and accountability measures.",
+          "subMetrics": [
+            { "label": "Ethical Guidelines", "value": 70 },
+            { "label": "Bias Mitigation", "value": 58 },
+            { "label": "Transparency", "value": 66 }
+          ]
+        },
+        {
+          "name": "Economic Adaptability",
+          "abbr": "ECO",
+          "weight": 15,
+          "score": 70,
+          "description": "Workforce transition readiness, reskilling infrastructure, and economic resilience.",
+          "subMetrics": [
+            { "label": "Workforce Transition", "value": 65 },
+            { "label": "Reskilling Programs", "value": 72 },
+            { "label": "Economic Resilience", "value": 74 }
+          ]
+        },
+        {
+          "name": "Infrastructure",
+          "abbr": "INF",
+          "weight": 10,
+          "score": 82,
+          "description": "Digital infrastructure, data governance, and technical capacity.",
+          "subMetrics": [
+            { "label": "Digital Infrastructure", "value": 88 },
+            { "label": "Data Governance", "value": 76 },
+            { "label": "Technical Capacity", "value": 82 }
+          ]
+        },
+        {
+          "name": "Foresight",
+          "abbr": "FOR",
+          "weight": 10,
+          "score": 60,
+          "description": "Future-readiness planning, scenario analysis, and adaptive policy mechanisms.",
+          "subMetrics": [
+            { "label": "Future Planning", "value": 62 },
+            { "label": "Scenario Analysis", "value": 55 },
+            { "label": "Adaptive Policy", "value": 63 }
+          ]
+        }
+      ]
+    },
+    "global": {
+      "name": "Global Average",
+      "shortName": "Global",
+      "overallScore": 44,
+      "pillars": [
+        {
+          "name": "Governance",
+          "abbr": "GOV",
+          "weight": 25,
+          "score": 45,
+          "description": "Regulatory frameworks, policy readiness, and institutional capacity for AI oversight.",
+          "subMetrics": [
+            { "label": "Regulatory Frameworks", "value": 48 },
+            { "label": "Policy Readiness", "value": 42 },
+            { "label": "Institutional Capacity", "value": 45 }
+          ]
+        },
+        {
+          "name": "Citizen Empowerment",
+          "abbr": "CIT",
+          "weight": 20,
+          "score": 38,
+          "description": "Public awareness, digital literacy, and citizen participation in AI governance.",
+          "subMetrics": [
+            { "label": "Public Awareness", "value": 35 },
+            { "label": "Digital Literacy", "value": 42 },
+            { "label": "Civic Participation", "value": 36 }
+          ]
+        },
+        {
+          "name": "Ethics",
+          "abbr": "ETH",
+          "weight": 20,
+          "score": 42,
+          "description": "Ethical guidelines, bias mitigation, transparency, and accountability measures.",
+          "subMetrics": [
+            { "label": "Ethical Guidelines", "value": 45 },
+            { "label": "Bias Mitigation", "value": 38 },
+            { "label": "Transparency", "value": 43 }
+          ]
+        },
+        {
+          "name": "Economic Adaptability",
+          "abbr": "ECO",
+          "weight": 15,
+          "score": 50,
+          "description": "Workforce transition readiness, reskilling infrastructure, and economic resilience.",
+          "subMetrics": [
+            { "label": "Workforce Transition", "value": 48 },
+            { "label": "Reskilling Programs", "value": 52 },
+            { "label": "Economic Resilience", "value": 50 }
+          ]
+        },
+        {
+          "name": "Infrastructure",
+          "abbr": "INF",
+          "weight": 10,
+          "score": 55,
+          "description": "Digital infrastructure, data governance, and technical capacity.",
+          "subMetrics": [
+            { "label": "Digital Infrastructure", "value": 58 },
+            { "label": "Data Governance", "value": 52 },
+            { "label": "Technical Capacity", "value": 55 }
+          ]
+        },
+        {
+          "name": "Foresight",
+          "abbr": "FOR",
+          "weight": 10,
+          "score": 35,
+          "description": "Future-readiness planning, scenario analysis, and adaptive policy mechanisms.",
+          "subMetrics": [
+            { "label": "Future Planning", "value": 38 },
+            { "label": "Scenario Analysis", "value": 32 },
+            { "label": "Adaptive Policy", "value": 35 }
+          ]
+        }
+      ]
+    }
+  },
   "pillars": [
     {
       "name": "Governance",

@@ -305,6 +305,10 @@
   .hero-subtitle {
     font-size: 15px;
     margin-bottom: 36px;
+    max-width: 100%;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   .hero-badge {
     padding: 8px 16px;

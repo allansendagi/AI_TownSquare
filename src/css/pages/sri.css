@@ -23,6 +23,83 @@
   line-height: 1.7;
 }
 
+/* City Selector */
+.sri-city-selector-section {
+  background: var(--bg);
+  padding: 0 0 40px;
+}
+.sri-city-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.sri-city-tab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  background: white;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+.sri-city-tab:hover {
+  border-color: var(--hairline-dark);
+  box-shadow: 0 4px 16px var(--shadow-neutral);
+}
+.sri-city-tab--active {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.sri-city-tab--active .sri-city-tab-name {
+  color: var(--bone);
+}
+.sri-city-tab--active .sri-city-tab-score {
+  background: var(--bronze);
+  color: var(--bone);
+}
+.sri-city-tab-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.sri-city-tab-score {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--bone);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+}
+.sri-city-coming-soon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  background: var(--bone);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  opacity: 0.6;
+}
+.sri-city-coming-soon .sri-city-tab-name {
+  color: var(--ink-50);
+  font-size: 13px;
+  font-weight: 500;
+}
+.sri-city-tab-badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-30);
+}
+
 /* Overall Score Gauge */
 .sri-gauge-section {
   background: white;
@@ -287,6 +364,16 @@
   .sri-hero {
     padding: 120px 0 60px;
   }
+  .sri-city-selector-section {
+    padding: 0 0 32px;
+  }
+  .sri-city-selector {
+    gap: 10px;
+  }
+  .sri-city-tab {
+    padding: 12px 20px;
+    gap: 10px;
+  }
   .sri-gauge-section {
     padding: 60px 0;
   }
@@ -383,6 +470,39 @@
   .sri-hero-sub {
     font-size: 15px;
     margin-bottom: 32px;
+  }
+  .sri-city-selector-section {
+    padding: 0 0 24px;
+  }
+  .sri-city-selector {
+    gap: 8px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sri-city-tab {
+    padding: 10px 16px;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .sri-city-tab-name {
+    font-size: 13px;
+  }
+  .sri-city-tab-score {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+  .sri-city-coming-soon {
+    padding: 10px 14px;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .sri-city-coming-soon .sri-city-tab-name {
+    font-size: 12px;
+  }
+  .sri-city-tab-badge {
+    font-size: 8px;
   }
   .sri-gauge-section {
     padding: 48px 0;

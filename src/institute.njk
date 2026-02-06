@@ -5,6 +5,8 @@ description: "Toolkits, training, and resources for AI societal readiness. Host 
 permalink: /institute/
 extraCss:
   - /css/pages/institute.css
+extraJs:
+  - /js/pages/institute.js
 ---
 
 <!-- ============================================
@@ -57,6 +59,90 @@ extraCss:
 </section>
 
 <!-- ============================================
+     RESEARCH & PUBLICATIONS
+     ============================================ -->
+<section class="institute-publications">
+  <div class="container">
+    <h2 class="institute-section-title reveal">Research &amp; Publications</h2>
+    <p class="institute-section-sub reveal">Foundational research papers and frameworks that guide our approach to AI societal readiness.</p>
+
+    <div class="publications-grid">
+      <!-- White Paper -->
+      <div class="publication-card reveal">
+        <div class="publication-header">
+          <span class="publication-badge">White Paper</span>
+          <span class="publication-num">01</span>
+        </div>
+        <h3 class="publication-title">Towards Societal Readiness</h3>
+        <p class="publication-desc">The foundational paper introducing the Societal Readiness Index and its six-pillar framework for measuring how prepared societies are for AI integration.</p>
+        <div class="publication-actions">
+          <button class="publication-toggle" data-publication="whitepaper">
+            <span class="publication-toggle-text">Read Online</span>
+            <svg class="publication-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <a href="/assets/resources/White Paper - Towards Societal Readiness.pdf" class="publication-download" target="_blank">
+            Download PDF <span>&rarr;</span>
+          </a>
+        </div>
+        <div class="publication-viewer" id="viewer-whitepaper">
+          <embed class="publication-embed" src="/assets/resources/White Paper - Towards Societal Readiness.pdf" type="application/pdf" />
+        </div>
+      </div>
+
+      <!-- Manifesto -->
+      <div class="publication-card reveal reveal-d1">
+        <div class="publication-header">
+          <span class="publication-badge publication-badge--manifesto">Manifesto</span>
+          <span class="publication-num">02</span>
+        </div>
+        <h3 class="publication-title">AI TownSquare Manifesto</h3>
+        <p class="publication-desc">Our vision for civic infrastructure in the intelligence age. A declaration of principles guiding structured dialogue on AI's most pressing questions.</p>
+        <div class="publication-actions">
+          <button class="publication-toggle" data-publication="manifesto">
+            <span class="publication-toggle-text">Read Online</span>
+            <svg class="publication-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <a href="/assets/resources/Manifesto.pdf" class="publication-download" target="_blank">
+            Download PDF <span>&rarr;</span>
+          </a>
+        </div>
+        <div class="publication-viewer" id="viewer-manifesto">
+          <embed class="publication-embed" src="/assets/resources/Manifesto.pdf" type="application/pdf" />
+        </div>
+      </div>
+
+      <!-- SRI Comparative Index -->
+      <div class="publication-card reveal reveal-d2">
+        <div class="publication-header">
+          <span class="publication-badge publication-badge--research">Research</span>
+          <span class="publication-num">03</span>
+        </div>
+        <h3 class="publication-title">SRI Comparative Index Summary</h3>
+        <p class="publication-desc">Methodology and comparative analysis of the Societal Readiness Index across regions. A detailed breakdown of pillar weights and scoring criteria.</p>
+        <div class="publication-actions">
+          <button class="publication-toggle" data-publication="sri-summary">
+            <span class="publication-toggle-text">Read Online</span>
+            <svg class="publication-toggle-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <a href="/assets/resources/SRI_Comparative_Index_Summary.pdf" class="publication-download" target="_blank">
+            Download PDF <span>&rarr;</span>
+          </a>
+        </div>
+        <div class="publication-viewer" id="viewer-sri-summary">
+          <embed class="publication-embed" src="/assets/resources/SRI_Comparative_Index_Summary.pdf" type="application/pdf" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
      TOOLKITS & RESOURCES
      ============================================ -->
 <section class="institute-toolkits">
@@ -96,15 +182,6 @@ extraCss:
         <h3 class="institute-resource-title">Venue Setup Guide</h3>
         <p class="institute-resource-desc">Physical and hybrid setup requirements, AV specifications, and room configuration for optimal dialogue.</p>
         <a href="/assets/resources/AI TownSquare_VENUE_2.pdf" class="institute-resource-link" target="_blank">
-          Download PDF <span>&rarr;</span>
-        </a>
-      </div>
-
-      <div class="institute-resource-card reveal reveal-d4">
-        <span class="institute-resource-num">05</span>
-        <h3 class="institute-resource-title">Onboarding Report</h3>
-        <p class="institute-resource-desc">Institutional onboarding framework for organizations adopting the TownSquare protocol.</p>
-        <a href="/assets/resources/AI TownSquare_ Special Onboarding Report.pdf" class="institute-resource-link" target="_blank">
           Download PDF <span>&rarr;</span>
         </a>
       </div>
