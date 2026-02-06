@@ -1337,10 +1337,17 @@
     font-size: clamp(22px, 6vw, 32px);
   }
   .orbital-center-value {
-    font-size: 24px;
+    font-size: 20px;
   }
   .orbital-center-label {
-    font-size: 8px;
+    font-size: 7px;
+  }
+  .orbital-sri-wrap {
+    max-width: 320px;
+  }
+  .orbital-satellite {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
   .orbital-detail-panel {
     padding: 20px;
@@ -1360,19 +1367,23 @@
     font-size: clamp(22px, 6vw, 32px);
   }
   .phase-machine-nav {
-    gap: 0;
+    gap: 8px;
+    padding: 0 16px;
+    scroll-padding: 16px;
     margin-bottom: 32px;
   }
   .phase-machine-nav-btn {
-    min-width: 55px;
-    padding: 14px 6px;
+    min-width: 70px;
+    padding: 12px 10px;
+    flex-shrink: 0;
   }
   .phase-machine-nav-num {
-    font-size: 9px;
-    margin-bottom: 2px;
+    font-size: 10px;
+    margin-bottom: 4px;
   }
   .phase-machine-nav-name {
-    font-size: 8px;
+    font-size: 9px;
+    white-space: nowrap;
   }
   .phase-mode-card {
     padding: 24px 20px;
@@ -1517,7 +1528,7 @@
     max-width: 100%;
   }
   .orbital-satellite {
-    r: 18;
+    r: 22;
   }
 
   /* Live Feed */
@@ -1553,8 +1564,8 @@
   }
 
   .phase-machine-nav-btn {
-    min-width: 48px;
-    padding: 12px 4px;
+    min-width: 65px;
+    padding: 10px 8px;
   }
 
   .agency-hex {
@@ -1576,7 +1587,9 @@
 
   /* Orbital SRI - Scale up nodes on small phones */
   .orbital-sri-svg {
-    transform: scale(1.1);
-    transform-origin: center;
+    transform: scale(1.0); /* Remove scaling that breaks alignment */
+  }
+  .orbital-center-value {
+    font-size: 18px;
   }
 }

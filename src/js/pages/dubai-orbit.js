@@ -109,7 +109,7 @@
   for (var i = 0; i < n; i++) {
     var p = pillars[i];
     // Satellite radius based on weight: smaller dots for scientific look
-    var satRadius = 8 + (p.weight / 25) * 8;
+    var satRadius = 12 + (p.weight / 25) * 10;
     var startAngle = (360 / n) * i;
 
     // Orbital ring group — rotates around the center

@@ -251,7 +251,7 @@
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     overflow-y: auto;
-    z-index: 999;
+    z-index: 1001;
   }
   .nav-links--open .nav-link {
     padding: 16px 0;
@@ -363,6 +363,8 @@
   }
   .hero-meta {
     text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
   }
 
   /* Manifesto */
@@ -675,6 +677,10 @@
 
   .hero-title {
     font-size: clamp(28px, 8vw, 36px);
+  }
+
+  .hero-meta {
+    font-size: 11px;
   }
 
   .countdown {

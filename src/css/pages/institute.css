@@ -387,9 +387,6 @@
    ============================================= */
 .sponsor-section {
   padding: 140px 0;
-  margin-bottom: 0;
-}
-.sponsor-section:last-child {
   margin-bottom: 80px;
 }
 .sponsor-inner {
@@ -627,7 +624,7 @@
   .publication-embed {
     height: 45vh;
   }
-  .sponsor-section:last-child {
+  .sponsor-section {
     margin-bottom: 60px;
   }
   .institute-section-title {
