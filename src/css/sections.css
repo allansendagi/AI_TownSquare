@@ -48,7 +48,7 @@
   content: '';
   width: 6px;
   height: 6px;
-  background: var(--bronze);
+  background: var(--ink-30);
   border-radius: 50%;
   flex-shrink: 0;
   margin-top: 8px;
@@ -68,7 +68,7 @@
   top: 24px;
   bottom: 24px;
   width: 2px;
-  background: var(--bronze);
+  background: var(--ink-30);
 }
 .stakes-quote p {
   font-family: var(--font-serif);
@@ -226,10 +226,10 @@
   transition: background 0.3s;
 }
 .protocol-step:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: transparent;
 }
 .protocol-step--active {
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
 }
 
 /* Connecting line */
@@ -416,7 +416,7 @@
   content: '';
   width: 6px;
   height: 6px;
-  background: var(--bronze);
+  background: var(--ink-30);
   border-radius: 50%;
   flex-shrink: 0;
   margin-top: 6px;
@@ -459,7 +459,7 @@
   font-size: 9px;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--bronze);
+  color: var(--ink-50);
   font-weight: 500;
   margin-bottom: 12px;
 }
@@ -509,7 +509,7 @@
   top: 12px;
   bottom: 12px;
   width: 2px;
-  background: var(--bronze);
+  background: var(--ink-30);
 }
 .output-preview-quote p {
   font-size: 14px;
@@ -573,23 +573,20 @@
 .system-node {
   width: 100%;
   background: rgba(255, 255, 255, 0.03);
-  border: 2px solid;
-  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
   padding: 32px 36px;
   display: flex;
   align-items: center;
   gap: 24px;
-  transition: transform 0.4s var(--ease-out), box-shadow 0.4s;
+  transition: border-color 0.3s var(--ease-smooth);
 }
 .system-node:hover {
   border-color: rgba(255, 255, 255, 0.3);
 }
-.system-node--teal { border-color: var(--accent); }
-.system-node--teal:hover { box-shadow: 0 0 40px rgba(43, 122, 120, 0.15); }
-.system-node--gold { border-color: var(--highlight); }
-.system-node--gold:hover { box-shadow: 0 0 40px rgba(212, 168, 67, 0.15); }
-.system-node--red { border-color: #E74C3C; }
-.system-node--red:hover { box-shadow: 0 0 40px rgba(231, 76, 60, 0.1); }
+.system-node--teal { border-color: rgba(255, 255, 255, 0.2); }
+.system-node--gold { border-color: rgba(255, 255, 255, 0.2); }
+.system-node--red { border-color: rgba(255, 255, 255, 0.2); }
 
 .system-node-marker {
   font-family: var(--font-mono);
@@ -611,9 +608,9 @@
   font-weight: 700;
   margin-bottom: 4px;
 }
-.system-node--teal .system-node-title { color: var(--accent-bright); }
-.system-node--gold .system-node-title { color: var(--highlight); }
-.system-node--red .system-node-title { color: #E74C3C; }
+.system-node--teal .system-node-title { color: var(--bone); }
+.system-node--gold .system-node-title { color: var(--bone); }
+.system-node--red .system-node-title { color: var(--bone); }
 .system-node-desc {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.45);
@@ -711,7 +708,7 @@
   top: 4px;
   bottom: 4px;
   width: 2px;
-  background: var(--bronze);
+  background: var(--ink-30);
 }
 .endorsement-name {
   font-weight: 600;
@@ -803,7 +800,7 @@
 .register-form-wrap {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
+  border-radius: var(--radius-sm);
   padding: 52px;
 }
 
@@ -817,7 +814,7 @@
 .register-detail {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
+  border-radius: var(--radius-sm);
   padding: 24px 20px;
   text-align: center;
   transition: border-color 0.3s;
