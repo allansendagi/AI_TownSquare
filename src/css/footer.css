@@ -87,6 +87,17 @@
   margin: 0;
 }
 
+/* Footer Locations (simplified) */
+.footer-locations {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-location {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 /* Mobile footer left-align */
 @media (max-width: 768px) {
   .footer-grid {

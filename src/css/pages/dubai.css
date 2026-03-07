@@ -121,6 +121,44 @@
 }
 
 /* =============================================
+   VENUE SECTION
+   ============================================= */
+.venue-section {
+  padding: 120px 0;
+  background: white;
+}
+.venue-content {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.venue-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+.venue-sub {
+  font-size: 16px;
+  color: var(--ink-50);
+}
+.venue-image-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+}
+.venue-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =============================================
    ORBITAL SRI — Scientific Diagram
    Minimalist black dots · Fine-line connectors
    ============================================= */
