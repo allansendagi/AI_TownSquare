@@ -29,9 +29,13 @@
   align-items: center;
 }
 
+/* Hide hero date badge while keeping markup intact */
+.hero .hero-badge {
+  display: none;
+}
 /* Hero badge - Refined */
 .hero-badge {
-  display: inline-flex;
+/*  display: inline-flex;
   align-items: center;
   gap: 10px;
   background: white;
@@ -40,7 +44,8 @@
   border-radius: var(--radius-sm);
   margin-bottom: 36px;
   opacity: 0;
-  animation: fadeUp 0.5s 0.1s var(--ease-out) forwards;
+  animation: fadeUp 0.5s 0.1s var(--ease-out) forwards;*/
+
 }
 .hero-badge-dot {
   width: 6px;
