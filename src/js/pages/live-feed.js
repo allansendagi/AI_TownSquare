@@ -5,7 +5,38 @@
 // =============================================
 (function () {
   var stream = document.getElementById('liveFeedStream');
+  var toggle = document.getElementById('liveFeedToggle');
   if (!stream) return;
+
+  // Toggle functionality
+  if (toggle) {
+    var toggleText = toggle.querySelector('.live-feed-toggle-text');
+
+    toggle.addEventListener('click', function () {
+      var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+      if (isExpanded) {
+        // Collapse
+        stream.style.maxHeight = stream.scrollHeight + 'px';
+        // Force reflow
+        stream.offsetHeight;
+        stream.classList.add('collapsed');
+        toggle.setAttribute('aria-expanded', 'false');
+        if (toggleText) toggleText.textContent = 'Show Insights';
+      } else {
+        // Expand
+        stream.classList.remove('collapsed');
+        stream.style.maxHeight = stream.scrollHeight + 'px';
+        toggle.setAttribute('aria-expanded', 'true');
+        if (toggleText) toggleText.textContent = 'Hide Insights';
+
+        // Remove max-height after transition
+        setTimeout(function () {
+          stream.style.maxHeight = '';
+        }, 500);
+      }
+    });
+  }
 
   var mockInsights = [
     { phase: 'Prime', text: 'The real question isn\u2019t job loss \u2014 it\u2019s whether institutions are ready to retrain at the speed AI deploys.', time: '0:03' },
