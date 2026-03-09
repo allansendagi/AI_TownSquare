@@ -1,0 +1,139 @@
+---
+layout: base.njk
+title: "Dubai Node — Confirm Your Attendance"
+description: "Confirm your invitation to AI TownSquare Dubai on 3 April 2026. 25 curated voices, 60 minutes, one question that matters."
+permalink: /dubai-rsvp/
+extraCss:
+  - /css/pages/dubai-rsvp.css
+extraJs:
+  - /js/pages/dubai-rsvp.js
+---
+
+<!-- ============================================
+     INVITATION CONFIRMATION PAGE
+     Private link for pre-invited participants
+     ============================================ -->
+<section class="rsvp-hero">
+  <div class="container">
+    <div class="rsvp-content">
+      <div class="rsvp-eyebrow reveal">You're Invited</div>
+
+      <h1 class="rsvp-title reveal">
+        AI TownSquare &mdash; Dubai Node
+      </h1>
+
+      <p class="rsvp-date reveal">3 April 2026 &middot; DIFC</p>
+
+      <!-- Event Details Card -->
+      <div class="rsvp-details-card reveal">
+        <div class="rsvp-detail">
+          <span class="rsvp-detail-label">Date</span>
+          <span class="rsvp-detail-value">3 April 2026</span>
+        </div>
+        <div class="rsvp-detail">
+          <span class="rsvp-detail-label">Time</span>
+          <span class="rsvp-detail-value">2:00 PM GST</span>
+        </div>
+        <div class="rsvp-detail">
+          <span class="rsvp-detail-label">Location</span>
+          <span class="rsvp-detail-value">DIFC, Dubai</span>
+        </div>
+        <div class="rsvp-detail">
+          <span class="rsvp-detail-label">Format</span>
+          <span class="rsvp-detail-value">60-min Civic Dialogue</span>
+        </div>
+      </div>
+
+      <!-- Personalized Greeting -->
+      <div class="rsvp-greeting reveal">
+        <p class="rsvp-greeting-text">Hello, <span id="guestName">Guest</span></p>
+        <p class="rsvp-greeting-sub">Please confirm your participation.</p>
+      </div>
+
+      <!-- RSVP Form -->
+      <div class="rsvp-form-wrap reveal" id="rsvpFormWrap">
+        <form id="rsvpForm" action="https://formspree.io/f/{{ site.formspreeId }}" method="POST">
+          <input type="hidden" name="_subject" id="formSubject" value="Dubai RSVP - Confirmed" />
+          <input type="hidden" name="rsvp_type" value="invitation_confirmation" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-input" name="name" id="nameField" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-input" name="email" id="emailField" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Organization</label>
+              <input type="text" class="form-input" name="organization" id="orgField" placeholder="Your company or institution" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Role / Title</label>
+              <input type="text" class="form-input" name="role" id="roleField" placeholder="Your position" />
+            </div>
+          </div>
+
+          <div class="form-group rsvp-attendance-group">
+            <label class="form-label">Will you attend?</label>
+            <div class="rsvp-radio-group">
+              <label class="rsvp-radio">
+                <input type="radio" name="attendance" value="yes" checked />
+                <span class="rsvp-radio-custom"></span>
+                <span class="rsvp-radio-label">Yes, I will attend</span>
+              </label>
+              <label class="rsvp-radio">
+                <input type="radio" name="attendance" value="no" />
+                <span class="rsvp-radio-custom"></span>
+                <span class="rsvp-radio-label">I can no longer attend</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="form-submit" id="rsvpSubmitBtn">
+            Confirm My Seat &rarr;
+          </button>
+        </form>
+      </div>
+
+      <!-- Success State: Confirmed -->
+      <div class="rsvp-success" id="rsvpSuccessConfirmed" style="display: none;">
+        <div class="rsvp-success-icon">&#10003;</div>
+        <h2 class="rsvp-success-title">Your seat is confirmed.</h2>
+        <p class="rsvp-success-text">Add this event to your calendar:</p>
+
+        <div class="rsvp-calendar-buttons">
+          <a href="#" id="googleCalendarBtn" class="rsvp-calendar-btn" target="_blank" rel="noopener">
+            <svg class="rsvp-calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Add to Google Calendar
+          </a>
+          <button type="button" id="icsDownloadBtn" class="rsvp-calendar-btn rsvp-calendar-btn--secondary">
+            <svg class="rsvp-calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download Calendar Invite (.ics)
+          </button>
+        </div>
+      </div>
+
+      <!-- Success State: Declined -->
+      <div class="rsvp-success rsvp-success--declined" id="rsvpSuccessDeclined" style="display: none;">
+        <div class="rsvp-success-icon rsvp-success-icon--subtle">&#10003;</div>
+        <h2 class="rsvp-success-title">Thank you for letting us know.</h2>
+        <p class="rsvp-success-text">We appreciate your response and hope to see you at a future AI TownSquare session.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

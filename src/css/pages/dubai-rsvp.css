@@ -1,0 +1,476 @@
+/* =============================================
+   DUBAI RSVP — INVITATION CONFIRMATION
+   Premium invitation aesthetic · Light background
+   ============================================= */
+
+/* =============================================
+   HERO — Centered, Inviting
+   ============================================= */
+.rsvp-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bone);
+  padding: 120px 0;
+}
+
+.rsvp-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rsvp-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: slowReveal var(--duration-reveal) 200ms var(--ease-reveal) forwards;
+}
+
+.rsvp-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4.5vw, 44px);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: slowReveal var(--duration-reveal) 400ms var(--ease-reveal) forwards;
+}
+
+.rsvp-date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-50);
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: slowReveal var(--duration-reveal) 500ms var(--ease-reveal) forwards;
+}
+
+/* =============================================
+   EVENT DETAILS CARD
+   ============================================= */
+.rsvp-details-card {
+  background: white;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: 32px 40px;
+  margin-bottom: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 40px;
+  text-align: left;
+  opacity: 0;
+  animation: slowReveal var(--duration-reveal) 600ms var(--ease-reveal) forwards;
+}
+
+.rsvp-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rsvp-detail-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-30);
+}
+
+.rsvp-detail-value {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* =============================================
+   PERSONALIZED GREETING
+   ============================================= */
+.rsvp-greeting {
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: slowReveal var(--duration-reveal) 700ms var(--ease-reveal) forwards;
+}
+
+.rsvp-greeting-text {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.rsvp-greeting-sub {
+  font-size: 15px;
+  color: var(--ink-70);
+}
+
+/* =============================================
+   RSVP FORM
+   ============================================= */
+.rsvp-form-wrap {
+  background: white;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: 40px;
+  text-align: left;
+  opacity: 0;
+  animation: slowReveal var(--duration-reveal) 800ms var(--ease-reveal) forwards;
+}
+
+.rsvp-form-wrap .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.rsvp-form-wrap .form-group {
+  margin-bottom: 24px;
+}
+
+.rsvp-form-wrap .form-input {
+  background: var(--bone);
+  border: 1px solid var(--hairline);
+}
+
+.rsvp-form-wrap .form-input:focus {
+  border-color: var(--ink-30);
+  background: white;
+}
+
+.rsvp-form-wrap .form-input[readonly] {
+  background: var(--bone-deep);
+  color: var(--ink-70);
+  cursor: not-allowed;
+}
+
+/* =============================================
+   ATTENDANCE RADIO BUTTONS
+   ============================================= */
+.rsvp-attendance-group {
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+.rsvp-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rsvp-radio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 16px 20px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  background: var(--bone);
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.rsvp-radio:hover {
+  border-color: var(--hairline-dark);
+}
+
+.rsvp-radio input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.rsvp-radio-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--hairline-dark);
+  border-radius: 50%;
+  position: relative;
+  transition: all var(--duration-normal) var(--ease-smooth);
+  flex-shrink: 0;
+}
+
+.rsvp-radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform var(--duration-normal) var(--ease-smooth);
+}
+
+.rsvp-radio input:checked + .rsvp-radio-custom {
+  border-color: var(--ink);
+}
+
+.rsvp-radio input:checked + .rsvp-radio-custom::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.rsvp-radio input:checked ~ .rsvp-radio-label {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.rsvp-radio-label {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--ink-70);
+  transition: color var(--duration-normal);
+}
+
+/* Selected state for radio container */
+.rsvp-radio:has(input:checked) {
+  border-color: var(--ink-30);
+  background: white;
+}
+
+/* =============================================
+   SUCCESS STATES
+   ============================================= */
+.rsvp-success {
+  background: white;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: 48px 40px;
+  text-align: center;
+  animation: fadeInUp var(--duration-slow) var(--ease-reveal) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rsvp-success-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #059669, #10B981);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+}
+
+.rsvp-success-icon--subtle {
+  background: var(--ink-15);
+  color: var(--ink-50);
+}
+
+.rsvp-success-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: var(--tracking-tight);
+}
+
+.rsvp-success-text {
+  font-size: 15px;
+  color: var(--ink-70);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.rsvp-success--declined .rsvp-success-text {
+  margin-bottom: 0;
+}
+
+/* =============================================
+   CALENDAR BUTTONS
+   ============================================= */
+.rsvp-calendar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rsvp-calendar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-smooth);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  color: var(--bone);
+}
+
+.rsvp-calendar-btn:hover {
+  background: var(--ink-90);
+}
+
+.rsvp-calendar-btn--secondary {
+  background: white;
+  border: 1px solid var(--hairline);
+  color: var(--ink);
+}
+
+.rsvp-calendar-btn--secondary:hover {
+  border-color: var(--ink-30);
+  background: var(--ink-04);
+}
+
+.rsvp-calendar-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .rsvp-hero {
+    padding: 100px 0;
+  }
+
+  .rsvp-content {
+    padding: 0 20px;
+  }
+
+  .rsvp-title {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .rsvp-details-card {
+    padding: 24px;
+    gap: 20px 24px;
+  }
+
+  .rsvp-form-wrap {
+    padding: 28px 24px;
+  }
+
+  .rsvp-form-wrap .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .rsvp-success {
+    padding: 36px 24px;
+  }
+
+  .rsvp-greeting-text {
+    font-size: 20px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .rsvp-hero {
+    padding: 80px 0;
+    min-height: auto;
+  }
+
+  .rsvp-eyebrow {
+    font-size: 9px;
+  }
+
+  .rsvp-title {
+    font-size: 24px;
+  }
+
+  .rsvp-date {
+    font-size: 11px;
+    margin-bottom: 36px;
+  }
+
+  .rsvp-details-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px;
+    margin-bottom: 36px;
+  }
+
+  .rsvp-detail-value {
+    font-size: 14px;
+  }
+
+  .rsvp-greeting {
+    margin-bottom: 32px;
+  }
+
+  .rsvp-greeting-text {
+    font-size: 18px;
+  }
+
+  .rsvp-greeting-sub {
+    font-size: 14px;
+  }
+
+  .rsvp-form-wrap {
+    padding: 24px 20px;
+  }
+
+  .rsvp-radio {
+    padding: 14px 16px;
+  }
+
+  .rsvp-radio-label {
+    font-size: 14px;
+  }
+
+  .rsvp-success {
+    padding: 32px 20px;
+  }
+
+  .rsvp-success-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+
+  .rsvp-success-title {
+    font-size: 20px;
+  }
+
+  .rsvp-success-text {
+    font-size: 14px;
+  }
+
+  .rsvp-calendar-btn {
+    padding: 14px 20px;
+    font-size: 10px;
+  }
+}
