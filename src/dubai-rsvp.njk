@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: "Dubai Node — Confirm Your Attendance"
+title: "AI TownSquare Dubai — Confirm Your Attendance"
 description: "Confirm your invitation to AI TownSquare Dubai on 3 April 2026. 25 curated voices, 60 minutes, one question that matters."
 permalink: /dubai-rsvp/
 extraCss:
@@ -19,7 +19,7 @@ extraJs:
       <div class="rsvp-eyebrow reveal">You're Invited</div>
 
       <h1 class="rsvp-title reveal">
-        AI TownSquare &mdash; Dubai Node
+        AI TownSquare Dubai
       </h1>
 
       <p class="rsvp-date reveal">3 April 2026 &middot; DIFC</p>
@@ -54,6 +54,7 @@ extraJs:
       <div class="rsvp-form-wrap reveal" id="rsvpFormWrap">
         <form id="rsvpForm" action="https://formspree.io/f/{{ site.formspreeId }}" method="POST">
           <input type="hidden" name="_subject" id="formSubject" value="Dubai RSVP - Confirmed" />
+          <input type="hidden" name="_cc" value="olga@aitownsquare.org" />
           <input type="hidden" name="rsvp_type" value="invitation_confirmation" />
 
           <div class="form-row">

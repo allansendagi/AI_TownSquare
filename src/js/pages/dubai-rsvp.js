@@ -22,7 +22,7 @@
   // Event Details (for calendar generation)
   // =============================================
   var eventDetails = {
-    title: 'AI TownSquare — Dubai Node',
+    title: 'AI TownSquare Dubai',
     startDate: '20260403T100000Z', // 2:00 PM GST = 10:00 UTC
     endDate: '20260403T110000Z',   // 3:00 PM GST = 11:00 UTC
     location: 'Dubai International Financial Centre',
@@ -160,7 +160,7 @@
   // ICS File Generator
   // =============================================
   function generateICSContent() {
-    var uid = 'dubai-node-2026@aitownsquare.org';
+    var uid = 'dubai-2026@aitownsquare.org';
     var now = new Date();
     var dtstamp = now.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
 
@@ -170,7 +170,7 @@
     var ics = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//AI TownSquare//Dubai Node//EN',
+      'PRODID:-//AI TownSquare//Dubai//EN',
       'CALSCALE:GREGORIAN',
       'METHOD:PUBLISH',
       'BEGIN:VEVENT',
