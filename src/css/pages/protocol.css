@@ -122,6 +122,12 @@
   font-weight: 700;
   color: var(--text-primary);
 }
+.protocol-phase-micro {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
 .protocol-phase-timing {
   font-size: 12px;
   font-family: var(--font-mono);
