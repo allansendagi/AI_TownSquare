@@ -75,8 +75,8 @@
 
   function renderNuanceCards(container) {
     var nuances = [
-      { title: 'The Replacement Myth', text: 'History shows technology restructures work rather than eliminating it. But the speed of AI is unprecedented.' },
-      { title: 'The Geography Gap', text: 'Dubai\'s readiness score differs sharply from global averages. Local context shapes the answer fundamentally.' },
+      { title: 'The Replacement Myth', text: 'Historically, technology restructures work rather than eliminating it. But the speed of AI is unprecedented.' },
+      { title: 'The Geography Gap', text: 'Dubai\'s readiness profile differs significantly from global averages. Local context shapes the answer fundamentally.' },
       { title: 'The Agency Question', text: 'The outcome depends less on AI capability and more on institutional speed of adaptation.' }
     ];
     nuances.forEach(function (item, i) {
