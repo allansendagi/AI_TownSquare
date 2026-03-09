@@ -44,9 +44,19 @@
   color: var(--ink);
   line-height: 1.1;
   letter-spacing: var(--tracking-tight);
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   opacity: 0;
   animation: slowReveal var(--duration-reveal) 400ms var(--ease-reveal) forwards;
+}
+
+.dubai-hero-question-sub {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 400;
+  color: var(--ink-50);
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: slowReveal var(--duration-reveal) 500ms var(--ease-reveal) forwards;
 }
 
 .dubai-hero-sub {

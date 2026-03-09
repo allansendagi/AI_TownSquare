@@ -2,7 +2,7 @@
 // COUNTDOWN TIMER
 // =============================================
 (function () {
-  var target = new Date('2026-04-15T18:00:00+04:00').getTime();
+  var target = new Date('2026-04-03T18:00:00+04:00').getTime();
   var els = {
     d: document.getElementById('cd-days'),
     h: document.getElementById('cd-hours'),
