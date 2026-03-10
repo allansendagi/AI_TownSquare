@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AI TownSquare//Dubai//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dubai-2026@aitownsquare.org
+DTSTART:20260403T100000Z
+DTEND:20260403T110000Z
+SUMMARY:AI TownSquare Dubai
+LOCATION:Dubai International Financial Centre
+DESCRIPTION:60-minute structured civic dialogue examining AI's societal impact with 25 cross-sector participants.\n\nQuestion: Is AI Going to Take Our Jobs?\n\nMore info: https://aitownsquare.org/dubai/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
