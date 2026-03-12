@@ -337,7 +337,7 @@ export default function AITownSquareDubai() {
                   boxShadow: `0 4px 20px ${colors.signalTeal}44`,
                 }}
               >
-                Apply for 1 of 25 Seats
+                21 of 25 Seats Remaining
                 <span>→</span>
               </a>
               
