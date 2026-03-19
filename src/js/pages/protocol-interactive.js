@@ -21,4 +21,14 @@
       }
     });
   });
+
+  // Design Notes Toggle
+  var designNoteToggles = document.querySelectorAll('.protocol-design-notes-toggle');
+  designNoteToggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation(); // Prevent parent accordion from closing
+      var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !isExpanded);
+    });
+  });
 })();

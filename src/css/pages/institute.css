@@ -294,6 +294,180 @@
   line-height: 1.7;
 }
 
+/* =============================================
+   ALUMNI NETWORK
+   ============================================= */
+.institute-network {
+  background: var(--bone);
+  padding: 100px 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.network-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.network-stats {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  margin-bottom: 48px;
+}
+
+.network-stat {
+  text-align: center;
+}
+
+.network-stat-value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.network-stat-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-50);
+  margin-top: 12px;
+}
+
+.network-coming-soon {
+  max-width: 700px;
+  margin: 0 auto 64px;
+}
+
+.network-coming-soon-inner {
+  background: white;
+  border: 1px dashed var(--hairline-dark);
+  border-radius: 16px;
+  padding: 48px;
+  text-align: center;
+}
+
+.network-coming-soon-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 16px;
+  letter-spacing: var(--tracking-tight);
+}
+
+.network-coming-soon-text {
+  font-size: 15px;
+  color: var(--ink-70);
+  line-height: 1.8;
+  margin-bottom: 28px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.network-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.network-feature {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  border: 1px solid var(--hairline);
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.network-feature:hover {
+  border-color: var(--hairline-dark);
+}
+
+.network-feature-icon {
+  font-size: 24px;
+  color: var(--bronze);
+  margin-bottom: 16px;
+}
+
+.network-feature-title {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.network-feature-text {
+  font-size: 13px;
+  color: var(--ink-70);
+  line-height: 1.7;
+}
+
+/* Network responsive */
+@media (max-width: 768px) {
+  .network-stats {
+    gap: 32px;
+  }
+
+  .network-stat-value {
+    font-size: 36px;
+  }
+
+  .network-features {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .network-coming-soon-inner {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .institute-network {
+    padding: 60px 0;
+  }
+
+  .network-stats {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .network-stat-value {
+    font-size: 32px;
+  }
+
+  .network-coming-soon-title {
+    font-size: 18px;
+  }
+
+  .network-coming-soon-text {
+    font-size: 14px;
+  }
+
+  .network-feature {
+    padding: 24px 20px;
+  }
+
+  .network-feature-title {
+    font-size: 15px;
+  }
+
+  .network-feature-text {
+    font-size: 12px;
+  }
+}
+
 /* White Papers */
 .institute-papers {
   background: white;

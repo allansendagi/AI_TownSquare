@@ -3,15 +3,51 @@
 // =============================================
 (function () {
   var searchInput = document.getElementById('briefsSearch');
+  var searchWrap = document.getElementById('briefsSearchWrap');
+  var filtersWrap = document.getElementById('briefsFilters');
   var filterChips = document.querySelectorAll('.briefs-filter-chip');
   var briefCards = document.querySelectorAll('.brief-card');
   var emptyState = document.querySelector('.briefs-empty');
 
-  if (!searchInput || !briefCards.length) return;
+  // View toggle elements
+  var viewBtns = document.querySelectorAll('.briefs-view-btn');
+  var briefsView = document.getElementById('briefsView');
+  var questionsView = document.getElementById('questionsView');
 
   var activeFilter = 'All';
 
+  // View Toggle Handler
+  if (viewBtns.length && briefsView && questionsView) {
+    viewBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var view = btn.dataset.view;
+
+        // Update button states
+        viewBtns.forEach(function (b) { b.classList.remove('briefs-view-btn--active'); });
+        btn.classList.add('briefs-view-btn--active');
+
+        // Toggle views
+        if (view === 'briefs') {
+          briefsView.style.display = '';
+          questionsView.style.display = 'none';
+          if (searchWrap) searchWrap.style.display = '';
+          if (filtersWrap) filtersWrap.style.display = '';
+        } else if (view === 'questions') {
+          briefsView.style.display = 'none';
+          questionsView.style.display = '';
+          if (searchWrap) searchWrap.style.display = 'none';
+          if (filtersWrap) filtersWrap.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // Search & Filter (for briefs)
+  if (!searchInput) return;
+
   function filterBriefs() {
+    if (!briefCards.length) return;
+
     var query = searchInput.value.toLowerCase().trim();
     var visibleCount = 0;
 

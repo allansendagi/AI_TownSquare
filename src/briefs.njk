@@ -23,11 +23,23 @@ extraJs:
 </section>
 
 <!-- ============================================
-     SEARCH & FILTER
+     VIEW TOGGLE & SEARCH
      ============================================ -->
 <section class="briefs-controls">
   <div class="container">
-    <div class="briefs-search-wrap">
+    <!-- View Toggle: Briefs | Questions -->
+    <div class="briefs-view-toggle">
+      <button class="briefs-view-btn briefs-view-btn--active" data-view="briefs">
+        <span class="briefs-view-icon">&#9638;</span>
+        Briefs
+      </button>
+      <button class="briefs-view-btn" data-view="questions">
+        <span class="briefs-view-icon">?</span>
+        Questions
+      </button>
+    </div>
+
+    <div class="briefs-search-wrap" id="briefsSearchWrap">
       <input
         type="text"
         class="briefs-search"
@@ -36,7 +48,7 @@ extraJs:
         aria-label="Search briefs"
       />
     </div>
-    <div class="briefs-filters">
+    <div class="briefs-filters" id="briefsFilters">
       <button class="briefs-filter-chip briefs-filter-chip--active" data-filter="All">All</button>
       <button class="briefs-filter-chip" data-filter="Healthcare">Healthcare</button>
       <button class="briefs-filter-chip" data-filter="Finance">Finance</button>
@@ -50,7 +62,7 @@ extraJs:
 <!-- ============================================
      BRIEFS GRID
      ============================================ -->
-<section class="briefs-grid-section">
+<section class="briefs-grid-section" id="briefsView">
   <div class="container">
     {% if briefs.briefs.length > 0 %}
     <div class="briefs-grid">
@@ -91,6 +103,61 @@ extraJs:
       </div>
     </div>
     {% endif %}
+  </div>
+</section>
+
+<!-- ============================================
+     QUESTIONS ARCHIVE
+     ============================================ -->
+<section class="questions-grid-section" id="questionsView" style="display: none;">
+  <div class="container">
+    <div class="questions-intro">
+      <p class="questions-intro-text">
+        Every AI TownSquare session examines one central question. These are not rhetorical; they are genuinely unresolved problems that require diverse perspectives to address.
+      </p>
+    </div>
+
+    <div class="questions-list">
+      <!-- Upcoming Question -->
+      <div class="question-card question-card--upcoming">
+        <div class="question-card-status">
+          <span class="question-status-badge question-status-badge--upcoming">Upcoming</span>
+          <span class="question-card-meta">Dubai &middot; 3 April 2026</span>
+        </div>
+        <h3 class="question-card-text">&ldquo;Is AI going to take our jobs &mdash; or is that the wrong question entirely?&rdquo;</h3>
+        <div class="question-card-sectors">
+          <span class="question-sector-tag">Cross-Sector</span>
+          <span class="question-sector-tag">Employment</span>
+          <span class="question-sector-tag">Technology</span>
+        </div>
+        <div class="question-card-cta">
+          <a href="/dubai/#register" class="btn btn--primary btn--sm">
+            Join This Dialogue
+            <span class="btn-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Future Questions Placeholder -->
+      <div class="questions-future">
+        <h4 class="questions-future-title">Future Questions</h4>
+        <p class="questions-future-text">
+          Questions for upcoming sessions are developed through a curation process that considers: urgency, cross-sector relevance, genuine uncertainty, and institutional impact.
+        </p>
+        <a href="/institute/" class="questions-future-link">Learn about question design at the Institute &rarr;</a>
+      </div>
+
+      <!-- Propose a Question -->
+      <div class="question-propose">
+        <h4 class="question-propose-title">Propose a Question</h4>
+        <p class="question-propose-text">
+          Have a question that requires diverse perspectives to answer? Questions must pass three tests: (1) No single expert can answer it alone, (2) It affects multiple sectors differently, (3) Reasonable people disagree.
+        </p>
+        <a href="mailto:questions@aitownsquare.org?subject=Question%20Proposal" class="btn btn--outline btn--sm">
+          Submit a Question
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 

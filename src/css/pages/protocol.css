@@ -179,6 +179,117 @@
   font-style: italic;
 }
 
+/* =============================================
+   DESIGN NOTES — Expandable methodology content
+   ============================================= */
+.protocol-design-notes {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.protocol-design-notes-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--off-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.protocol-design-notes-toggle:hover {
+  background: white;
+  border-color: var(--accent);
+}
+
+.protocol-design-notes-toggle[aria-expanded="true"] {
+  border-radius: 8px 8px 0 0;
+  border-bottom-color: transparent;
+}
+
+.protocol-design-notes-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.protocol-design-notes-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.protocol-design-notes-toggle[aria-expanded="true"] .protocol-design-notes-icon {
+  transform: rotate(45deg);
+}
+
+.protocol-design-notes-body {
+  max-height: 0;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.protocol-design-notes-toggle[aria-expanded="true"] + .protocol-design-notes-body {
+  max-height: 600px;
+  padding: 20px;
+}
+
+.protocol-design-notes-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.protocol-design-notes-text:last-child {
+  margin-bottom: 0;
+}
+
+.protocol-design-notes-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Responsive adjustments for design notes */
+@media (max-width: 640px) {
+  .protocol-design-notes {
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+
+  .protocol-design-notes-toggle {
+    padding: 10px 14px;
+  }
+
+  .protocol-design-notes-label {
+    font-size: 9px;
+  }
+
+  .protocol-design-notes-toggle[aria-expanded="true"] + .protocol-design-notes-body {
+    padding: 16px;
+  }
+
+  .protocol-design-notes-text {
+    font-size: 13px;
+  }
+}
+
 /* Designed for Transfer */
 .protocol-transfer {
   background: var(--off-white);
