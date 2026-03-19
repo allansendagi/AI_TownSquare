@@ -41,6 +41,411 @@
   letter-spacing: -0.01em;
 }
 
+/* =============================================
+   INTELLECTUAL HERITAGE SECTION
+   ============================================= */
+.protocol-heritage {
+  background: white;
+  padding: 100px 0;
+}
+
+.protocol-heritage-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.protocol-heritage-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.protocol-heritage-subtitle {
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.protocol-heritage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.protocol-heritage-column {
+  background: var(--off-white);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+}
+
+.protocol-heritage-column-header {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.protocol-heritage-column-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.protocol-heritage-column-era {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.protocol-heritage-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.protocol-heritage-step {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+}
+
+.protocol-heritage-step:last-child {
+  border-bottom: none;
+}
+
+.protocol-heritage-step::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+/* Convergence visualization */
+.protocol-heritage-convergence {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.protocol-heritage-lines {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  height: 48px;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.protocol-heritage-line {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--border-light), var(--primary-deep));
+  position: relative;
+}
+
+.protocol-heritage-line:first-child {
+  transform: rotate(25deg);
+  transform-origin: bottom center;
+  margin-right: 80px;
+}
+
+.protocol-heritage-line:nth-child(2) {
+  transform: rotate(0deg);
+}
+
+.protocol-heritage-line:last-child {
+  transform: rotate(-25deg);
+  transform-origin: bottom center;
+  margin-left: 80px;
+}
+
+.protocol-heritage-synthesis {
+  background: var(--primary-deep);
+  border-radius: 12px;
+  padding: 28px 40px;
+  display: inline-block;
+  margin-top: -4px;
+}
+
+.protocol-heritage-synthesis-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bone);
+  margin-bottom: 8px;
+}
+
+.protocol-heritage-synthesis-text {
+  font-size: 15px;
+  color: var(--bone-deep);
+  margin: 0;
+}
+
+/* =============================================
+   FIRST PRINCIPLES SECTION
+   ============================================= */
+.protocol-principles {
+  background: var(--off-white);
+  padding: 100px 0;
+}
+
+.protocol-principles-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.protocol-principles-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.protocol-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.protocol-principle-card {
+  background: white;
+  padding: 32px 24px;
+  text-align: left;
+}
+
+.protocol-principle-number {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.protocol-principle-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.protocol-principle-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =============================================
+   THREE MACRO-PHASES SECTION
+   ============================================= */
+.protocol-macro {
+  background: white;
+  padding: 100px 0;
+}
+
+.protocol-macro-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.protocol-macro-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.protocol-macro-grid {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.protocol-macro-phase {
+  flex: 1;
+  background: var(--off-white);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+  position: relative;
+}
+
+.protocol-macro-phase--core {
+  border-color: var(--bronze);
+  border-width: 2px;
+  background: white;
+}
+
+.protocol-macro-phase-header {
+  margin-bottom: 20px;
+}
+
+.protocol-macro-phase-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.protocol-macro-phase--core .protocol-macro-phase-label {
+  color: var(--bronze);
+}
+
+.protocol-macro-phase-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.protocol-macro-phase-body {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.protocol-macro-phase-phases {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.protocol-macro-phase-time {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.protocol-macro-phase-core-label {
+  display: inline-block;
+  background: var(--bronze);
+  color: var(--bone);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.protocol-macro-phase-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.protocol-macro-phase-steps li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 6px 0;
+}
+
+.protocol-macro-connector {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.protocol-macro-arrow {
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--border-light);
+  position: relative;
+}
+
+.protocol-macro-arrow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--border-light);
+  border-right: 2px solid var(--border-light);
+}
+
+/* =============================================
+   PHASE GROUP HEADERS
+   ============================================= */
+.protocol-phase-group {
+  background: var(--bone);
+  padding: 16px 24px;
+  border-left: 3px solid var(--accent);
+  margin-bottom: 4px;
+  margin-left: 80px;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.protocol-phase-group--core {
+  border-left-color: var(--bronze);
+  background: linear-gradient(90deg, rgba(140, 120, 81, 0.1), var(--bone));
+}
+
+.protocol-phase-group-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.protocol-phase-group-time {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
 /* Visual Timeline */
 .protocol-timeline-section {
   background: white;
@@ -157,7 +562,7 @@
   transition: max-height 0.4s var(--ease-out);
 }
 .protocol-phase--open .protocol-phase-body {
-  max-height: 500px;
+  max-height: 800px;
 }
 .protocol-phase-content {
   padding: 20px 24px;
@@ -246,7 +651,7 @@
 }
 
 .protocol-design-notes-toggle[aria-expanded="true"] + .protocol-design-notes-body {
-  max-height: 600px;
+  max-height: 800px;
   padding: 20px;
 }
 
@@ -266,28 +671,128 @@
   font-weight: 600;
 }
 
-/* Responsive adjustments for design notes */
-@media (max-width: 640px) {
-  .protocol-design-notes {
-    margin-top: 16px;
-    padding-top: 12px;
-  }
+/* =============================================
+   INTELLIGENCE PIPELINE SECTION
+   ============================================= */
+.protocol-pipeline {
+  background: var(--primary-deep);
+  padding: 100px 0;
+}
 
-  .protocol-design-notes-toggle {
-    padding: 10px 14px;
-  }
+.protocol-pipeline-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
 
-  .protocol-design-notes-label {
-    font-size: 9px;
-  }
+.protocol-pipeline-header .label {
+  color: var(--bone);
+  border-color: rgba(239, 239, 233, 0.3);
+}
 
-  .protocol-design-notes-toggle[aria-expanded="true"] + .protocol-design-notes-body {
-    padding: 16px;
-  }
+.protocol-pipeline-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--bone);
+  font-weight: 700;
+}
 
-  .protocol-design-notes-text {
-    font-size: 13px;
-  }
+.protocol-pipeline-flow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.protocol-pipeline-node {
+  flex: 1;
+  max-width: 220px;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.protocol-pipeline-node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--bone);
+}
+
+.protocol-pipeline-node-icon--doc::before {
+  content: '';
+  width: 24px;
+  height: 30px;
+  border: 2px solid var(--bone);
+  border-radius: 4px;
+  position: relative;
+}
+
+.protocol-pipeline-node-icon--chart::before {
+  content: '';
+  width: 28px;
+  height: 20px;
+  border-bottom: 2px solid var(--bone);
+  border-left: 2px solid var(--bone);
+  position: relative;
+}
+
+.protocol-pipeline-node-icon--action::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--bone);
+  border-radius: 50%;
+  position: relative;
+}
+
+.protocol-pipeline-node-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--bone);
+  margin-bottom: 8px;
+}
+
+.protocol-pipeline-node-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.protocol-pipeline-connector {
+  display: flex;
+  align-items: center;
+  padding-top: 44px;
+}
+
+.protocol-pipeline-arrow {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.protocol-pipeline-arrow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Designed for Transfer */
@@ -346,15 +851,46 @@
   .protocol-hero {
     padding: 120px 0 60px;
   }
+
+  .protocol-heritage,
+  .protocol-principles,
+  .protocol-macro,
   .protocol-timeline-section,
+  .protocol-pipeline,
   .protocol-transfer {
     padding: 80px 0;
   }
+
+  .protocol-heritage-header,
+  .protocol-principles-header,
+  .protocol-macro-header,
+  .protocol-pipeline-header {
+    margin-bottom: 48px;
+  }
+
   .protocol-timeline-title {
     margin-bottom: 48px;
   }
+
   .protocol-phases {
     max-width: 100%;
+  }
+
+  .protocol-principles-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .protocol-principle-card:nth-child(4),
+  .protocol-principle-card:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  .protocol-macro-phase {
+    padding: 24px 20px;
+  }
+
+  .protocol-macro-phase-title {
+    font-size: 18px;
   }
 }
 
@@ -370,41 +906,140 @@
   .protocol-hero-manifesto {
     font-size: 18px;
   }
+
+  .protocol-heritage,
+  .protocol-principles,
+  .protocol-macro,
   .protocol-timeline-section,
+  .protocol-pipeline,
   .protocol-transfer {
     padding: 60px 0;
   }
+
+  /* Heritage grid to stack */
+  .protocol-heritage-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 400px;
+  }
+
+  .protocol-heritage-column {
+    padding: 24px 20px;
+  }
+
+  .protocol-heritage-lines {
+    height: 32px;
+  }
+
+  .protocol-heritage-line:first-child {
+    margin-right: 40px;
+  }
+
+  .protocol-heritage-line:last-child {
+    margin-left: 40px;
+  }
+
+  .protocol-heritage-synthesis {
+    padding: 20px 28px;
+  }
+
+  /* Principles grid to 2 columns */
+  .protocol-principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .protocol-principle-card:last-child {
+    grid-column: span 2;
+  }
+
+  /* Macro phases to stack */
+  .protocol-macro-grid {
+    flex-direction: column;
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .protocol-macro-connector {
+    transform: rotate(90deg);
+    padding: 8px 0;
+  }
+
+  .protocol-macro-arrow {
+    width: 24px;
+  }
+
+  /* Phase group headers */
+  .protocol-phase-group {
+    margin-left: 64px;
+    padding: 12px 16px;
+  }
+
+  .protocol-phase-group-label {
+    font-size: 10px;
+  }
+
   .protocol-timeline-title {
     margin-bottom: 40px;
   }
+
   .protocol-phases::before {
     left: 24px;
   }
+
   .protocol-phase {
     padding-left: 64px;
   }
+
   .protocol-phase-node {
     left: 10px;
   }
+
   .protocol-phase-header {
     padding: 16px 20px;
   }
+
   .protocol-phase-name {
     font-size: 16px;
   }
+
   .protocol-phase-content {
     padding: 16px 20px;
   }
+
   .protocol-phase-desc {
     font-size: 14px;
   }
+
+  /* Pipeline to 2x2 grid */
+  .protocol-pipeline-flow {
+    flex-wrap: wrap;
+    max-width: 480px;
+  }
+
+  .protocol-pipeline-node {
+    flex: 0 0 calc(50% - 20px);
+    max-width: none;
+  }
+
+  .protocol-pipeline-connector {
+    flex: 0 0 40px;
+    padding-top: 32px;
+  }
+
+  .protocol-pipeline-connector:nth-child(4) {
+    display: none;
+  }
+
   .protocol-transfer-title {
     margin-bottom: 20px;
   }
+
   .protocol-transfer-text {
     font-size: 15px;
     margin-bottom: 28px;
   }
+
   .protocol-transfer-feature {
     padding: 20px;
   }
@@ -425,74 +1060,175 @@
   .protocol-hero-manifesto {
     font-size: 16px;
   }
+
+  .protocol-heritage,
+  .protocol-principles,
+  .protocol-macro,
   .protocol-timeline-section,
+  .protocol-pipeline,
   .protocol-transfer {
     padding: 48px 0;
   }
+
+  .protocol-heritage-title,
+  .protocol-principles-title,
+  .protocol-macro-title,
+  .protocol-pipeline-title {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+
+  .protocol-heritage-subtitle {
+    font-size: 15px;
+  }
+
+  /* Principles to single column */
+  .protocol-principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .protocol-principle-card:last-child {
+    grid-column: span 1;
+  }
+
+  .protocol-principle-card {
+    padding: 24px 20px;
+  }
+
+  /* Phase group headers */
+  .protocol-phase-group {
+    margin-left: 52px;
+    padding: 10px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
   .protocol-timeline-title {
     font-size: clamp(24px, 5vw, 32px);
     margin-bottom: 32px;
   }
+
   .protocol-phases::before {
     left: 16px;
   }
+
   .protocol-phase {
     padding-left: 52px;
   }
+
   .protocol-phase-node {
     left: 2px;
     width: 26px;
     height: 26px;
     font-size: 11px;
   }
+
   .protocol-phase-header {
     padding: 14px 16px;
     border-radius: 10px;
     flex-wrap: wrap;
     gap: 8px;
   }
+
   .protocol-phase-name {
     font-size: 15px;
   }
+
   .protocol-phase-timing {
     font-size: 11px;
   }
+
   .protocol-phase-toggle {
     width: 24px;
     height: 24px;
     font-size: 12px;
   }
+
   .protocol-phase-content {
     padding: 14px 16px;
     border-radius: 0 0 10px 10px;
     margin-bottom: 16px;
   }
+
   .protocol-phase-desc {
     font-size: 13px;
     margin-bottom: 10px;
   }
+
   .protocol-phase-detail {
     font-size: 12px;
   }
+
+  /* Design notes responsive */
+  .protocol-design-notes {
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+
+  .protocol-design-notes-toggle {
+    padding: 10px 14px;
+  }
+
+  .protocol-design-notes-label {
+    font-size: 9px;
+  }
+
+  .protocol-design-notes-toggle[aria-expanded="true"] + .protocol-design-notes-body {
+    padding: 16px;
+  }
+
+  .protocol-design-notes-text {
+    font-size: 13px;
+  }
+
+  /* Pipeline to single column */
+  .protocol-pipeline-flow {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 280px;
+  }
+
+  .protocol-pipeline-node {
+    flex: none;
+    width: 100%;
+    padding: 20px 16px;
+  }
+
+  .protocol-pipeline-connector {
+    transform: rotate(90deg);
+    padding: 0;
+    height: 32px;
+  }
+
+  .protocol-pipeline-arrow {
+    width: 24px;
+  }
+
   .protocol-transfer-title {
     font-size: clamp(24px, 5vw, 32px);
     margin-bottom: 16px;
   }
+
   .protocol-transfer-text {
     font-size: 14px;
     margin-bottom: 24px;
   }
+
   .protocol-transfer-features {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+
   .protocol-transfer-feature {
     padding: 20px;
     border-radius: 12px;
   }
+
   .protocol-transfer-feature-title {
     font-size: 14px;
   }
+
   .protocol-transfer-feature-text {
     font-size: 13px;
   }
@@ -506,12 +1242,60 @@
   .protocol-hero-title {
     font-size: clamp(24px, 7vw, 30px);
   }
+
+  .protocol-heritage-column {
+    padding: 20px 16px;
+  }
+
+  .protocol-heritage-column-title {
+    font-size: 18px;
+  }
+
+  .protocol-heritage-synthesis {
+    padding: 16px 20px;
+  }
+
+  .protocol-heritage-synthesis-label {
+    font-size: 10px;
+  }
+
+  .protocol-heritage-synthesis-text {
+    font-size: 13px;
+  }
+
+  .protocol-principle-card {
+    padding: 20px 16px;
+  }
+
+  .protocol-macro-phase {
+    padding: 20px 16px;
+  }
+
+  .protocol-macro-phase-title {
+    font-size: 16px;
+  }
+
+  .protocol-phase-group {
+    margin-left: 44px;
+    padding: 8px 12px;
+  }
+
+  .protocol-phase-group-label {
+    font-size: 9px;
+  }
+
+  .protocol-phase-group-time {
+    font-size: 10px;
+  }
+
   .protocol-phases::before {
     left: 12px;
   }
+
   .protocol-phase {
     padding-left: 44px;
   }
+
   .protocol-phase-node {
     left: 0;
     width: 24px;
@@ -519,12 +1303,29 @@
     font-size: 10px;
     border-width: 2px;
   }
+
   .protocol-phase-header {
     padding: 12px 14px;
   }
+
   .protocol-phase-content {
     padding: 12px 14px;
   }
+
+  .protocol-pipeline-node-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 18px;
+  }
+
+  .protocol-pipeline-node-title {
+    font-size: 15px;
+  }
+
+  .protocol-pipeline-node-desc {
+    font-size: 12px;
+  }
+
   .protocol-transfer-feature {
     padding: 16px;
   }
