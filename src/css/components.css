@@ -114,6 +114,17 @@
   border-color: var(--ink-90);
 }
 
+/* Outline variant for dark backgrounds */
+.btn--outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+.btn--outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
 /* Bronze accent for critical actions only */
 .btn--bronze {
   background: var(--bronze);
