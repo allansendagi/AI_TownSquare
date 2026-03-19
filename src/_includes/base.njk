@@ -7,10 +7,25 @@
   <meta name="description" content="{{ description or 'Civic infrastructure for the intelligence age. Bridging the gap between AI advancement and societal readiness.' }}" />
   <meta name="theme-color" content="#080808" />
 
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
   <!-- Open Graph -->
   <meta property="og:title" content="{{ title }} | AI TownSquare" />
   <meta property="og:description" content="{{ description or 'Civic infrastructure for the intelligence age.' }}" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="AI TownSquare" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@AITownSquare" />
+  <meta name="twitter:title" content="{{ title }} | AI TownSquare" />
+  <meta name="twitter:description" content="{{ description or 'Civic infrastructure for the intelligence age.' }}" />
+  <meta name="twitter:image" content="{{ site.url }}/assets/og-image.png" />
 
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,6 +51,43 @@
   <link rel="stylesheet" href="{{ css }}" />
   {% endfor %}
   {% endif %}
+
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-xtZt_rhujA2ywdxUHzUEX.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH37Y4RK99"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LH37Y4RK99');
+  </script>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AI TownSquare",
+    "url": "https://aitownsquare.org",
+    "logo": "https://aitownsquare.org/assets/Logo_Black.png",
+    "description": "Civic infrastructure for the intelligence age. Bridging the gap between AI advancement and societal readiness.",
+    "sameAs": [
+      "https://www.linkedin.com/company/aitownsquare",
+      "https://x.com/AITownSquare"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@aitownsquare.org",
+      "contactType": "General Inquiry"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -47,6 +99,7 @@
 
   <!-- JS -->
   <script src="/js/shared.js"></script>
+  <script src="/js/analytics.js"></script>
   {% if extraJs %}
   {% for js in extraJs %}
   <script src="{{ js }}"></script>
