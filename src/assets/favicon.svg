@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- AI TownSquare Nodes Icon - Two stacked horizontal diamonds sharing center node, tilted ~15 degrees CW -->
+  <g transform="rotate(15 16 16)">
+    <!-- Upper diamond lines -->
+    <line x1="16" y1="5" x2="5" y2="11" stroke="#D4A843" stroke-width="1.2"/>
+    <line x1="16" y1="5" x2="27" y2="11" stroke="#D4A843" stroke-width="1.2"/>
+    <line x1="5" y1="11" x2="16" y2="17" stroke="#D4A843" stroke-width="1.2"/>
+    <line x1="27" y1="11" x2="16" y2="17" stroke="#D4A843" stroke-width="1.2"/>
+
+    <!-- Lower diamond lines -->
+    <line x1="16" y1="17" x2="5" y2="23" stroke="#D4A843" stroke-width="1.2"/>
+    <line x1="16" y1="17" x2="27" y2="23" stroke="#D4A843" stroke-width="1.2"/>
+    <line x1="5" y1="23" x2="16" y2="29" stroke="#D4A843" stroke-width="1.2"/>
+    <line x1="27" y1="23" x2="16" y2="29" stroke="#D4A843" stroke-width="1.2"/>
+
+    <!-- Nodes (7 total) -->
+    <circle cx="16" cy="5" r="2.2" fill="#D4A843"/>
+    <circle cx="5" cy="11" r="2.2" fill="#D4A843"/>
+    <circle cx="27" cy="11" r="2.2" fill="#D4A843"/>
+    <circle cx="16" cy="17" r="2.2" fill="#D4A843"/>
+    <circle cx="5" cy="23" r="2.2" fill="#D4A843"/>
+    <circle cx="27" cy="23" r="2.2" fill="#D4A843"/>
+    <circle cx="16" cy="29" r="2.2" fill="#D4A843"/>
+  </g>
+</svg>

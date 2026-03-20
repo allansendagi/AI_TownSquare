@@ -557,101 +557,29 @@
 }
 
 /* =============================================
-   SPONSOR SECTION
+   ASSEMBLY CTA
    ============================================= */
-.sponsor-section {
-  padding: 140px 0;
+.assembly-cta {
+  padding: 100px 0;
   margin-bottom: 80px;
 }
-.sponsor-inner {
-  max-width: 1000px;
+.assembly-cta-inner {
+  max-width: 640px;
   margin: 0 auto;
-}
-.sponsor-header {
   text-align: center;
-  margin-bottom: 64px;
 }
-.sponsor-title {
-  font-family: var(--font-serif);
-  font-size: clamp(32px, 4.5vw, 50px);
-  font-weight: 700;
-  color: white;
-  line-height: 1.2;
-  letter-spacing: var(--tracking-tight);
-  margin-bottom: 16px;
+.assembly-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: var(--bone);
+  margin: 16px 0 20px;
 }
-.sponsor-subtitle {
+.assembly-cta-text {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.5);
-  max-width: 560px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-
-.sponsor-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-.sponsor-benefits {
-  padding: 40px 0;
-}
-.sponsor-benefits-title {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
+  line-height: 1.7;
   color: var(--bone-deep);
   margin-bottom: 32px;
-}
-.sponsor-benefits-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-.sponsor-benefits-list li {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-.sponsor-benefit-num {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: var(--tracking-wide);
-  color: var(--bronze);
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.sponsor-benefits-list strong {
-  display: block;
-  font-size: 15px;
-  font-weight: 600;
-  color: white;
-  margin-bottom: 4px;
-}
-.sponsor-benefits-list p {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
-  line-height: 1.6;
-  margin: 0;
-}
-
-.sponsor-form-wrap {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-sm);
-  padding: 48px;
 }
 
 /* =============================================
@@ -684,18 +612,8 @@
   .institute-training-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .sponsor-section {
-    padding: 100px 0;
-  }
-  .sponsor-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .sponsor-benefits {
-    padding: 0;
-  }
-  .sponsor-header {
-    margin-bottom: 48px;
+  .assembly-cta {
+    padding: 80px 0;
   }
 }
 
@@ -735,11 +653,8 @@
   .institute-cta {
     padding: 60px 0;
   }
-  .sponsor-section {
-    padding: 80px 0;
-  }
-  .sponsor-title {
-    font-size: clamp(28px, 5vw, 40px);
+  .assembly-cta {
+    padding: 60px 0;
   }
 }
 
@@ -798,8 +713,15 @@
   .publication-embed {
     height: 45vh;
   }
-  .sponsor-section {
+  .assembly-cta {
+    padding: 48px 0;
     margin-bottom: 60px;
+  }
+  .assembly-cta-title {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+  .assembly-cta-text {
+    font-size: 15px;
   }
   .institute-section-title {
     font-size: clamp(22px, 5vw, 28px);
@@ -857,30 +779,6 @@
   .institute-cta-text {
     font-size: 14px;
   }
-  .sponsor-section {
-    padding: 60px 0;
-  }
-  .sponsor-header {
-    margin-bottom: 36px;
-  }
-  .sponsor-title {
-    font-size: clamp(24px, 6vw, 32px);
-  }
-  .sponsor-subtitle {
-    font-size: 14px;
-  }
-  .sponsor-benefits-list {
-    gap: 20px;
-  }
-  .sponsor-benefits-list strong {
-    font-size: 14px;
-  }
-  .sponsor-benefits-list p {
-    font-size: 13px;
-  }
-  .sponsor-form-wrap {
-    padding: 32px 24px;
-  }
 }
 
 /* Small phones (480px and below) */
@@ -895,12 +793,5 @@
   .institute-training-card,
   .institute-paper-card {
     padding: 16px;
-  }
-  .sponsor-form-wrap {
-    padding: 24px 16px;
-  }
-  .sponsor-benefit-num {
-    width: 28px;
-    height: 28px;
   }
 }
