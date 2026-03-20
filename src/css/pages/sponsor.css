@@ -1,17 +1,17 @@
 /* =============================================
-   SPONSOR PAGE — World-Class Partnership Experience
+   FOUNDING ASSEMBLY PAGE — Exclusive, Mission-Driven
    ============================================= */
 
 /* =============================================
-   HERO
+   HERO: THE INVERSE PITCH
    ============================================= */
-.sponsor-hero {
+.assembly-hero {
   padding: 140px 0 100px;
   background: linear-gradient(180deg, var(--bone) 0%, var(--bone-warm) 100%);
   position: relative;
 }
 
-.sponsor-hero::before {
+.assembly-hero::before {
   content: '';
   position: absolute;
   top: 0;
@@ -22,163 +22,70 @@
   pointer-events: none;
 }
 
-.sponsor-hero-content {
+.assembly-hero-content {
   max-width: 800px;
   position: relative;
   z-index: 1;
 }
 
-.sponsor-hero-title {
+.assembly-hero-title {
   font-family: var(--font-display);
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: clamp(36px, 5vw, 56px);
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--ink);
   margin: 20px 0 28px;
   letter-spacing: -0.02em;
 }
 
-.sponsor-hero-sub {
+.assembly-hero-sub {
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.8;
   color: var(--ink-70);
-  max-width: 640px;
+  max-width: 680px;
   margin-bottom: 40px;
 }
 
-.sponsor-hero-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-/* =============================================
-   THE OPPORTUNITY
-   ============================================= */
-.sponsor-opportunity {
-  padding: 100px 0;
+.assembly-hero-note {
   background: white;
-}
-
-.sponsor-opportunity-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.sponsor-opportunity-title {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 600;
-  color: var(--ink);
-  margin-top: 16px;
-  letter-spacing: -0.01em;
-}
-
-.sponsor-opportunity-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-}
-
-.sponsor-opportunity-card {
-  padding: 36px 28px;
-  background: var(--bone);
+  border: 1px solid var(--bronze);
   border-radius: var(--radius-sm);
-  border: 1px solid var(--hairline);
-  transition: all var(--duration-normal) var(--ease-smooth);
+  padding: 24px 28px;
+  max-width: 520px;
 }
 
-.sponsor-opportunity-card:hover {
-  border-color: var(--bronze);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(8, 8, 8, 0.08);
-}
-
-.sponsor-opportunity-icon {
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  border-radius: 50%;
-  margin-bottom: 24px;
-  color: var(--bronze);
-  border: 1px solid var(--hairline);
-}
-
-.sponsor-opportunity-card-title {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 12px;
-}
-
-.sponsor-opportunity-card-text {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--ink-60);
-}
-
-/* =============================================
-   IMPACT METRICS
-   ============================================= */
-.sponsor-impact {
-  padding: 60px 0;
-  background: var(--ink);
-}
-
-.sponsor-impact-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 48px;
-  flex-wrap: wrap;
-}
-
-.sponsor-impact-stat {
-  text-align: center;
-}
-
-.sponsor-impact-value {
+.assembly-hero-note-label {
   display: block;
   font-family: var(--font-mono);
-  font-size: 48px;
+  font-size: 10px;
   font-weight: 600;
-  color: var(--bronze);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.sponsor-impact-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--bone-deep);
+  color: var(--bronze);
+  margin-bottom: 10px;
 }
 
-.sponsor-impact-divider {
-  width: 1px;
-  height: 48px;
-  background: var(--ink-30);
+.assembly-hero-note p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-70);
+  margin: 0;
 }
 
 /* =============================================
-   PARTNERSHIP TIERS
+   THE MODEL: COMPARISON
    ============================================= */
-.sponsor-tiers {
+.assembly-model {
   padding: 100px 0;
-  background: var(--bone);
+  background: white;
 }
 
-.sponsor-tiers-header {
+.assembly-model-header {
   text-align: center;
   margin-bottom: 60px;
 }
 
-.sponsor-tiers-title {
+.assembly-model-title {
   font-family: var(--font-display);
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 600;
@@ -187,7 +94,7 @@
   letter-spacing: -0.01em;
 }
 
-.sponsor-tiers-sub {
+.assembly-model-sub {
   font-size: 16px;
   line-height: 1.7;
   color: var(--ink-60);
@@ -195,187 +102,104 @@
   margin: 20px auto 0;
 }
 
-.sponsor-tiers-grid {
+.assembly-model-comparison {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 32px;
-  align-items: start;
+  max-width: 900px;
+  margin: 0 auto 60px;
 }
 
-.sponsor-tier {
-  background: white;
+.assembly-model-col {
+  padding: 40px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--hairline);
-  padding: 40px 32px;
-  position: relative;
-  transition: all var(--duration-normal) var(--ease-smooth);
 }
 
-.sponsor-tier:hover {
-  border-color: var(--hairline-dark);
-  box-shadow: 0 8px 32px rgba(8, 8, 8, 0.06);
-}
-
-.sponsor-tier--founding {
-  border-color: var(--bronze);
-  background: linear-gradient(180deg, rgba(212, 168, 67, 0.04) 0%, white 100%);
-}
-
-.sponsor-tier--founding:hover {
-  border-color: var(--bronze);
-  box-shadow: 0 12px 48px rgba(212, 168, 67, 0.15);
-}
-
-.sponsor-tier-badge {
-  position: absolute;
-  top: -12px;
-  left: 24px;
-  background: var(--bronze);
-  color: white;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 20px;
-}
-
-.sponsor-tier-header {
-  margin-bottom: 28px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--hairline);
-}
-
-.sponsor-tier-name {
-  font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 6px;
-}
-
-.sponsor-tier-tagline {
-  font-size: 14px;
-  color: var(--ink-50);
-}
-
-.sponsor-tier-benefits {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 28px;
-}
-
-.sponsor-tier-benefits li {
-  display: flex;
-  gap: 12px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--ink-80);
-  padding: 10px 0;
-  border-bottom: 1px solid var(--hairline-light);
-}
-
-.sponsor-tier-benefits li:last-child {
-  border-bottom: none;
-}
-
-.sponsor-tier-check {
-  color: var(--teal);
-  font-weight: 600;
-  flex-shrink: 0;
-}
-
-.sponsor-tier-footer {
-  padding-top: 20px;
-  border-top: 1px solid var(--hairline);
-}
-
-.sponsor-tier-slots {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--bronze);
-}
-
-/* =============================================
-   BENEFITS SECTION (DETAILED)
-   ============================================= */
-.sponsor-benefits-section {
-  padding: 100px 0;
-  background: white;
-}
-
-.sponsor-benefits-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.sponsor-benefits-title {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 600;
-  color: var(--ink);
-  margin-top: 16px;
-}
-
-.sponsor-benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-}
-
-.sponsor-benefit-card {
-  display: flex;
-  gap: 24px;
-  padding: 32px;
+.assembly-model-col--old {
   background: var(--bone);
-  border-radius: var(--radius-sm);
   border: 1px solid var(--hairline);
-  transition: all var(--duration-normal) var(--ease-smooth);
 }
 
-.sponsor-benefit-card:hover {
-  border-color: var(--hairline-dark);
+.assembly-model-col--new {
+  background: linear-gradient(180deg, rgba(212, 168, 67, 0.08) 0%, rgba(212, 168, 67, 0.02) 100%);
+  border: 1px solid var(--bronze);
 }
 
-.sponsor-benefit-num {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--bronze);
-  flex-shrink: 0;
-}
-
-.sponsor-benefit-name {
+.assembly-model-col-title {
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 600;
   color: var(--ink);
-  margin-bottom: 10px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--hairline);
 }
 
-.sponsor-benefit-desc {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--ink-60);
+.assembly-model-col--new .assembly-model-col-title {
+  color: var(--bronze);
+  border-bottom-color: var(--bronze-30);
+}
+
+.assembly-model-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.assembly-model-list li {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-70);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hairline-light);
+}
+
+.assembly-model-col--old .assembly-model-list li {
+  text-decoration: line-through;
+  color: var(--ink-40);
+}
+
+.assembly-model-col--new .assembly-model-list li {
+  color: var(--ink-80);
+  font-weight: 500;
+}
+
+.assembly-model-list li:last-child {
+  border-bottom: none;
+}
+
+.assembly-model-principle {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.assembly-model-quote {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--ink);
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 /* =============================================
-   THE SYSTEM
+   SELECTION CRITERIA
    ============================================= */
-.sponsor-system {
+.assembly-criteria {
   padding: 100px 0;
   background: var(--bone);
 }
 
-.sponsor-system-header {
+.assembly-criteria-header {
   text-align: center;
   margin-bottom: 60px;
 }
 
-.sponsor-system-title {
+.assembly-criteria-title {
   font-family: var(--font-display);
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 600;
@@ -383,7 +207,7 @@
   margin-top: 16px;
 }
 
-.sponsor-system-sub {
+.assembly-criteria-sub {
   font-size: 16px;
   line-height: 1.7;
   color: var(--ink-60);
@@ -391,171 +215,28 @@
   margin: 20px auto 0;
 }
 
-.sponsor-system-flow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  flex-wrap: wrap;
-}
-
-.sponsor-system-node {
-  text-align: center;
-  padding: 32px 24px;
-  background: white;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--hairline);
-  min-width: 180px;
-}
-
-.sponsor-system-num {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: var(--tracking-wide);
-  color: var(--bronze);
-  margin-bottom: 12px;
-}
-
-.sponsor-system-node-title {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 6px;
-}
-
-.sponsor-system-node-desc {
-  font-size: 12px;
-  color: var(--ink-50);
-}
-
-.sponsor-system-connector {
-  width: 48px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--hairline) 0%, var(--bronze) 50%, var(--hairline) 100%);
-}
-
-/* =============================================
-   FAQ
-   ============================================= */
-.sponsor-faq {
-  padding: 100px 0;
-  background: white;
-}
-
-.sponsor-faq-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.sponsor-faq-title {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 600;
-  color: var(--ink);
-  margin-top: 16px;
-}
-
-.sponsor-faq-grid {
+.assembly-criteria-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
-.sponsor-faq-item {
-  padding: 28px;
-  background: var(--bone);
+.assembly-criteria-card {
+  display: flex;
+  gap: 24px;
+  padding: 32px;
+  background: white;
   border-radius: var(--radius-sm);
   border: 1px solid var(--hairline);
+  transition: all var(--duration-normal) var(--ease-smooth);
 }
 
-.sponsor-faq-question {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 12px;
-  line-height: 1.4;
+.assembly-criteria-card:hover {
+  border-color: var(--bronze);
+  box-shadow: 0 8px 32px rgba(8, 8, 8, 0.06);
 }
 
-.sponsor-faq-answer {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--ink-60);
-}
-
-/* =============================================
-   INQUIRY FORM
-   ============================================= */
-.sponsor-inquiry {
-  padding: 100px 0;
-}
-
-.sponsor-inquiry-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.sponsor-inquiry-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.sponsor-inquiry-title {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 600;
-  color: var(--bone);
-  margin-top: 16px;
-}
-
-.sponsor-inquiry-sub {
-  font-size: 16px;
-  line-height: 1.7;
-  color: var(--bone-deep);
-  max-width: 500px;
-  margin: 16px auto 0;
-}
-
-.sponsor-inquiry-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
-  align-items: start;
-}
-
-.sponsor-inquiry-context-title {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--bone);
-  margin-bottom: 28px;
-}
-
-.sponsor-inquiry-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.sponsor-inquiry-step {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.sponsor-inquiry-step-num {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--ink-10);
-  border-radius: 50%;
+.assembly-criteria-num {
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 600;
@@ -563,26 +244,441 @@
   flex-shrink: 0;
 }
 
-.sponsor-inquiry-step strong {
-  display: block;
+.assembly-criteria-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.assembly-criteria-desc {
   font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-60);
+}
+
+/* =============================================
+   REQUIREMENTS
+   ============================================= */
+.assembly-requirements {
+  padding: 100px 0;
+  background: white;
+}
+
+.assembly-requirements-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.assembly-requirements-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 16px;
+}
+
+.assembly-requirements-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-60);
+  max-width: 560px;
+  margin: 20px auto 0;
+}
+
+.assembly-requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.assembly-requirement {
+  display: flex;
+  gap: 20px;
+  padding: 32px;
+  background: var(--bone);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--hairline);
+}
+
+.assembly-requirement-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  color: var(--bronze);
+  border: 1px solid var(--hairline);
+  flex-shrink: 0;
+}
+
+.assembly-requirement-title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.assembly-requirement-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-60);
+}
+
+/* =============================================
+   THE CHARTER
+   ============================================= */
+.assembly-charter {
+  padding: 100px 0;
+  background: var(--ink);
+}
+
+.assembly-charter-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.assembly-charter-badge {
+  display: inline-block;
+  background: var(--bronze);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.assembly-charter-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 600;
   color: var(--bone);
-  margin-bottom: 4px;
+  margin-bottom: 20px;
 }
 
-.sponsor-inquiry-step p {
-  font-size: 13px;
+.assembly-charter-intro {
+  font-size: 16px;
+  line-height: 1.7;
   color: var(--bone-deep);
-  line-height: 1.5;
+  margin-bottom: 40px;
 }
 
-.sponsor-inquiry-contact {
-  margin-top: 40px;
+.assembly-charter-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  max-width: 540px;
+  margin: 0 auto 32px;
+}
+
+.assembly-charter-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--bone);
+}
+
+.assembly-charter-check {
+  color: var(--bronze);
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.assembly-charter-note {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--bone-deep);
+  font-style: italic;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ink-20);
+}
+
+/* =============================================
+   OUTCOMES (WHAT JOINING MEANS)
+   ============================================= */
+.assembly-outcomes {
+  padding: 100px 0;
+  background: var(--bone);
+}
+
+.assembly-outcomes-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.assembly-outcomes-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 16px;
+}
+
+.assembly-outcomes-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-60);
+  max-width: 520px;
+  margin: 20px auto 0;
+}
+
+.assembly-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.assembly-outcome {
+  padding: 32px;
+  background: white;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--hairline);
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.assembly-outcome:hover {
+  border-color: var(--hairline-dark);
+  transform: translateY(-2px);
+}
+
+.assembly-outcome-title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.assembly-outcome-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-60);
+}
+
+/* =============================================
+   THE PROCESS
+   ============================================= */
+.assembly-process {
+  padding: 100px 0;
+  background: white;
+}
+
+.assembly-process-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.assembly-process-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 16px;
+}
+
+.assembly-process-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-60);
+  max-width: 520px;
+  margin: 20px auto 0;
+}
+
+.assembly-process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.assembly-process-steps::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  bottom: 40px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--bronze) 0%, var(--hairline) 100%);
+}
+
+.assembly-process-step {
+  display: flex;
+  gap: 24px;
+  padding: 28px 0;
+  position: relative;
+}
+
+.assembly-process-num {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 2px solid var(--bronze);
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--bronze);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.assembly-process-step-title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.assembly-process-step-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-60);
+}
+
+/* =============================================
+   ASSEMBLY STATUS
+   ============================================= */
+.assembly-status {
+  padding: 80px 0;
+  background: var(--bone);
+}
+
+.assembly-status-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px;
+  background: white;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--bronze);
+  box-shadow: 0 4px 24px rgba(212, 168, 67, 0.08);
+}
+
+.assembly-status-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.assembly-status-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ink-60);
+  margin-bottom: 16px;
+}
+
+.assembly-status-text:last-child {
+  margin-bottom: 0;
+}
+
+/* =============================================
+   EXPRESSION OF INTEREST
+   ============================================= */
+.assembly-interest {
+  padding: 100px 0;
+}
+
+.assembly-interest-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.assembly-interest-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.assembly-interest-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: var(--bone);
+  margin-top: 16px;
+}
+
+.assembly-interest-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--bone-deep);
+  max-width: 560px;
+  margin: 16px auto 0;
+}
+
+.assembly-interest-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.assembly-interest-context-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--bone);
+  margin-bottom: 28px;
+}
+
+.assembly-interest-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.assembly-interest-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--bone);
+}
+
+.assembly-interest-item-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink-10);
+  border-radius: 50%;
+  color: var(--bronze);
+  flex-shrink: 0;
+}
+
+.assembly-interest-contact {
+  margin-top: 48px;
   padding-top: 28px;
   border-top: 1px solid var(--ink-20);
 }
 
-.sponsor-inquiry-contact-label {
+.assembly-interest-contact-label {
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: var(--tracking-wide);
@@ -591,111 +687,111 @@
   margin-bottom: 8px;
 }
 
-.sponsor-inquiry-contact-email {
+.assembly-interest-contact-email {
   font-size: 16px;
   color: var(--bronze);
   text-decoration: none;
   transition: color var(--duration-normal) var(--ease-smooth);
 }
 
-.sponsor-inquiry-contact-email:hover {
+.assembly-interest-contact-email:hover {
   color: var(--bronze-light);
 }
 
-.sponsor-inquiry-form-wrap {
+.assembly-interest-form-wrap {
   background: var(--ink-04);
   border-radius: var(--radius-sm);
   padding: 40px;
   border: 1px solid var(--ink-10);
 }
 
+.form-hint {
+  display: block;
+  font-size: 12px;
+  color: var(--bone-deep);
+  margin-top: 6px;
+}
+
+.form-disclaimer {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--bone-deep);
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink-10);
+}
+
 /* =============================================
    RESPONSIVE
    ============================================= */
 @media (max-width: 1024px) {
-  .sponsor-opportunity-grid {
+  .assembly-model-comparison {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+
+  .assembly-criteria-grid,
+  .assembly-requirements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .assembly-outcomes-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .sponsor-tiers-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    margin: 0 auto;
-  }
-
-  .sponsor-tier--founding {
-    order: -1;
-  }
-
-  .sponsor-system-flow {
-    flex-direction: column;
-  }
-
-  .sponsor-system-connector {
-    width: 2px;
-    height: 32px;
-    background: linear-gradient(180deg, var(--hairline) 0%, var(--bronze) 50%, var(--hairline) 100%);
-  }
-
-  .sponsor-inquiry-grid {
+  .assembly-interest-grid {
     grid-template-columns: 1fr;
   }
 
-  .sponsor-inquiry-context {
+  .assembly-interest-context {
     order: 2;
   }
 }
 
 @media (max-width: 768px) {
-  .sponsor-hero {
+  .assembly-hero {
     padding: 100px 0 60px;
   }
 
-  .sponsor-opportunity-grid,
-  .sponsor-benefits-grid,
-  .sponsor-faq-grid {
+  .assembly-outcomes-grid {
     grid-template-columns: 1fr;
   }
 
-  .sponsor-impact-inner {
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .sponsor-impact-divider {
-    width: 48px;
-    height: 1px;
-  }
-
-  .sponsor-inquiry-form-wrap {
+  .assembly-interest-form-wrap {
     padding: 28px 20px;
   }
 
-  .sponsor-hero-actions {
-    flex-direction: column;
+  .assembly-model-col {
+    padding: 28px;
   }
 
-  .sponsor-hero-actions .btn {
-    width: 100%;
-    justify-content: center;
+  .assembly-status-inner {
+    padding: 32px 24px;
+  }
+
+  .assembly-process-steps::before {
+    left: 15px;
+  }
+
+  .assembly-process-num {
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .sponsor-hero-title {
-    font-size: 32px;
+  .assembly-hero-title {
+    font-size: 28px;
   }
 
-  .sponsor-impact-value {
-    font-size: 36px;
-  }
-
-  .sponsor-tier {
-    padding: 32px 24px;
-  }
-
-  .sponsor-benefit-card {
+  .assembly-criteria-card,
+  .assembly-requirement {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .assembly-charter-items {
+    padding: 0 12px;
   }
 }
