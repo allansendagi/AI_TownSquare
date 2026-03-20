@@ -1,0 +1,701 @@
+/* =============================================
+   SPONSOR PAGE — World-Class Partnership Experience
+   ============================================= */
+
+/* =============================================
+   HERO
+   ============================================= */
+.sponsor-hero {
+  padding: 140px 0 100px;
+  background: linear-gradient(180deg, var(--bone) 0%, var(--bone-warm) 100%);
+  position: relative;
+}
+
+.sponsor-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(212, 168, 67, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.sponsor-hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+.sponsor-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 20px 0 28px;
+  letter-spacing: -0.02em;
+}
+
+.sponsor-hero-sub {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink-70);
+  max-width: 640px;
+  margin-bottom: 40px;
+}
+
+.sponsor-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* =============================================
+   THE OPPORTUNITY
+   ============================================= */
+.sponsor-opportunity {
+  padding: 100px 0;
+  background: white;
+}
+
+.sponsor-opportunity-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sponsor-opportunity-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 16px;
+  letter-spacing: -0.01em;
+}
+
+.sponsor-opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.sponsor-opportunity-card {
+  padding: 36px 28px;
+  background: var(--bone);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--hairline);
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.sponsor-opportunity-card:hover {
+  border-color: var(--bronze);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(8, 8, 8, 0.08);
+}
+
+.sponsor-opportunity-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  margin-bottom: 24px;
+  color: var(--bronze);
+  border: 1px solid var(--hairline);
+}
+
+.sponsor-opportunity-card-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.sponsor-opportunity-card-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-60);
+}
+
+/* =============================================
+   IMPACT METRICS
+   ============================================= */
+.sponsor-impact {
+  padding: 60px 0;
+  background: var(--ink);
+}
+
+.sponsor-impact-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.sponsor-impact-stat {
+  text-align: center;
+}
+
+.sponsor-impact-value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--bronze);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.sponsor-impact-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--bone-deep);
+}
+
+.sponsor-impact-divider {
+  width: 1px;
+  height: 48px;
+  background: var(--ink-30);
+}
+
+/* =============================================
+   PARTNERSHIP TIERS
+   ============================================= */
+.sponsor-tiers {
+  padding: 100px 0;
+  background: var(--bone);
+}
+
+.sponsor-tiers-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sponsor-tiers-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 16px;
+  letter-spacing: -0.01em;
+}
+
+.sponsor-tiers-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-60);
+  max-width: 560px;
+  margin: 20px auto 0;
+}
+
+.sponsor-tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.sponsor-tier {
+  background: white;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--hairline);
+  padding: 40px 32px;
+  position: relative;
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.sponsor-tier:hover {
+  border-color: var(--hairline-dark);
+  box-shadow: 0 8px 32px rgba(8, 8, 8, 0.06);
+}
+
+.sponsor-tier--founding {
+  border-color: var(--bronze);
+  background: linear-gradient(180deg, rgba(212, 168, 67, 0.04) 0%, white 100%);
+}
+
+.sponsor-tier--founding:hover {
+  border-color: var(--bronze);
+  box-shadow: 0 12px 48px rgba(212, 168, 67, 0.15);
+}
+
+.sponsor-tier-badge {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  background: var(--bronze);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.sponsor-tier-header {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.sponsor-tier-name {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.sponsor-tier-tagline {
+  font-size: 14px;
+  color: var(--ink-50);
+}
+
+.sponsor-tier-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+.sponsor-tier-benefits li {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-80);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hairline-light);
+}
+
+.sponsor-tier-benefits li:last-child {
+  border-bottom: none;
+}
+
+.sponsor-tier-check {
+  color: var(--teal);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.sponsor-tier-footer {
+  padding-top: 20px;
+  border-top: 1px solid var(--hairline);
+}
+
+.sponsor-tier-slots {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+/* =============================================
+   BENEFITS SECTION (DETAILED)
+   ============================================= */
+.sponsor-benefits-section {
+  padding: 100px 0;
+  background: white;
+}
+
+.sponsor-benefits-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sponsor-benefits-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 16px;
+}
+
+.sponsor-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.sponsor-benefit-card {
+  display: flex;
+  gap: 24px;
+  padding: 32px;
+  background: var(--bone);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--hairline);
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.sponsor-benefit-card:hover {
+  border-color: var(--hairline-dark);
+}
+
+.sponsor-benefit-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--bronze);
+  flex-shrink: 0;
+}
+
+.sponsor-benefit-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.sponsor-benefit-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-60);
+}
+
+/* =============================================
+   THE SYSTEM
+   ============================================= */
+.sponsor-system {
+  padding: 100px 0;
+  background: var(--bone);
+}
+
+.sponsor-system-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sponsor-system-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 16px;
+}
+
+.sponsor-system-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-60);
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+.sponsor-system-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.sponsor-system-node {
+  text-align: center;
+  padding: 32px 24px;
+  background: white;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--hairline);
+  min-width: 180px;
+}
+
+.sponsor-system-num {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  color: var(--bronze);
+  margin-bottom: 12px;
+}
+
+.sponsor-system-node-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.sponsor-system-node-desc {
+  font-size: 12px;
+  color: var(--ink-50);
+}
+
+.sponsor-system-connector {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--hairline) 0%, var(--bronze) 50%, var(--hairline) 100%);
+}
+
+/* =============================================
+   FAQ
+   ============================================= */
+.sponsor-faq {
+  padding: 100px 0;
+  background: white;
+}
+
+.sponsor-faq-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sponsor-faq-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 16px;
+}
+
+.sponsor-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sponsor-faq-item {
+  padding: 28px;
+  background: var(--bone);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--hairline);
+}
+
+.sponsor-faq-question {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.sponsor-faq-answer {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-60);
+}
+
+/* =============================================
+   INQUIRY FORM
+   ============================================= */
+.sponsor-inquiry {
+  padding: 100px 0;
+}
+
+.sponsor-inquiry-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sponsor-inquiry-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sponsor-inquiry-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: var(--bone);
+  margin-top: 16px;
+}
+
+.sponsor-inquiry-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--bone-deep);
+  max-width: 500px;
+  margin: 16px auto 0;
+}
+
+.sponsor-inquiry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.sponsor-inquiry-context-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--bone);
+  margin-bottom: 28px;
+}
+
+.sponsor-inquiry-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sponsor-inquiry-step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.sponsor-inquiry-step-num {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink-10);
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--bronze);
+  flex-shrink: 0;
+}
+
+.sponsor-inquiry-step strong {
+  display: block;
+  font-size: 14px;
+  color: var(--bone);
+  margin-bottom: 4px;
+}
+
+.sponsor-inquiry-step p {
+  font-size: 13px;
+  color: var(--bone-deep);
+  line-height: 1.5;
+}
+
+.sponsor-inquiry-contact {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--ink-20);
+}
+
+.sponsor-inquiry-contact-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--bone-deep);
+  margin-bottom: 8px;
+}
+
+.sponsor-inquiry-contact-email {
+  font-size: 16px;
+  color: var(--bronze);
+  text-decoration: none;
+  transition: color var(--duration-normal) var(--ease-smooth);
+}
+
+.sponsor-inquiry-contact-email:hover {
+  color: var(--bronze-light);
+}
+
+.sponsor-inquiry-form-wrap {
+  background: var(--ink-04);
+  border-radius: var(--radius-sm);
+  padding: 40px;
+  border: 1px solid var(--ink-10);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1024px) {
+  .sponsor-opportunity-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sponsor-tiers-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .sponsor-tier--founding {
+    order: -1;
+  }
+
+  .sponsor-system-flow {
+    flex-direction: column;
+  }
+
+  .sponsor-system-connector {
+    width: 2px;
+    height: 32px;
+    background: linear-gradient(180deg, var(--hairline) 0%, var(--bronze) 50%, var(--hairline) 100%);
+  }
+
+  .sponsor-inquiry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-inquiry-context {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsor-hero {
+    padding: 100px 0 60px;
+  }
+
+  .sponsor-opportunity-grid,
+  .sponsor-benefits-grid,
+  .sponsor-faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-impact-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .sponsor-impact-divider {
+    width: 48px;
+    height: 1px;
+  }
+
+  .sponsor-inquiry-form-wrap {
+    padding: 28px 20px;
+  }
+
+  .sponsor-hero-actions {
+    flex-direction: column;
+  }
+
+  .sponsor-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-hero-title {
+    font-size: 32px;
+  }
+
+  .sponsor-impact-value {
+    font-size: 36px;
+  }
+
+  .sponsor-tier {
+    padding: 32px 24px;
+  }
+
+  .sponsor-benefit-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
