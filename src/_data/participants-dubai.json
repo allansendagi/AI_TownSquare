@@ -1,6 +1,6 @@
 {
   "participants": [
-    { "initials": "OV", "sector": "Host", "label": "Facilitator" },
+    { "initials": "OM", "sector": "Host", "label": "Facilitator" },
     { "initials": "MK", "sector": "Healthcare", "label": "Clinician" },
     { "initials": "RJ", "sector": "Finance", "label": "Risk Analyst" },
     { "initials": "SA", "sector": "Government", "label": "Policy Advisor" },
