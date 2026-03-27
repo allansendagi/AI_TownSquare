@@ -82,7 +82,15 @@
     "name": "AI TownSquare",
     "url": "https://aitownsquare.org",
     "logo": "https://aitownsquare.org/assets/Logo_Black.png",
-    "description": "Civic infrastructure for the intelligence age. Bridging the gap between AI advancement and societal readiness.",
+    "description": "Civic dialogue platform examining societal implications of AI through structured conversations. 25 curated participants, 60 minutes, one published civic record.",
+    "founder": {
+      "@type": "Person",
+      "name": "Allan Sendagi"
+    },
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Doha, Qatar"
+    },
     "sameAs": [
       "https://www.linkedin.com/company/aitownsquare",
       "https://x.com/AITownSquare"
@@ -91,7 +99,49 @@
       "@type": "ContactPoint",
       "email": "info@aitownsquare.org",
       "contactType": "General Inquiry"
+    },
+    "subjectOf": {
+      "@type": "NewsArticle",
+      "headline": "AI TownSquare launches in Dubai to examine the societal impact of artificial intelligence",
+      "url": "https://businesstoday.me/show-report/ai-townsquare-launches-in-dubai-to-examine-the-societal-impact-of-artificial-intelligence/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "BusinessToday ME"
+      }
     }
+  }
+  </script>
+
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AI TownSquare",
+    "url": "https://aitownsquare.org",
+    "description": "Civic Infrastructure for the Intelligence Age"
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://aitownsquare.org/"
+      }{% if page.url != "/" %},
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ title }}",
+        "item": "https://aitownsquare.org{{ page.url }}"
+      }{% endif %}
+    ]
   }
   </script>
 </head>

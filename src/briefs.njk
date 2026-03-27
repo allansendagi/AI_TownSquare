@@ -9,6 +9,55 @@ extraJs:
   - /js/pages/briefs-search.js
 ---
 
+<!-- Structured Data: ItemList for Civic Briefs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "AI TownSquare Civic Briefs Archive",
+  "description": "Published civic insight briefs from AI TownSquare sessions examining AI's societal impact.",
+  "itemListElement": [
+    {% if briefs.briefs.length > 0 %}
+    {% for brief in briefs.briefs %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "item": {
+        "@type": "Article",
+        "headline": "{{ brief.title }}",
+        "description": "{{ brief.insight }}",
+        "url": "https://aitownsquare.org{{ brief.link }}",
+        "datePublished": "{{ brief.date }}",
+        "publisher": {
+          "@type": "Organization",
+          "name": "AI TownSquare"
+        },
+        "keywords": "{{ brief.themes | join(', ') }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+    {% else %}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Article",
+        "headline": "Dubai Node: AI & Employment",
+        "description": "Upcoming civic brief examining whether AI will take our jobs or if the real challenge is institutional readiness.",
+        "url": "https://aitownsquare.org/briefs/dubai-2026/",
+        "datePublished": "2026-04-05",
+        "publisher": {
+          "@type": "Organization",
+          "name": "AI TownSquare"
+        },
+        "keywords": "AI, Employment, Jobs, Institutional Readiness"
+      }
+    }
+    {% endif %}
+  ]
+}
+</script>
+
 <!-- ============================================
      HERO
      ============================================ -->
