@@ -91,3 +91,70 @@
     });
   });
 })();
+
+// =============================================
+// QUESTION SUBMISSION FORM
+// =============================================
+(function () {
+  var form = document.getElementById('questionForm');
+  var btn = document.getElementById('questionSubmitBtn');
+  var note = document.getElementById('questionFormNote');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+
+    var data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (response.ok) {
+        btn.textContent = 'Question Submitted ✔';
+        btn.style.background = 'linear-gradient(135deg, #059669, #10B981)';
+        form.reset();
+
+        note.textContent = 'Thank you! We\'ll review your question and get back to you.';
+        note.className = 'question-form-note success';
+        note.style.display = 'block';
+
+        setTimeout(function () {
+          btn.textContent = 'Submit Question →';
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        btn.textContent = 'Something went wrong';
+        btn.style.background = 'linear-gradient(135deg, #DC2626, #EF4444)';
+        btn.disabled = false;
+
+        note.textContent = 'There was a problem submitting your question. Please try again.';
+        note.className = 'question-form-note error';
+        note.style.display = 'block';
+
+        setTimeout(function () {
+          btn.textContent = 'Submit Question →';
+          btn.style.background = '';
+        }, 3000);
+      }
+    }).catch(function () {
+      btn.textContent = 'Network error';
+      btn.style.background = 'linear-gradient(135deg, #DC2626, #EF4444)';
+      btn.disabled = false;
+
+      note.textContent = 'Network error. Please check your connection and try again.';
+      note.className = 'question-form-note error';
+      note.style.display = 'block';
+
+      setTimeout(function () {
+        btn.textContent = 'Submit Question →';
+        btn.style.background = '';
+      }, 3000);
+    });
+  });
+})();

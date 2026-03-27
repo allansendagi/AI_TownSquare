@@ -203,9 +203,37 @@ extraJs:
         <p class="question-propose-text">
           Have a question that requires diverse perspectives to answer? Questions must pass three tests: (1) No single expert can answer it alone, (2) It affects multiple sectors differently, (3) Reasonable people disagree.
         </p>
-        <a href="mailto:questions@aitownsquare.org?subject=Question%20Proposal" class="btn btn--outline btn--sm">
-          Submit a Question
-        </a>
+
+        <form id="questionForm" class="question-form" action="https://formspree.io/f/{{ site.formspreeId }}" method="POST">
+          <input type="hidden" name="_subject" value="New Question Proposal - AI TownSquare" />
+          <input type="hidden" name="_replyto" value="allansendagi@gmail.com" />
+
+          <div class="question-form-group">
+            <label class="question-form-label" for="questionName">Your Name *</label>
+            <input type="text" class="question-form-input" id="questionName" name="name" required />
+          </div>
+
+          <div class="question-form-group">
+            <label class="question-form-label" for="questionEmail">Email Address *</label>
+            <input type="email" class="question-form-input" id="questionEmail" name="email" required />
+          </div>
+
+          <div class="question-form-group">
+            <label class="question-form-label" for="questionText">Your Question *</label>
+            <textarea class="question-form-textarea" id="questionText" name="question" rows="4" placeholder="What question should AI TownSquare examine?" required></textarea>
+          </div>
+
+          <div class="question-form-group">
+            <label class="question-form-label" for="questionContext">Why does this question matter? (Optional)</label>
+            <textarea class="question-form-textarea" id="questionContext" name="context" rows="3" placeholder="Explain why this question requires diverse perspectives"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary question-form-submit" id="questionSubmitBtn">
+            Submit Question &rarr;
+          </button>
+        </form>
+
+        <p class="question-form-note" id="questionFormNote" style="display: none;"></p>
       </div>
     </div>
   </div>
