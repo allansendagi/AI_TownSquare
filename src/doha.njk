@@ -149,45 +149,65 @@ extraCss:
 </section>
 
 <!-- ============================================
-     KEY INSIGHTS — What Emerged
+     KEY INSIGHTS — What Emerged (Collapsible)
      ============================================ -->
 <section class="doha-insights bone-bg">
   <div class="container">
-    <div class="doha-insights-header reveal">
-      <span class="label label--accent">Key Insights</span>
-      <h2 class="doha-insights-title">What Emerged</h2>
-      <p class="doha-insights-sub">
-        Themes that surfaced from cross-sector dialogue on AI as a General-Purpose Technology.
-      </p>
-    </div>
-
-    <div class="doha-insight-grid reveal">
-      <div class="doha-insight">
-        <span class="doha-insight-number">01</span>
-        <h3>AI as Infrastructure, Not Just Tool</h3>
-        <p>Participants recognized that AI isn't merely another software tool—it's foundational infrastructure that will reshape how every sector operates, similar to electricity or the internet.</p>
+    <button class="doha-insights-toggle reveal" aria-expanded="false" aria-controls="insights-content">
+      <div class="doha-insights-toggle-content">
+        <span class="label label--accent">Key Insights</span>
+        <h2 class="doha-insights-title">What Emerged</h2>
+        <p class="doha-insights-sub">
+          Themes that surfaced from cross-sector dialogue on AI as a General-Purpose Technology.
+        </p>
       </div>
+      <span class="doha-insights-toggle-icon" aria-hidden="true"></span>
+    </button>
 
-      <div class="doha-insight">
-        <span class="doha-insight-number">02</span>
-        <h3>The Readiness Gap is Institutional</h3>
-        <p>The challenge isn't technological capability—it's institutional readiness. Organizations, policies, and mental models haven't kept pace with AI's advancement.</p>
-      </div>
+    <div id="insights-content" class="doha-insights-collapsible">
+      <div class="doha-insight-grid reveal">
+        <div class="doha-insight">
+          <span class="doha-insight-number">01</span>
+          <h3>AI as Infrastructure, Not Just Tool</h3>
+          <p>Participants recognized that AI isn't merely another software tool—it's foundational infrastructure that will reshape how every sector operates, similar to electricity or the internet.</p>
+        </div>
 
-      <div class="doha-insight">
-        <span class="doha-insight-number">03</span>
-        <h3>Cross-Sector Dialogue is Essential</h3>
-        <p>No single sector has the complete picture. Healthcare sees patient implications, education sees workforce shifts, government sees policy gaps—each perspective is partial but necessary.</p>
-      </div>
+        <div class="doha-insight">
+          <span class="doha-insight-number">02</span>
+          <h3>The Readiness Gap is Institutional</h3>
+          <p>The challenge isn't technological capability—it's institutional readiness. Organizations, policies, and mental models haven't kept pace with AI's advancement.</p>
+        </div>
 
-      <div class="doha-insight">
-        <span class="doha-insight-number">04</span>
-        <h3>Urgency Without Panic</h3>
-        <p>The conversation revealed a shared sense that action is needed now, but thoughtful action—not reactive fear. Preparation, not prediction, emerged as the guiding principle.</p>
+        <div class="doha-insight">
+          <span class="doha-insight-number">03</span>
+          <h3>Cross-Sector Dialogue is Essential</h3>
+          <p>No single sector has the complete picture. Healthcare sees patient implications, education sees workforce shifts, government sees policy gaps—each perspective is partial but necessary.</p>
+        </div>
+
+        <div class="doha-insight">
+          <span class="doha-insight-number">04</span>
+          <h3>Urgency Without Panic</h3>
+          <p>The conversation revealed a shared sense that action is needed now, but thoughtful action—not reactive fear. Preparation, not prediction, emerged as the guiding principle.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.doha-insights-toggle');
+    const content = document.getElementById('insights-content');
+
+    if (toggle && content) {
+      toggle.addEventListener('click', function() {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !isExpanded);
+        content.classList.toggle('is-expanded');
+      });
+    }
+  });
+</script>
 
 <!-- ============================================
      MISSION FRAME
