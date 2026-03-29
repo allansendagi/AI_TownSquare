@@ -12,7 +12,6 @@
   var guestNameEl = document.getElementById('guestName');
   var nameField = document.getElementById('nameField');
   var emailField = document.getElementById('emailField');
-  var formSubject = document.getElementById('formSubject');
   var googleCalBtn = document.getElementById('googleCalendarBtn');
   var icsBtn = document.getElementById('icsDownloadBtn');
   var googleCalBtnMain = document.getElementById('googleCalendarBtnMain');
@@ -89,10 +88,8 @@
     var selectedValue = document.querySelector('input[name="attendance"]:checked').value;
     if (selectedValue === 'yes') {
       btn.textContent = 'Confirm My Seat \u2192';
-      formSubject.value = 'Dubai RSVP - Confirmed';
     } else {
       btn.textContent = 'Submit Response \u2192';
-      formSubject.value = 'Dubai RSVP - Declined';
     }
   }
 
@@ -109,13 +106,24 @@
     btn.textContent = 'Submitting...';
     btn.disabled = true;
 
-    var data = new FormData(form);
     var attendance = document.querySelector('input[name="attendance"]:checked').value;
 
-    fetch(form.action, {
+    // Collect form data as JSON for API
+    var formData = {
+      name: nameField.value,
+      email: emailField.value,
+      organization: document.getElementById('orgField').value,
+      role: document.getElementById('roleField').value,
+      attendance: attendance
+    };
+
+    fetch('/api/rsvp', {
       method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
     }).then(function (response) {
       if (response.ok) {
         // Hide form and calendar section
@@ -127,7 +135,7 @@
         // Show appropriate success state
         if (attendance === 'yes') {
           successConfirmed.style.display = 'block';
-          // Generate calendar links
+          // Generate calendar links (user can still download manually)
           googleCalBtn.href = generateGoogleCalendarUrl();
           icsBtn.addEventListener('click', downloadICS);
         } else {

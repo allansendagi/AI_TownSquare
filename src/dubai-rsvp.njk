@@ -52,10 +52,7 @@ extraJs:
 
       <!-- RSVP Form -->
       <div class="rsvp-form-wrap reveal" id="rsvpFormWrap">
-        <form id="rsvpForm" action="https://formspree.io/f/{{ site.formspreeId }}" method="POST">
-          <input type="hidden" name="_subject" id="formSubject" value="Dubai RSVP - Confirmed" />
-          <input type="hidden" name="_cc" value="olga@aitownsquare.org" />
-          <input type="hidden" name="rsvp_type" value="invitation_confirmation" />
+        <form id="rsvpForm" method="POST">
 
           <div class="form-row">
             <div class="form-group">
@@ -129,7 +126,7 @@ extraJs:
       <div class="rsvp-success" id="rsvpSuccessConfirmed" style="display: none;">
         <div class="rsvp-success-icon">&#10003;</div>
         <h2 class="rsvp-success-title">Your seat is confirmed.</h2>
-        <p class="rsvp-success-text">Add this event to your calendar:</p>
+        <p class="rsvp-success-text">A confirmation email with a calendar invite has been sent to you.<br>You can also add the event manually:</p>
 
         <div class="rsvp-calendar-buttons">
           <a href="#" id="googleCalendarBtn" class="rsvp-calendar-btn" target="_blank" rel="noopener">
