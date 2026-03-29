@@ -15,6 +15,9 @@
   var formSubject = document.getElementById('formSubject');
   var googleCalBtn = document.getElementById('googleCalendarBtn');
   var icsBtn = document.getElementById('icsDownloadBtn');
+  var googleCalBtnMain = document.getElementById('googleCalendarBtnMain');
+  var icsDownloadBtnMain = document.getElementById('icsDownloadBtnMain');
+  var calendarSection = document.querySelector('.rsvp-calendar-section');
 
   if (!form) return;
 
@@ -66,6 +69,18 @@
   prefillForm();
 
   // =============================================
+  // Initialize Main Calendar Buttons (on page load)
+  // =============================================
+  function initializeMainCalendarButtons() {
+    if (googleCalBtnMain) {
+      googleCalBtnMain.href = generateGoogleCalendarUrl();
+    }
+    if (icsDownloadBtnMain) {
+      icsDownloadBtnMain.addEventListener('click', downloadICS);
+    }
+  }
+
+  // =============================================
   // Attendance Radio Handling
   // =============================================
   var attendanceRadios = document.querySelectorAll('input[name="attendance"]');
@@ -103,8 +118,11 @@
       headers: { 'Accept': 'application/json' }
     }).then(function (response) {
       if (response.ok) {
-        // Hide form
+        // Hide form and calendar section
         formWrap.style.display = 'none';
+        if (calendarSection) {
+          calendarSection.style.display = 'none';
+        }
 
         // Show appropriate success state
         if (attendance === 'yes') {
@@ -202,4 +220,7 @@
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
   }
+
+  // Initialize main calendar buttons on page load
+  initializeMainCalendarButtons();
 })();
