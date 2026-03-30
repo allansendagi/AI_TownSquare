@@ -177,11 +177,10 @@ module.exports = async function handler(req, res) {
       `;
     }
 
-    // Send email via Resend
+    // Send confirmation email to attendee
     const emailResult = await resend.emails.send({
       from: 'AI TownSquare <rsvp@aitownsquare.org>',
       to: email,
-      cc: ['olga@aitownsquare.org', 'allan@aitownsquare.org'],
       subject: subject,
       html: htmlBody,
       attachments: attachments.length > 0 ? attachments : undefined
@@ -190,6 +189,29 @@ module.exports = async function handler(req, res) {
     if (emailResult.error) {
       console.error('Resend error:', emailResult.error);
       return res.status(500).json({ error: 'Failed to send email' });
+    }
+
+    // Send notification to organizers with full RSVP details
+    const organizerResult = await resend.emails.send({
+      from: 'AI TownSquare <rsvp@aitownsquare.org>',
+      to: ['olga@aitownsquare.org', 'allan@aitownsquare.org'],
+      subject: `[RSVP] ${name} - ${isAttending ? 'Confirmed' : 'Declined'} - Dubai`,
+      html: `
+        <h2>New RSVP Submission</h2>
+        <p><strong>Status:</strong> ${isAttending ? '✓ Confirmed' : '✗ Declined'}</p>
+        <hr>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Organization:</strong> ${organization || 'Not provided'}</p>
+        <p><strong>Role/Title:</strong> ${role || 'Not provided'}</p>
+        <hr>
+        <p><em>Submitted: ${new Date().toISOString()}</em></p>
+      `
+    });
+
+    if (organizerResult.error) {
+      console.error('Organizer notification error:', organizerResult.error);
+      // Don't fail the request - attendee already got their email
     }
 
     return res.status(200).json({
