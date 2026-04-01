@@ -66,10 +66,10 @@
           Watch the live dialogue as 25 cross-sector participants examine one of the defining questions of the AI era.
         </p>
 
-        {# YouTube Live Embed #}
+        {# YouTube Live Embed - uses channel ID to auto-show current livestream #}
         <div class="youtube-embed-wrap" id="youtubeEmbed">
           <iframe
-            src="https://www.youtube.com/embed/LIVE_VIDEO_ID?autoplay=1&rel=0&modestbranding=1"
+            src="https://www.youtube.com/embed/live_stream?channel=UC4nNC0GSVCtmRJBFRh_9z-Q&autoplay=1&rel=0&modestbranding=1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
             loading="lazy"
@@ -78,7 +78,7 @@
           <div class="youtube-fallback" style="display: none;">
             <span class="youtube-fallback-icon">&#9654;</span>
             <span class="youtube-fallback-text">Stream loading...</span>
-            <a href="https://youtube.com/watch?v=LIVE_VIDEO_ID" class="btn btn--primary" target="_blank" rel="noopener">
+            <a href="https://www.youtube.com/channel/UC4nNC0GSVCtmRJBFRh_9z-Q/live" class="btn btn--primary" target="_blank" rel="noopener">
               Watch on YouTube
               <span class="btn-arrow">&rarr;</span>
             </a>
@@ -86,7 +86,7 @@
         </div>
 
         <div class="dubai-hero-actions">
-          <a href="https://youtube.com/watch?v=LIVE_VIDEO_ID" class="btn btn--secondary" target="_blank" rel="noopener">
+          <a href="https://www.youtube.com/channel/UC4nNC0GSVCtmRJBFRh_9z-Q/live" class="btn btn--secondary" target="_blank" rel="noopener">
             Watch on YouTube
             <span class="btn-arrow">&rarr;</span>
           </a>
@@ -111,6 +111,7 @@
         </p>
 
         {# YouTube Recording Embed #}
+        {# TODO: After event, replace RECORDING_VIDEO_ID with the actual video ID from your channel #}
         <div class="youtube-embed-wrap">
           <iframe
             src="https://www.youtube.com/embed/RECORDING_VIDEO_ID?rel=0&modestbranding=1"
@@ -126,7 +127,7 @@
             Read the Civic Brief
             <span class="btn-arrow">&rarr;</span>
           </a>
-          <a href="https://youtube.com/watch?v=RECORDING_VIDEO_ID" class="btn btn--secondary" target="_blank" rel="noopener" style="margin-left: 12px;">
+          <a href="https://www.youtube.com/channel/UC4nNC0GSVCtmRJBFRh_9z-Q" class="btn btn--secondary" target="_blank" rel="noopener" style="margin-left: 12px;">
             Watch Full Recording
           </a>
         </div>
