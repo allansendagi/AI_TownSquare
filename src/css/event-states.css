@@ -8,6 +8,17 @@
    STATE VISIBILITY RULES
    ============================================= */
 
+/* Default: pre-event content visible, live/post hidden */
+.pre-event-only {
+  display: block;
+}
+
+.live-only,
+.post-event-only,
+.live-or-post-only {
+  display: none;
+}
+
 /* Pre-event elements: visible only before event */
 .event-state--live .pre-event-only,
 .event-state--post-event .pre-event-only {
