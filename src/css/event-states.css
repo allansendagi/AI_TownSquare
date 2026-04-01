@@ -1,0 +1,378 @@
+/* =============================================
+   EVENT STATES
+   Controls visibility and styling based on event state
+   States: pre-event, live, post-event
+   ============================================= */
+
+/* =============================================
+   STATE VISIBILITY RULES
+   ============================================= */
+
+/* Pre-event elements: visible only before event */
+.event-state--live .pre-event-only,
+.event-state--post-event .pre-event-only {
+  display: none !important;
+}
+
+/* Live elements: visible only during event */
+.event-state--pre-event .live-only,
+.event-state--post-event .live-only {
+  display: none !important;
+}
+
+/* Post-event elements: visible only after event */
+.event-state--pre-event .post-event-only,
+.event-state--live .post-event-only {
+  display: none !important;
+}
+
+/* Live or post: visible during and after event */
+.event-state--pre-event .live-or-post-only {
+  display: none !important;
+}
+
+/* =============================================
+   YOUTUBE EMBED CONTAINER
+   16:9 Responsive aspect ratio
+   ============================================= */
+.youtube-embed-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  aspect-ratio: 16 / 9;
+  background: var(--ink);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.youtube-embed-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Fallback when iframe fails */
+.youtube-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--bone);
+}
+
+.youtube-fallback-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+.youtube-fallback-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--bone);
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* =============================================
+   LIVE BADGE
+   Red pulsing indicator
+   ============================================= */
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #dc2626;
+  color: white;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.live-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: liveBadgePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes liveBadgePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* =============================================
+   POST-EVENT BADGE
+   Bronze completed indicator
+   ============================================= */
+.post-event-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bronze);
+  color: var(--bone);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.post-event-badge-icon {
+  font-size: 14px;
+}
+
+/* =============================================
+   PARTICIPATION MAP SECTION
+   Dark background with world map
+   ============================================= */
+.participation-map-section {
+  background: var(--ink);
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.participation-map-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.participation-map-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--bone);
+  opacity: 0.5;
+  margin-bottom: 12px;
+}
+
+.participation-map-count {
+  font-family: var(--font-mono);
+  font-size: clamp(48px, 8vw, 72px);
+  font-weight: 600;
+  color: var(--bone);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.participation-map-watching {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--bone);
+  opacity: 0.6;
+}
+
+.participation-map-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* World Map SVG */
+.world-map-svg {
+  width: 100%;
+  height: auto;
+  opacity: 0.3;
+}
+
+.world-map-svg path {
+  fill: var(--bone);
+  opacity: 0.15;
+}
+
+/* Viewer Dots */
+.viewer-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--bronze);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: viewerDotPulse 2s ease-in-out infinite;
+}
+
+.viewer-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--bronze);
+  opacity: 0.5;
+  animation: viewerDotRing 2s ease-out infinite;
+}
+
+@keyframes viewerDotPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+@keyframes viewerDotRing {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Dubai marker - larger, bronze accent */
+.viewer-dot--dubai {
+  width: 12px;
+  height: 12px;
+  background: var(--bronze);
+  box-shadow: 0 0 20px var(--bronze);
+}
+
+.viewer-dot--dubai::after {
+  inset: -6px;
+}
+
+/* =============================================
+   KEY TAKEAWAYS SECTION
+   Post-event summary grid
+   ============================================= */
+.key-takeaways-section {
+  background: var(--bone);
+  padding: 120px 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.key-takeaways-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.key-takeaways-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3.5vw, 40px);
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: 16px;
+}
+
+.key-takeaways-sub {
+  font-size: 15px;
+  color: var(--ink-70);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.key-takeaways-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto 48px;
+}
+
+.key-takeaway-card {
+  background: white;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: 32px;
+  text-align: left;
+}
+
+.key-takeaway-number {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--bronze);
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: 16px;
+}
+
+.key-takeaway-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: var(--tracking-tight);
+}
+
+.key-takeaway-text {
+  font-size: 14px;
+  color: var(--ink-70);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.key-takeaways-cta {
+  text-align: center;
+}
+
+/* =============================================
+   HERO VARIANTS
+   ============================================= */
+
+/* Live hero adjustments */
+.event-state--live .dubai-hero {
+  background: var(--bone);
+}
+
+/* Post-event hero adjustments */
+.event-state--post-event .dubai-hero {
+  background: var(--bone);
+}
+
+.event-state--post-event .dubai-hero-sub {
+  margin-bottom: 40px;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 768px) {
+  .key-takeaways-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .key-takeaway-card {
+    padding: 24px;
+  }
+
+  .participation-map-section {
+    padding: 60px 0;
+  }
+
+  .participation-map-count {
+    font-size: clamp(36px, 10vw, 56px);
+  }
+}
+
+@media (max-width: 640px) {
+  .youtube-embed-wrap {
+    margin-bottom: 32px;
+  }
+
+  .live-badge,
+  .post-event-badge {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+}

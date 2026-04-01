@@ -1,0 +1,137 @@
+{# ============================================
+   EVENT HERO — Multi-State Component
+   Three variants: pre-event, live, post-event
+   Visibility controlled by CSS based on body class
+   ============================================ #}
+<section class="dubai-hero">
+  <div class="container">
+    <div class="dubai-hero-content">
+
+      {# ===== PRE-EVENT STATE ===== #}
+      <div class="pre-event-only">
+        <div class="dubai-hero-eyebrow">AI TownSquare &middot; Dubai Node<br/>3 April 2026</div>
+
+        <h1 class="dubai-hero-question">
+          Is AI Going to Take Our Jobs?
+        </h1>
+
+        <p class="dubai-hero-sub">
+          25 cross-sector participants examine one of the defining questions of the AI era through a structured 60-minute civic dialogue.
+        </p>
+
+        <div class="readiness-clock" id="countdown">
+          <div class="readiness-clock-label">Global Readiness Clock</div>
+          <div class="readiness-clock-units">
+            <div class="readiness-clock-unit">
+              <span class="readiness-clock-value" id="cd-days">--</span>
+              <span class="readiness-clock-name">Days</span>
+            </div>
+            <div class="readiness-clock-unit">
+              <span class="readiness-clock-value" id="cd-hours">--</span>
+              <span class="readiness-clock-name">Hours</span>
+            </div>
+            <div class="readiness-clock-unit">
+              <span class="readiness-clock-value" id="cd-min">--</span>
+              <span class="readiness-clock-name">Min</span>
+            </div>
+            <div class="readiness-clock-unit">
+              <span class="readiness-clock-value" id="cd-sec">--</span>
+              <span class="readiness-clock-name">Sec</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dubai-hero-actions">
+          <a href="/dubai-rsvp/" class="btn btn--primary">
+            7 of 25 Seats Remaining
+            <span class="btn-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      {# ===== LIVE STATE ===== #}
+      <div class="live-only">
+        <div class="live-badge">
+          <span class="live-badge-dot"></span>
+          Live Now
+        </div>
+
+        <div class="dubai-hero-eyebrow">AI TownSquare &middot; Dubai Node<br/>3 April 2026</div>
+
+        <h1 class="dubai-hero-question">
+          Is AI Going to Take Our Jobs?
+        </h1>
+
+        <p class="dubai-hero-sub">
+          Watch the live dialogue as 25 cross-sector participants examine one of the defining questions of the AI era.
+        </p>
+
+        {# YouTube Live Embed #}
+        <div class="youtube-embed-wrap" id="youtubeEmbed">
+          <iframe
+            src="https://www.youtube.com/embed/LIVE_VIDEO_ID?autoplay=1&rel=0&modestbranding=1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+            title="AI TownSquare Dubai Live Stream"
+          ></iframe>
+          <div class="youtube-fallback" style="display: none;">
+            <span class="youtube-fallback-icon">&#9654;</span>
+            <span class="youtube-fallback-text">Stream loading...</span>
+            <a href="https://youtube.com/watch?v=LIVE_VIDEO_ID" class="btn btn--primary" target="_blank" rel="noopener">
+              Watch on YouTube
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="dubai-hero-actions">
+          <a href="https://youtube.com/watch?v=LIVE_VIDEO_ID" class="btn btn--secondary" target="_blank" rel="noopener">
+            Watch on YouTube
+            <span class="btn-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      {# ===== POST-EVENT STATE ===== #}
+      <div class="post-event-only">
+        <div class="post-event-badge">
+          <span class="post-event-badge-icon">&#10003;</span>
+          Event Complete
+        </div>
+
+        <div class="dubai-hero-eyebrow">AI TownSquare &middot; Dubai Node<br/>3 April 2026</div>
+
+        <h1 class="dubai-hero-question">
+          Is AI Going to Take Our Jobs?
+        </h1>
+
+        <p class="dubai-hero-sub">
+          Watch the recording of this landmark civic dialogue where 25 cross-sector participants examined AI's impact on employment.
+        </p>
+
+        {# YouTube Recording Embed #}
+        <div class="youtube-embed-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/RECORDING_VIDEO_ID?rel=0&modestbranding=1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+            title="AI TownSquare Dubai Recording"
+          ></iframe>
+        </div>
+
+        <div class="dubai-hero-actions">
+          <a href="/briefs/dubai-april-2026/" class="btn btn--primary">
+            Read the Civic Brief
+            <span class="btn-arrow">&rarr;</span>
+          </a>
+          <a href="https://youtube.com/watch?v=RECORDING_VIDEO_ID" class="btn btn--secondary" target="_blank" rel="noopener" style="margin-left: 12px;">
+            Watch Full Recording
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

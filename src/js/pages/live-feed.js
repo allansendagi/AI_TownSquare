@@ -1,12 +1,19 @@
 // =============================================
 // LIVE SYNTHESIS FEED
 // Polls mock JSON to simulate real-time insight capture
-// In production: polls Google Sheets CSV or WebSocket
+// In production: polls /api/live-insights every 8 seconds
+// State-aware: only active during live event
 // =============================================
 (function () {
+  'use strict';
+
   var stream = document.getElementById('liveFeedStream');
   var toggle = document.getElementById('liveFeedToggle');
   if (!stream) return;
+
+  var isPolling = false;
+  var pollInterval = null;
+  var shown = 0;
 
   // Toggle functionality
   if (toggle) {
@@ -49,8 +56,6 @@
     { phase: 'Synthesize', text: 'Three themes emerged: institutional speed, trust architecture, and citizen agency.', time: '0:48' }
   ];
 
-  var shown = 0;
-
   function renderInsight(insight) {
     var card = document.createElement('div');
     card.className = 'live-feed-card';
@@ -74,19 +79,69 @@
     });
   }
 
-  // Show first 3 immediately
-  for (var i = 0; i < Math.min(3, mockInsights.length); i++) {
-    renderInsight(mockInsights[i]);
-    shown++;
+  function startPolling() {
+    if (isPolling) return;
+    isPolling = true;
+
+    // Show first 3 immediately
+    for (var i = shown; i < Math.min(shown + 3, mockInsights.length); i++) {
+      renderInsight(mockInsights[i]);
+      shown++;
+    }
+
+    // Poll every 8 seconds for new insights
+    pollInterval = setInterval(function () {
+      if (shown >= mockInsights.length) {
+        // In production, would continue polling API
+        return;
+      }
+      renderInsight(mockInsights[shown]);
+      shown++;
+    }, 8000);
   }
 
-  // Simulate live polling: add one every 8 seconds
-  var interval = setInterval(function () {
-    if (shown >= mockInsights.length) {
-      clearInterval(interval);
-      return;
+  function stopPolling() {
+    isPolling = false;
+    if (pollInterval) {
+      clearInterval(pollInterval);
+      pollInterval = null;
     }
-    renderInsight(mockInsights[shown]);
-    shown++;
-  }, 8000);
+  }
+
+  // Listen for event state changes
+  document.addEventListener('eventStateChange', function(e) {
+    var state = e.detail.state;
+
+    if (state === 'live') {
+      // Start live polling
+      startPolling();
+    } else if (state === 'post-event') {
+      // Stop polling, show all insights
+      stopPolling();
+      while (shown < mockInsights.length) {
+        renderInsight(mockInsights[shown]);
+        shown++;
+      }
+    } else {
+      // Pre-event: stop polling
+      stopPolling();
+    }
+  });
+
+  // Check current state on load
+  if (window.EventState) {
+    var currentState = window.EventState.getState();
+    if (currentState === 'live') {
+      startPolling();
+    } else if (currentState === 'post-event') {
+      // Show all insights immediately
+      while (shown < mockInsights.length) {
+        renderInsight(mockInsights[shown]);
+        shown++;
+      }
+    }
+  } else {
+    // Fallback: start polling if no event state manager
+    startPolling();
+  }
 })();

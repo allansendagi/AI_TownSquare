@@ -5,13 +5,16 @@ description: "Is AI Going to Take Our Jobs? 25 curated voices. 60 minutes. One q
 permalink: /dubai/
 extraCss:
   - /css/pages/dubai.css
+  - /css/event-states.css
 extraJs:
+  - /js/event-state.js
   - /js/countdown.js
   - /js/form.js
   - /js/pages/dubai-orbit.js
   - /js/pages/dubai-phases.js
   - /js/pages/dubai-agency.js
   - /js/pages/live-feed.js
+  - /js/participation-map.js
 ---
 
 <!-- Structured Data: Event -->
@@ -21,8 +24,8 @@ extraJs:
   "@type": "Event",
   "name": "AI TownSquare Dubai: Is AI Going to Take Our Jobs?",
   "description": "Is AI going to take our jobs — or is the real challenge institutional readiness? 25 cross-sector participants examine one of the defining questions of the AI era through a structured 60-minute civic dialogue using the AI TownSquare Protocol.",
-  "startDate": "2026-04-03T09:00:00+04:00",
-  "endDate": "2026-04-03T10:00:00+04:00",
+  "startDate": "2026-04-03T14:00:00+04:00",
+  "endDate": "2026-04-03T15:00:00+04:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
   "location": {
@@ -58,52 +61,15 @@ extraJs:
 </script>
 
 <!-- ============================================
-     HERO: Global Readiness Clock
+     HERO: Multi-State Event Hero
+     Shows countdown (pre), YouTube (live), recording (post)
      ============================================ -->
-<section class="dubai-hero">
-  <div class="container">
-    <div class="dubai-hero-content">
-      <div class="dubai-hero-eyebrow">AI TownSquare &middot; Dubai Node<br/>3 April 2026</div>
+{% include "event-hero.njk" %}
 
-      <h1 class="dubai-hero-question">
-        Is AI Going to Take Our Jobs?
-      </h1>
-
-      <p class="dubai-hero-sub">
-        25 cross-sector participants examine one of the defining questions of the AI era through a structured 60-minute civic dialogue.
-      </p>
-
-      <div class="readiness-clock" id="countdown">
-        <div class="readiness-clock-label">Global Readiness Clock</div>
-        <div class="readiness-clock-units">
-          <div class="readiness-clock-unit">
-            <span class="readiness-clock-value" id="cd-days">--</span>
-            <span class="readiness-clock-name">Days</span>
-          </div>
-          <div class="readiness-clock-unit">
-            <span class="readiness-clock-value" id="cd-hours">--</span>
-            <span class="readiness-clock-name">Hours</span>
-          </div>
-          <div class="readiness-clock-unit">
-            <span class="readiness-clock-value" id="cd-min">--</span>
-            <span class="readiness-clock-name">Min</span>
-          </div>
-          <div class="readiness-clock-unit">
-            <span class="readiness-clock-value" id="cd-sec">--</span>
-            <span class="readiness-clock-name">Sec</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="dubai-hero-actions">
-        <a href="/dubai-rsvp/" class="btn btn--primary">
-          7 of 25 Seats Remaining
-          <span class="btn-arrow">&rarr;</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ============================================
+     PARTICIPATION MAP (Live Only)
+     ============================================ -->
+{% include "participation-map.njk" %}
 
 <!-- ============================================
      VENUE
@@ -427,9 +393,14 @@ extraJs:
 {% include "live-feed.njk" %}
 
 <!-- ============================================
+     POST-EVENT SUMMARY (Post-Event Only)
+     ============================================ -->
+{% include "post-event-summary.njk" %}
+
+<!-- ============================================
      REGISTRATION
      ============================================ -->
-<section class="register section--dark" id="register">
+<section class="register section--dark pre-event-only" id="register">
   <div class="container">
     <div class="register-inner">
       <div class="register-header">

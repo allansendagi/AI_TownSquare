@@ -1,0 +1,41 @@
+{# ============================================
+   PARTICIPATION MAP — Global Viewer Visualization
+   Shows animated dots for viewer locations during live event
+   Only visible during live state
+   ============================================ #}
+<section class="participation-map-section live-only" id="participationMap">
+  <div class="container">
+    <div class="participation-map-header">
+      <div class="participation-map-label">Watching Worldwide</div>
+      <div class="participation-map-count" id="viewerCount">--</div>
+      <div class="participation-map-watching">Live Viewers</div>
+    </div>
+
+    <div class="participation-map-wrap">
+      {# Simplified World Map SVG #}
+      <svg class="world-map-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" aria-label="World map showing viewer locations">
+        {# Simplified continent shapes #}
+        <g class="continents">
+          {# North America #}
+          <path d="M150,120 L280,80 L320,120 L280,200 L220,220 L180,280 L120,260 L100,200 L120,160 Z" />
+          {# South America #}
+          <path d="M220,280 L280,300 L300,380 L260,450 L200,420 L180,340 Z" />
+          {# Europe #}
+          <path d="M440,100 L520,80 L560,120 L540,160 L480,180 L440,160 Z" />
+          {# Africa #}
+          <path d="M460,200 L540,180 L580,240 L560,340 L500,380 L440,340 L420,260 Z" />
+          {# Asia #}
+          <path d="M560,80 L720,60 L820,100 L860,180 L800,240 L700,260 L620,220 L560,180 Z" />
+          {# Australia #}
+          <path d="M780,340 L860,320 L900,360 L880,420 L820,440 L760,400 Z" />
+        </g>
+      </svg>
+
+      {# Viewer dots container - populated by JS #}
+      <div class="viewer-dots" id="viewerDots">
+        {# Dubai marker - always present #}
+        <div class="viewer-dot viewer-dot--dubai" style="left: 56%; top: 42%;" title="Dubai"></div>
+      </div>
+    </div>
+  </div>
+</section>
