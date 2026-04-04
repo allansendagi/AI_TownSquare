@@ -42,6 +42,22 @@
   display: none !important;
 }
 
+/* Show live elements during event */
+.event-state--live .live-only {
+  display: block !important;
+}
+
+/* Show post-event elements after event */
+.event-state--post-event .post-event-only {
+  display: block !important;
+}
+
+/* Show live-or-post elements during and after event */
+.event-state--live .live-or-post-only,
+.event-state--post-event .live-or-post-only {
+  display: block !important;
+}
+
 /* =============================================
    YOUTUBE EMBED CONTAINER
    16:9 Responsive aspect ratio
