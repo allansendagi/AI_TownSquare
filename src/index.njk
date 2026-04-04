@@ -2,10 +2,14 @@
 layout: base.njk
 title: Civic Infrastructure for the Intelligence Age
 description: "25 curated voices. 60 minutes. One question that matters. The world's most structured civic dialogue on AI — Dubai, 3 April 2026."
+extraCss:
+  - /css/event-states.css
 extraJs:
+  - /js/event-state.js
   - /js/countdown.js
   - /js/counter.js
   - /js/form.js
+  - /js/civic-brief-countdown.js
 ---
 
 <!-- Structured Data: FAQPage -->
@@ -58,41 +62,103 @@ extraJs:
     <div class="hero-layout">
       <!-- Left column -->
       <div>
-        <h1 class="hero-title">
-          <span class="hero-title-line">Bridging the Gap</span>
-          <span class="hero-title-line">Between <span class="hero-title-accent">AI Advancement</span></span>
-          <span class="hero-title-line">&amp; <span class="hero-title-accent">Societal Readiness</span></span>
-        </h1>
+        {# ===== PRE-EVENT HERO ===== #}
+        <div class="pre-event-only">
+          <h1 class="hero-title">
+            <span class="hero-title-line">Bridging the Gap</span>
+            <span class="hero-title-line">Between <span class="hero-title-accent">AI Advancement</span></span>
+            <span class="hero-title-line">&amp; <span class="hero-title-accent">Societal Readiness</span></span>
+          </h1>
 
-        <p class="hero-subtitle">
-          Civic infrastructure for the intelligence age. 25 curated participants. 60 minutes. One published civic record.
-        </p>
+          <p class="hero-subtitle">
+            Civic infrastructure for the intelligence age. 25 curated participants. 60 minutes. One published civic record.
+          </p>
 
-        <div class="countdown" id="countdown">
-          <div class="countdown-unit">
-            <span class="countdown-value" id="cd-days">--</span>
-            <span class="countdown-label">Days</span>
+          <div class="countdown" id="countdown">
+            <div class="countdown-unit">
+              <span class="countdown-value" id="cd-days">--</span>
+              <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-value" id="cd-hours">--</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-value" id="cd-min">--</span>
+              <span class="countdown-label">Min</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-value" id="cd-sec">--</span>
+              <span class="countdown-label">Sec</span>
+            </div>
           </div>
-          <div class="countdown-unit">
-            <span class="countdown-value" id="cd-hours">--</span>
-            <span class="countdown-label">Hours</span>
-          </div>
-          <div class="countdown-unit">
-            <span class="countdown-value" id="cd-min">--</span>
-            <span class="countdown-label">Min</span>
-          </div>
-          <div class="countdown-unit">
-            <span class="countdown-value" id="cd-sec">--</span>
-            <span class="countdown-label">Sec</span>
+
+          <div class="hero-actions">
+            <a href="/dubai-rsvp/" class="btn btn--primary">
+              0 of 25 seats &middot Join the AI TownSquare Waitlist
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+            <span class="hero-meta">By invitation &middot; Curated entry</span>
           </div>
         </div>
 
-        <div class="hero-actions">
-          <a href="/dubai-rsvp/" class="btn btn--primary">
-            0 of 25 seats &middot Join the AI TownSquare Waitlist 
-            <span class="btn-arrow">&rarr;</span>
-          </a>
-          <span class="hero-meta">By invitation &middot; Curated entry</span>
+        {# ===== POST-EVENT HERO ===== #}
+        <div class="post-event-only home-post-event-hero">
+          <div class="home-post-event-badge">
+            <span>&#10003;</span>
+            Dubai Node Complete
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-title-line">Dubai Node</span>
+            <span class="hero-title-line"><span class="hero-title-accent">Complete</span></span>
+          </h1>
+
+          <p class="hero-subtitle home-post-event-sub">
+            25 cross-sector participants examined AI's impact on employment. The Civic Brief is being synthesized.
+          </p>
+
+          {# Civic Brief Countdown for Home Page #}
+          <div class="civic-brief-countdown" id="civicBriefCountdownHome">
+            <div class="civic-brief-countdown-badge">
+              <span class="civic-brief-countdown-icon">&#9998;</span>
+              In Progress
+            </div>
+            <div class="civic-brief-countdown-label">Civic Brief Publication</div>
+            <div class="civic-brief-countdown-timer">
+              <div class="civic-brief-countdown-unit">
+                <span class="civic-brief-countdown-value" id="cb-hours-home">--</span>
+                <span class="civic-brief-countdown-name">Hours</span>
+              </div>
+              <div class="civic-brief-countdown-unit">
+                <span class="civic-brief-countdown-value" id="cb-min-home">--</span>
+                <span class="civic-brief-countdown-name">Min</span>
+              </div>
+              <div class="civic-brief-countdown-unit">
+                <span class="civic-brief-countdown-value" id="cb-sec-home">--</span>
+                <span class="civic-brief-countdown-name">Sec</span>
+              </div>
+            </div>
+          </div>
+
+          {# Civic Brief Available - shown after deadline #}
+          <div class="civic-brief-available" id="civicBriefAvailableHome" style="display: none;">
+            <div class="civic-brief-available-badge">
+              <span class="civic-brief-available-icon">&#10003;</span>
+              Civic Brief Published
+            </div>
+          </div>
+
+          <div class="hero-actions" style="justify-content: center;">
+            <a href="/dubai/" class="btn btn--primary">
+              Watch the Dialogue
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+            <a href="/briefs/dubai-april-2026/" class="btn btn--secondary civic-brief-link" id="civicBriefBtnHome" style="display: none; margin-left: 12px;">
+              Read the Civic Brief
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+          </div>
         </div>
       </div>
 

@@ -47,9 +47,8 @@
             <span class="btn-arrow">&rarr;</span>
           </a>
         </div>
-      </div>
 
-      {# Livestream Preview #}
+        {# Livestream Preview - inside pre-event-only #}
         <div class="livestream-preview">
           <div class="livestream-preview-badge">
             <span class="livestream-preview-icon">&#9737;</span>
@@ -58,11 +57,12 @@
           <p class="livestream-preview-text">
             Are you outside Dubai? Watch AI TownSquare live from anywhere on Earth.
           </p>
-          <a href="https://youtube.com/live/h2HoeT2pFz4?feature=share" class="btn btn--ghost" target="_blank" rel="noopener">
+          <a href="https://youtube.com/live/dW4XoVqgIXU?feature=share" class="btn btn--ghost" target="_blank" rel="noopener">
             <span class="yt-icon">&#9654;</span>
             Subscribe to Watch Live
           </a>
         </div>
+      </div>
 
       {# ===== LIVE STATE ===== #}
       <div class="live-only">
@@ -112,7 +112,7 @@
       <div class="post-event-only">
         <div class="post-event-badge">
           <span class="post-event-badge-icon">&#10003;</span>
-          Event Complete
+          Dialogue Complete
         </div>
 
         <div class="dubai-hero-eyebrow">AI TownSquare &middot; Dubai Node<br/>3 April 2026</div>
@@ -122,14 +122,13 @@
         </h1>
 
         <p class="dubai-hero-sub">
-          Watch the recording of this landmark civic dialogue where 25 cross-sector participants examined AI's impact on employment.
+          25 voices. 60 minutes. One question that matters. Watch the full dialogue.
         </p>
 
         {# YouTube Recording Embed #}
-        {# TODO: After event, replace RECORDING_VIDEO_ID with the actual video ID from your channel #}
         <div class="youtube-embed-wrap">
           <iframe
-            src="https://www.youtube.com/embed/RECORDING_VIDEO_ID?rel=0&modestbranding=1"
+            src="https://www.youtube.com/embed/dW4XoVqgIXU?rel=0&modestbranding=1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
             loading="lazy"
@@ -137,13 +136,47 @@
           ></iframe>
         </div>
 
+        {# Civic Brief Countdown #}
+        <div class="civic-brief-countdown" id="civicBriefCountdown">
+          <div class="civic-brief-countdown-badge">
+            <span class="civic-brief-countdown-icon">&#9998;</span>
+            In Progress
+          </div>
+          <div class="civic-brief-countdown-label">Civic Brief Publication</div>
+          <div class="civic-brief-countdown-timer">
+            <div class="civic-brief-countdown-unit">
+              <span class="civic-brief-countdown-value" id="cb-hours">--</span>
+              <span class="civic-brief-countdown-name">Hours</span>
+            </div>
+            <div class="civic-brief-countdown-unit">
+              <span class="civic-brief-countdown-value" id="cb-min">--</span>
+              <span class="civic-brief-countdown-name">Min</span>
+            </div>
+            <div class="civic-brief-countdown-unit">
+              <span class="civic-brief-countdown-value" id="cb-sec">--</span>
+              <span class="civic-brief-countdown-name">Sec</span>
+            </div>
+          </div>
+          <p class="civic-brief-countdown-message">
+            Our team is synthesizing 60 minutes of cross-sector dialogue into a permanent civic record.
+          </p>
+        </div>
+
+        {# Civic Brief Available - shown after deadline #}
+        <div class="civic-brief-available" id="civicBriefAvailable" style="display: none;">
+          <div class="civic-brief-available-badge">
+            <span class="civic-brief-available-icon">&#10003;</span>
+            Civic Brief Published
+          </div>
+        </div>
+
         <div class="dubai-hero-actions">
-          <a href="/briefs/dubai-april-2026/" class="btn btn--primary">
+          <a href="/briefs/dubai-april-2026/" class="btn btn--primary civic-brief-link" id="civicBriefBtn" style="display: none;">
             Read the Civic Brief
             <span class="btn-arrow">&rarr;</span>
           </a>
-          <a href="https://www.youtube.com/channel/UC4nNC0GSVCtmRJBFRh_9z-Q" class="btn btn--secondary" target="_blank" rel="noopener" style="margin-left: 12px;">
-            Watch Full Recording
+          <a href="https://www.youtube.com/watch?v=dW4XoVqgIXU" class="btn btn--secondary" target="_blank" rel="noopener">
+            Watch on YouTube
           </a>
         </div>
       </div>
