@@ -1,3 +1,19 @@
 {
-  "briefs": []
+  "briefs": [
+    {
+      "id": "CB-DXB-001",
+      "title": "Dubai Node: AI & Employment",
+      "fullTitle": "Is AI going to take our jobs — or is that the wrong question entirely?",
+      "city": "Dubai",
+      "location": "DIFC, Dubai International Financial Centre",
+      "date": "2026-04-03",
+      "publication": "2026-04-05",
+      "sector": "Cross-Sector",
+      "participants": 25,
+      "insight": "In a domain where agency is everything, there is a vacuum of agency.",
+      "themes": ["AI Governance", "Employment", "Accountability", "Cognitive Displacement"],
+      "catalyst": "Olga Medvedeva",
+      "link": "/briefs/CB-DXB-001/"
+    }
+  ]
 }
