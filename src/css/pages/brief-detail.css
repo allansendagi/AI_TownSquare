@@ -523,6 +523,46 @@
 }
 
 /* =============================================
+   LOOP + WHO THIS SERVES - VISUAL GROUPING
+   ============================================= */
+
+/* Target the Self-Correcting Loop section (section VII) and Who This Serves */
+#self-correcting-loop,
+#who-this-serves {
+  background: var(--light-grey-brief, #f8f9fa);
+  padding: 32px;
+  border-radius: 0;
+  border-bottom: none;  /* Remove section divider */
+}
+
+#self-correcting-loop {
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 0;
+  padding-bottom: 24px;
+}
+
+#self-correcting-loop .brief-section-title {
+  border-bottom: none;  /* Remove title underline */
+}
+
+#self-correcting-loop .self-correcting-loop {
+  border-top: none;     /* Remove diagram top border */
+  border-bottom: none;  /* Remove diagram bottom border */
+  margin: 32px 0 0;     /* Adjust margin since no borders */
+}
+
+#who-this-serves {
+  border-radius: 0 0 12px 12px;
+  margin-top: 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(27, 42, 74, 0.1);  /* Keep only this subtle divider */
+}
+
+#who-this-serves .brief-section-title {
+  border-bottom: none;  /* Remove title underline */
+}
+
+/* =============================================
    SELF-CORRECTING LOOP DIAGRAM
    ============================================= */
 
