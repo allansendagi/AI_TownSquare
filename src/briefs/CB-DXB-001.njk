@@ -90,10 +90,53 @@ extraJs:
         <li><a href="#civic-contributors" class="brief-toc-link">IX. Civic Contributors</a></li>
       </ul>
     </nav>
-    <a href="/assets/briefs/CB-DXB-001.pdf" class="brief-download-btn" download>
+    <a href="/assets/briefs/CB-DXB-001.pdf"
+       class="brief-download-btn"
+       id="brief-download-link"
+       download
+       onclick="trackBriefDownload()">
       Download Full Brief (PDF)
     </a>
+    <p class="brief-download-count" id="brief-download-count" style="font-size:12px;text-align:center;color:#6b7280;margin-top:8px;">
+      Downloaded <span id="download-count-num">0</span> times
+    </p>
   </aside>
+
+  <script>
+    function trackBriefDownload() {
+      // Tier 1: fire analytics events
+      if (typeof gtag === 'function') {
+        gtag('event', 'brief_download', {
+          brief_id: 'CB-DXB-001',
+          brief_title: 'Dubai Node: AI & Employment'
+        });
+      }
+      if (typeof plausible === 'function') {
+        plausible('Brief Download', { props: { brief: 'CB-DXB-001' } });
+      }
+      // Tier 2: increment persistent counter
+      fetch('/api/download-count', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ brief: 'CB-DXB-001' })
+      }).then(function(r) { return r.json(); }).then(function(data) {
+        if (data.count !== undefined) {
+          document.getElementById('download-count-num').textContent = data.count;
+          document.getElementById('brief-download-count').style.display = 'block';
+        }
+      }).catch(function() {});
+    }
+
+    // Load current count on page load
+    fetch('/api/download-count?brief=CB-DXB-001')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data.count && data.count > 0) {
+          document.getElementById('download-count-num').textContent = data.count;
+          document.getElementById('brief-download-count').style.display = 'block';
+        }
+      }).catch(function() {});
+  </script>
 
   <!-- Main Content -->
   <main class="brief-content">
